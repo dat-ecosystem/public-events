@@ -4,7 +4,7 @@ A public space with lightning talks and self-organized sessions, to hear the lat
 
 <h2>Venue</h2>
 
-* May 19th, Berlin
+* May 19th, Berlin, 2019
 * 13:00 - 20:00 for talks, co-hacking, sessions, and food
 * [Trust](https://trust.support/) is a space for platform design and utopian conspiracy. 
 * Kluckstr. 25, 10785 Berlin
