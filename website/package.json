@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "get-data": "npm run get-readme",
-    "get-readme": "node -r esm get-readme.js",
+    "get-readme": "node --no-warnings --experimental-modules get-readme.mjs",
     "build": "bankai build index.js",
     "create": "choo-scaffold",
     "inspect": "bankai inspect index.js",
@@ -30,7 +30,6 @@
     "choo-devtools": "^2.5.1",
     "choo-scaffold": "^1.2.0",
     "dependency-check": "^3.3.0",
-    "esm": "^3.2.22",
     "hasha": "^5.0.0",
     "level": "^5.0.1",
     "smh-markdowner": "^2.1.0",
