@@ -1,7 +1,4 @@
 const html = require('choo/html')
-const raw = require('choo/html/raw')
-const readme = require('../readme.json').content
-const { beeView } = require('../bees')
 
 const TITLE = 'dat events'
 

@@ -8,7 +8,7 @@ const { markdowner } = smhMarkdowner
   const rawReadme = await fs.readFile(path.join(process.cwd(), '..', 'README.md'))
   const html = await markdowner(rawReadme)
 
-  await fs.writeFile(`readme.json`, JSON.stringify(html, null, 2))
+  await fs.writeFile(path.join(process.cwd(), 'readme.json'), JSON.stringify(html, null, 2))
 
-  console.log(`Readme updated`)
+  console.log('Readme updated')
 })()
