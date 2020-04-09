@@ -40,10 +40,7 @@ function bees (state, emitter) {
   var t0 = 0
 
   function animate (t) {
-    var dt = 1
-
-    if (!t0 || !t) { dt = 1 } else {
-      dt = t - t0
+    if (!t0 || !t) {} else {
       t0 = t
     }
 

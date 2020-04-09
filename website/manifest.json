@@ -1,7 +1,7 @@
 {
-  "name": "comm-comm-site",
-  "short_name": "comm-comm-site",
-  "description": " website for the Dat comm-comm working group",
+  "name": "dat:// foundation events site",
+  "short_name": "dat-foundation-events",
+  "description": "Website for events hosted by the dat:// foundation.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#000",
