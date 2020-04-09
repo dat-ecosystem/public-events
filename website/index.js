@@ -13,8 +13,7 @@ if (process.env.NODE_ENV !== 'production') {
 app.use(bees)
 
 app.route('/', require('./views/main'))
-app.route('/rsvp', require('./views/rsvp'))
-app.route('/thanks', require('./views/main'))
+require('./2019')(app)
 app.route('/*', require('./views/404'))
 
 module.exports = app.mount('body')

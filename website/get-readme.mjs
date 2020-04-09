@@ -5,10 +5,18 @@ import path from 'path'
 const { markdowner } = smhMarkdowner
 
 ;(async () => {
-  const rawReadme = await fs.readFile(path.join(process.cwd(), '..', 'README.md'))
-  const html = await markdowner(rawReadme)
-
-  await fs.writeFile(path.join(process.cwd(), 'readme.json'), JSON.stringify(html, null, 2))
-
-  console.log('Readme updated')
-})()
+  for (const [md, json] of [
+    ['README.md', 'readme.json'],
+    ['2019.md', path.join('2019', 'readme.json')]
+  ]) {
+    const rawReadme = await fs.readFile(path.join(process.cwd(), '..', md))
+    const html = await markdowner(rawReadme)
+  
+    await fs.writeFile(path.join(process.cwd(), json), JSON.stringify(html, null, 2))
+  
+    console.log(`Updated ${md} → ${json}`)
+  }
+})().catch(err => {
+  console.error(err.stack)
+  process.exit(1)
+})
