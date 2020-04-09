@@ -1,8 +1,8 @@
-website/node_modules/
-website/dist/
-website/tmp/
+website/**/dist/
+website/**/tmp/
 npm-debug.log*
 .DS_Store
-website/readme.json
-website/assets/dat-land_comm-comm.ics
+website/**/readme.json
 website/meetings.json
+website/**/node_modules
+website/**/package-lock.json
