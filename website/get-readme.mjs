@@ -7,7 +7,8 @@ const { markdowner } = smhMarkdowner
 ;(async () => {
   for (const [md, json] of [
     ['README.md', 'readme.json'],
-    ['2019.md', path.join('2019', 'readme.json')]
+    ['2019.md', path.join('2019', 'readme.json')],
+    ['2020.md', path.join('2020', 'readme.json')]
   ]) {
     const rawReadme = await fs.readFile(path.join(process.cwd(), '..', md))
     const html = await markdowner(rawReadme)

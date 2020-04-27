@@ -14,6 +14,7 @@ app.use(bees)
 
 app.route('/', require('./views/main'))
 require('./2019')(app)
+require('./2020')(app)
 app.route('/*', require('./views/404'))
 
 module.exports = app.mount('body')

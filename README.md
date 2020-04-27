@@ -1,1 +1,2 @@
 - <a href="https://events.dat.foundation/2019">2019</a>
+- <a href="https://events.dat.foundation/2020">2020</a>
