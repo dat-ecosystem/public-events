@@ -1,36 +1,14 @@
 {
-  "name": "events-site",
+  "name": "website-new",
   "version": "1.0.0",
-  "private": true,
+  "main": "index.js",
+  "license": "MIT",
   "scripts": {
-    "get-data": "npm run get-readme",
-    "get-readme": "node --no-warnings --experimental-modules get-readme.mjs",
-    "build": "bankai build index.js",
-    "create": "choo-scaffold",
-    "inspect": "bankai inspect index.js",
-    "start": "npm run get-data && bankai start index.js",
-    "test": "standard && npm run test-deps",
-    "test-deps": "dependency-check . && dependency-check . --extra --no-dev -i tachyons",
-    "ci": "npm run get-data && npm run build"
-  },
-  "standard": {
-    "ignore": [
-      "dist/**"
-    ]
+    "build": "eleventy",
+    "ci": "npm run build",
+    "dev": "eleventy --serve"
   },
   "dependencies": {
-    "choo": "^7.1.0",
-    "choo-service-worker": "^3.0.0",
-    "sheetify": "^8.0.0",
-    "tachyons": "^4.11.1"
-  },
-  "devDependencies": {
-    "acorn": "^7.1.1",
-    "bankai": "^9.15.3",
-    "choo-devtools": "^3.0.4",
-    "choo-scaffold": "^1.2.0",
-    "dependency-check": "^4.1.0",
-    "smh-markdowner": "^2.2.1",
-    "standard": "^14.3.3"
+    "@11ty/eleventy": "^0.11.0"
   }
 }

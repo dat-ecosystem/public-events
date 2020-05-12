@@ -1,8 +1,5 @@
-website/**/dist/
-website/**/tmp/
-npm-debug.log*
-.DS_Store
-website/**/readme.json
-website/meetings.json
-website/**/node_modules
-website/**/package-lock.json
+website/node_modules
+website/dist
+yarn.lock
+package-lock.json
+_site

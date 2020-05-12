@@ -1,0 +1,129 @@
+:root {
+  --datgreen: #2aca4b;
+}
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: monospace;
+}
+
+a {
+  color: var(--datgreen, green);
+}
+
+body > main,
+body > header {
+  position: relative;
+  z-index: 10;
+}
+
+body > main {
+  max-width: 44rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  background: white;
+}
+
+body > header {
+  background: black;
+  color: white;
+}
+
+#menu {
+  display: flex;
+  max-width: 44rem;
+  padding: 1rem 2rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+}
+
+#menu-dat-link:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  background-image: url("logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1s ease-in-out;
+}
+
+#menu-dat-link:hover:after {
+  transform: rotate(-360deg);
+}
+
+#menu > * {
+  display: block;
+  margin: 0 2rem 0 0;
+}
+
+#menu h2 {
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+#menu a {
+  color: white;
+}
+#menu a:hover {
+  color: var(--datgreen);
+}
+
+#menu h2 a {
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+#bees {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  right: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#index-hero {
+  font-size: 2rem;
+  margin: 4rem -1rem;
+}
+
+#index-hero > a {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+#index-hero > a:hover {
+  background: black;
+  color: white;
+}
+
+#index-hero > a span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+#index-hero > a em {
+  color: red;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 930px) {
+  #menu-dat-link:after {
+    display: none;
+  }
+}
+
