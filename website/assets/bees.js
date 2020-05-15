@@ -1,50 +1,43 @@
-const html = require('choo/html')
-
 const BEE = '🐝'
 
-module.exports = { beeView, bees }
+document.addEventListener('DOMContentLoaded', function () {
+  bees()
+})
 
-function beeView (state, emit) {
-  if (!state.bees) return ''
-  return html`<div class="z-1 absolute top-0 left-0 w-100 h-100 overflow-hidden">${state.bees.map((b) => { return b.element })}</div>`
-}
+function bees () {
+  const NUM_BEES = 3
+  const bees = []
+  const container = document.createElement('div')
+  container.id = 'bees'
+  document.body.prepend(container)
+  for (var i = 0; i < NUM_BEES; i++) {
+    var b = document.createElement('div')
+    b.classList.add('b')
+    b.innerHTML = BEE
+    b.style.position = 'absolute'
+    b.style.width = '40px'
+    b.style.height = '40px'
+    b.style.fontSize = '40px'
+    b.style.textAlign = 'center'
+    container.appendChild(b)
 
-function bees (state, emitter) {
-  emitter.on(state.events.DOMCONTENTLOADED, () => {
-    if (!state.bees || !state.bees.length) {
-      state.bees = []
-
-      for (var i = 0; i < 15; i++) {
-        var b = document.createElement('div')
-        b.classList.add('b')
-        b.innerHTML = BEE
-        b.style.position = 'absolute'
-        b.style.width = '70px'
-        b.style.height = '70px'
-        b.style.fontSize = '70px'
-        b.style.textAlign = 'center'
-
-        state.bees.push({
-          element: b,
-          position: [Math.random(), Math.random()],
-          speed: Math.random(),
-          direction: Math.random() * 10,
-          angularVelocity: Math.random() - 0.5
-        })
-      }
-      emitter.emit('render')
-      animate()
-    }
-  })
+    bees.push({
+      element: b,
+      position: [Math.random(), Math.random()],
+      speed: Math.random(),
+      direction: Math.random() * 10,
+      angularVelocity: Math.random() - 0.5
+    })
+  }
+  animate()
 
   var t0 = 0
-
   function animate (t) {
     if (!t0 || !t) {} else {
       t0 = t
     }
 
-    state.bees.forEach(function (b) {
+    bees.forEach(function (b) {
       // update velocity
       b.angularVelocity = clampAngularVelocity(b.angularVelocity + randomWalk() * 1000)
       b.speed += randomWalk()
