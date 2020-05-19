@@ -10,7 +10,9 @@ assignees: ''
 **Suggested Activity**
 
 _Title_: {Insert title here}
+
 _Proposed Time_: {Insert time frame here}
+
 _Session Type_: {What is this? Workshop / Presentation / Facilitated discussion / Interactive Artpiece...}
 
 {Text and/or images describing what we could do.}
