@@ -11,7 +11,7 @@ assignees: ''
 
 _Title_: {Insert title here}
 
-_Proposed Time_: {Insert time frame here}
+_Proposed Time_: {Insert time frame here} (incl. Timezone!)
 
 _Session Type_: {What is this? Workshop / Presentation / Facilitated discussion / Interactive Artpiece...}
 
