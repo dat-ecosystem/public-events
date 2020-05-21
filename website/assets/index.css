@@ -57,6 +57,11 @@ body > header {
   color: white;
 }
 
+main > h2 {
+  color: #293648;
+  font-size: 40px;
+}
+
 #menu {
   display: flex;
   max-width: 44rem;
