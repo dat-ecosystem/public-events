@@ -1,5 +1,5 @@
 ---
-title: Dat Protocol Events
+title: Dat Events
 layout: layout
 ---
 
@@ -10,4 +10,4 @@ layout: layout
 
 ### What is Dat?
 
-Dat is a peer to peer protocol and ecosystem of projects. Read more on the [Dat website](https://dat.foundation).
+Dat is an ecosystem of peer-to-peer projects. Read more on the [Dat website](https://dat.foundation).
