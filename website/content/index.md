@@ -9,5 +9,4 @@ layout: layout
 </div>
 
 ### What is Dat?
-
-Dat is an ecosystem of peer-to-peer projects. Read more on the [Dat website](https://dat.foundation).
+[Dat](https://dat.foundation) is a community ecosystem of peer-to-peer projects. They build on a shared set of technologies called the [Hypercore protocol](https://hypercore-protocol.org).
