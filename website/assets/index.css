@@ -1,10 +1,38 @@
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Regular.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Italic.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-Bold.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-BoldItalic.ttf");
+}
+
 :root {
   --datgreen: #2aca4b;
 }
 body {
   font-size: 18px;
   line-height: 1.6;
-  font-family: monospace;
+  font-family: 'Source Sans Pro', sans-serif;
 }
 
 a {
@@ -25,14 +53,19 @@ body > main {
 }
 
 body > header {
-  background: black;
+  background: #293648;
   color: white;
+}
+
+main > h2 {
+  color: #293648;
+  font-size: 40px;
 }
 
 #menu {
   display: flex;
   max-width: 44rem;
-  padding: 1rem 2rem;
+  padding: 2rem 2rem;
   margin: 0 auto;
   font-size: 1.5rem;
   flex-wrap: wrap;
@@ -68,6 +101,11 @@ body > header {
 
 #menu a {
   color: white;
+  text-decoration: unset;
+}
+
+#menu a.active {
+  text-decoration: underline;
 }
 #menu a:hover {
   color: var(--datgreen);
@@ -79,16 +117,6 @@ body > header {
 
 #menu a:hover {
   text-decoration: underline;
-}
-
-#bees {
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 100vh;
-  right: 0;
-  overflow: hidden;
-  z-index: 0;
 }
 
 #index-hero {
@@ -128,7 +156,7 @@ body > header {
 }
 
 p.submission-link-btn {
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .submission-link-btn > a {
@@ -136,4 +164,11 @@ p.submission-link-btn {
     color: #fff;
     font-weight: bold;
     padding: 0.8rem;
+    transition: background 200ms;
+    text-decoration: unset;
+}
+
+.submission-link-btn > a:hover {
+    background: #293648;
+    transition: background 200ms;
 }
