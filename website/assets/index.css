@@ -152,7 +152,6 @@ body > header {
 
 p.submission-link-btn {
     margin-top: 4rem;
-    text-decoration: unset;
 }
 
 .submission-link-btn > a {
@@ -161,6 +160,7 @@ p.submission-link-btn {
     font-weight: bold;
     padding: 0.8rem;
     transition: background 200ms;
+    text-decoration: unset;
 }
 
 .submission-link-btn > a:hover {
