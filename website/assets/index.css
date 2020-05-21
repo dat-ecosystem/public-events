@@ -127,3 +127,13 @@ body > header {
   }
 }
 
+p.submission-link-btn {
+    margin-top: 2rem;
+}
+
+.submission-link-btn > a {
+    background-color: var(--datgreen);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.8rem;
+}
