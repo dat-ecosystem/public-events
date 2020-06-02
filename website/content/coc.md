@@ -22,7 +22,7 @@ If you are being harassed, notice that someone else is being harassed, or have a
 
 **Anonymous report**: Please use [this form](https://forms.gle/a8pvnrNoMCpMzqQ16) to file an anonymous report. The Safety Officers will fully investigate your report, although we will not follow up with you as the report is anonymous.
 
-**Personal report**: Please email either Diego ([diego@geutstudio.com](mailto:diego@geutstudio.com)) or Martin ([martin@consento.org](mailto:martin@consento.org) or matrix [@mh:zerc.net](@mh:zerc.net)) to file a personal report. You can also directly message either Lilly or Jonathan on the csv,conf Slack ([csvconf.slack.com](http://csvconf.slack.com)).
+**Personal report**: Please email either Diego ([diego@geutstudio.com](mailto:diego@geutstudio.com)) or Martin ([martin@consento.org](mailto:martin@consento.org) or matrix [@mh:zerc.net](@mh:zerc.net)) to file a personal report.
 
 In your report, please do your best to include:
 
@@ -37,12 +37,12 @@ In your report, please do your best to include:
 - If there is a publicly available record (e.g. mailing list record), please include a link
 - Any additional helpful information
 
-**Online Trolls**: With the move to a fully virtual conference, the risk for online trolling has increased. This behaviour is unacceptable, and the Safety Officers and conference staff will be monitoring the various chat platforms associated with csv,conf,v5 and will act decisively and swiftly to end behaviour they deem trolling. Anyone exhibiting trolling behaviour will be immediately kicked out of the conference platform (including Slack). If you believe you were accidentally kicked out, please contact us and we will review reinstatement.
+**Online Trolls**: With the move to a fully virtual conference, the risk for online trolling has increased. This behaviour is unacceptable, and the Safety Officers and conference staff will be monitoring the various chat platforms associated with dat event and will act decisively and swiftly to end behaviour they deem trolling. Anyone exhibiting trolling behaviour will be immediately kicked out of the conference platform. If you believe you were accidentally kicked out, please contact us and we will review reinstatement.
 
-**Conflicts of Interest**: If your report involves one of the csv,conf,v5 organizers or Safety Officers, or you otherwise feel like there is potential for a conflict of interest, please contact Danielle at danielle@codeforsociety.org with your report and include the above bullet point information. Danielle is serving as an impartial Code of Conduct incident reviewer for csv,conf,v5 and will fully investigate your report.
+**Conflicts of Interest**: If your report involves one of the dat event organizers or Safety Officers, or you otherwise feel like there is potential for a conflict of interest, please contact Franz at frando@unbiskant.org with your report and include the above bullet point information. Franz is serving as an impartial Code of Conduct incident reviewer for dat event and will fully investigate your report.
 
 ## Investigation
-We will fully investigate your report and follow up with you via the contact information you provide. Upon receipt of your report, the Safety Officers will immediately start the process to determine an appropriate response. If the incident is deemed urgent, the Safety Officers will coordinate with the csv,conf,v5 staff to quickly take appropriate action. This could include giving a warning to the offending party, kicking the offending party out, or referring the issue to a non-csv,conf entity, such as local police. We are unable to handle emergency situations. If the incident is less urgent, the Safety Officers will confer with the csv,conf,v5 organizing team to determine the appropriate response. 
+We will fully investigate your report and follow up with you via the contact information you provide. Upon receipt of your report, the Safety Officers will immediately start the process to determine an appropriate response. If the incident is deemed urgent, the Safety Officers will coordinate with the dat event staff to quickly take appropriate action. This could include giving a warning to the offending party, kicking the offending party out, or referring the issue to a non-dat-event entity, such as local police. We are unable to handle emergency situations. If the incident is less urgent, the Safety Officers will confer with the dat event organizing team to determine the appropriate response. 
 
 **Transparency Report**: After the conference, all reports will be summarized in an anonymized post for transparency. For example, a post would include if there were any Code of Conduct violations reported, how many violations occurred, what kinds of violations (in general terms), and if the violations were resolved. This report would not include any identifying information about the reportees.
 
