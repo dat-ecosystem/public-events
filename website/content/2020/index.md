@@ -1,6 +1,6 @@
 ---
 title: Dat Conference 2020
-layout: layout
+layout: layout-2020
 ---
 
 ## Dat Conference 2020
