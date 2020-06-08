@@ -1,4 +1,5 @@
 # Redirect default Netlify subdomain to primary domain
-http://dat-events.netlify.com/* http://events.dat.foundation/:splat 301!
+http://dat-events.netlify.com/* https://events.dat.foundation/:splat 301!
+https://dat-events.netlify.com/* https://events.dat.foundation/:splat 301!
 # Redirect old domain to new one
-https://events.datproject.org/* http://events.dat.foundation/:splat 301!
+https://events.datproject.org/* https://events.dat.foundation/:splat 301!
