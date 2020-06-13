@@ -27,7 +27,7 @@ If you are being harassed, notice that someone else is being harassed, or have a
 
 **Anonymous report**: Please use [this form](https://forms.gle/a8pvnrNoMCpMzqQ16) to file an anonymous report. The Safety Officers will fully investigate your report, although we will not follow up with you as the report is anonymous.
 
-**Personal report**: Please email either Diego ([diego@geutstudio.com](mailto:diego@geutstudio.com)) or Martin ([martin@consento.org](mailto:martin@consento.org) or matrix [@mh:zerc.net](@mh:zerc.net)) to file a personal report.
+**Personal report**: Please email either Diego ([diego@geutstudio.com](mailto:diego@geutstudio.com)) or Nina ([ninabreznik@gmail.com](mailto:ninabreznik@gmail.com) to file a personal report.
 
 In your report, please do your best to include:
 
