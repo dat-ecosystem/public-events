@@ -84,14 +84,17 @@ main > h2 {
   color: #293648;
   margin: 0 auto;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
   padding: 4em 0em 2em 0em;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 .conference .splash > * {
   max-width: 44rem;
   margin: 0 auto;
+  font-weight: bold;
 }
 
 .conference .splash > h2 {
@@ -213,14 +216,24 @@ p.submission-link-btn {
     color: #fff;
     font-weight: bold;
     padding: 0.8rem;
-    transition: background 200ms;
+    transition: background 400ms;
     text-decoration: unset;
+    border-radius: 5px 5px;
+    box-shadow: none;
 }
 
 .submission-link-btn > a:hover {
-    background: #293648;
-    transition: background 200ms;
+  background: #919ba4;
 }
+
+.splash .submission-link-btn > a {
+  box-shadow: 2px 2px 2px 1px #919ba4;
+}
+
+.splash .submission-link-btn > a:hover {
+    background: #293648;
+}
+
 
 .darkbg, .darkbg > main {
   background-color: #293648;
