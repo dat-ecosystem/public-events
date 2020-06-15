@@ -5,8 +5,9 @@
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ '/assets/normalize.css' | url }}">
         <link rel="stylesheet" href="{{ '/assets/index.css' | url }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
-    <body>
+    <body class="conference{% if splash_img %} darkbg{%endif%}">
       <header>
         <nav id="menu">
           <a id="menu-dat-link" href="/" aria-label="Dat events index" style="margin:0"></a>
@@ -14,7 +15,13 @@
           <a href="/2020/agenda/">Agenda</a>
           <a href="/2020/coc/">Code of conduct</a>
         </nav>
+        {{ header_title }}
       </header>
+      {% if splash_img %}
+        <div class="splash" style="background-image: url({{splash_img|escape }})">
+        {{ splash_text }}
+        </div>
+      {% endif %}
       <main>
         {{ content }}
       </main>

@@ -1,14 +1,15 @@
 ---
 title: Dat Conference 2020
 layout: layout-2020
+header_title: <h1>Dat Conference 2020</h1>
+splash_img: /assets/dat-bg-2020.png
+splash_text: |
+    <p>Virtual peer to peer event about local-first tech and meetup space for everyone interested in the decentralized web.</p>
+    <h2>July 30-31<br />Online</h2>
+    <p class="submission-link-btn">
+      <a href="https://forms.gle/cdGu39dxqSQRdcJCA">Submit proposal</a>
+    </p>
 ---
-
-## Dat Conference 2020
-
-Virtual peer to peer event about local-first tech and meetup space for everyone interested in the decentralized web.
-
-- _Date:_ **July 30/31, 2020**
-- _Location:_ **Worldwide (Online)**
 
 [Dat](https://dat.foundation) is a community ecosystem of peer-to-peer projects. They build on a shared set of technologies called the [Hypercore protocol](https://hypercore-protocol.org). 
 
