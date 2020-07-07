@@ -7,3 +7,4 @@ _site
 website/content/_data/2020
 website/assets/pretalx
 website/assets/*-schedule.ics
+node_modules
