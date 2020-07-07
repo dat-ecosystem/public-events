@@ -51,7 +51,7 @@
   [plugins.inputs]
     # Where should data files reside
     targetDomain = "events.dat.foundation"
-    ttl = 3600
+    ttl = 60 # cache for 1 minute
 
     # All the feeds we wish to gather for use in the build
 
