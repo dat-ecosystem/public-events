@@ -58,4 +58,4 @@
     [[plugins.inputs.conferences]]
       domain = "conf.consento.org"
       prefix = "2020"
-      event = "dat-event-2020"
+      event = "template-test"
