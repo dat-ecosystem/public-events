@@ -5,6 +5,10 @@ layout: layout-2020
 {% assign conference = 2020.schedule.schedule.conference %}
 <h1>{{conference.title}}</h1>
 <a href="/assets/2020-schedule.ics">iCal file</a>
+
+The schedule is not yet fixed, but if you subscribe to the iCal file
+as a web calendar, it will update whenever there is an update!
+
 {% for day in conference.days %}
   <h2>Day #{{ day.index }} - {{ day.date }}</h2>
   {% for entry in day.rooms %}

@@ -1,6 +1,6 @@
 [
   { "href": "/2020/", "slug": "2020", "title": "About" },
-  { "href": "/2020/agenda", "slug": "agenda", "title": "Agenda" },
+  { "href": "/2020/schedule", "slug": "schedule", "title": "Agenda" },
   { "href": "/2020/coc", "slug": "coc", "title": "Code of Conduct" },
   { "href": "/2020/register", "slug": "register", "title": "Register" }
 ]
