@@ -1,5 +1,6 @@
 {% assign conference = 2020.schedule.schedule.conference %}
 <h1>{{conference.title}}</h1>
+<a href="/assets/2020-schedule.ics">iCal file</a>
 {% for day in conference.days %}
   <h2>Day #{{ day.index }} - {{ day.date }}</h2>
   {% for entry in day.rooms %}
