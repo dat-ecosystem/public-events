@@ -24,7 +24,7 @@ permalink: "2020/talk/{{ talk.code }}/"
   {{ talk.slot.start }} - {{ talk.slot.end }}
 </div>
 
-Speakers:
+<h4>Speakers:</h4>
 <ul>
   {% for speaker in talk.speakers %}
   <li>
@@ -33,5 +33,11 @@ Speakers:
   {% endfor %}
 </ul>
 
+<h4>Resources:</h4>
+<ul>
 {% for resource in talk.resources %}
+  <li>
+    <a href="{{resource.resource}}">{{resource.description}}</a>
+  </li>
 {% endfor %}
+</ul>
