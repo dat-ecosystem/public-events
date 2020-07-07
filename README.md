@@ -12,6 +12,8 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed through Netlify.
 
 To develop locally:
 ```bash
+npm i # install locally
+npm run build # download latest data & build latest version
 cd website
 npm run dev
 ```

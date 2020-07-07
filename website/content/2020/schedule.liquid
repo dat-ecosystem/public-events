@@ -1,0 +1,27 @@
+{% assign conference = 2020.schedule.schedule.conference %}
+<h1>{{conference.title}}</h1>
+{% for day in conference.days %}
+  <h2>Day #{{ day.index }} - {{ day.date }}</h2>
+  {% for entry in day.rooms %}
+    {% assign roomName = entry[0] %}
+    {% assign room = entry[1] %}
+    {% assign roomInfo = 2020.rooms  | find: "name.en", roomName %}
+    <h3>{{ roomName }}</h3>
+    <div class="description">
+      {{ roomInfo.description.en | md }}
+    </div>
+    {% for slot in room %}
+      {% assign slug = slot.slug %}
+      {% assign talk = 2020.talks | find: "code", slug %}
+      <div>
+        <a href="/2020/talk/{{talk.code}}">{{talk.title}}</a> at {{talk.slot.start}}-{{talk.slot.end}} by
+        <ul>
+        {% for speaker in talk.speakers %}
+          <li><a href="/2020/speaker/{{speaker.code}}"">{{speaker.name}}</a></li>
+        {% endfor %}
+        </ul>
+      </div>
+      <hr/>
+    {% endfor %}
+  {% endfor %}
+{% endfor %}

@@ -1,0 +1,16 @@
+{
+  "private": true,
+  "dependencies": {
+    "base32.js": "^0.1.0",
+    "chalk": "^4.1.0",
+    "lodash.flatten": "^4.4.0",
+    "node-fetch": "^2.6.0"
+  },
+  "scripts": {
+    "lint": "standard",
+    "test": "npm run lint"
+  },
+  "devDependencies": {
+    "standard": "^14.3.4"
+  }
+}

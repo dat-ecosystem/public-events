@@ -1,0 +1,10 @@
+# manifest.yml
+
+name: pretalx-fetch
+inputs:
+  - name: targetDomain
+    required: true
+  - name: ttl
+    required: true
+  - name: conferences
+    required: true

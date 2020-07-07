@@ -1,0 +1,24 @@
+---
+pagination:
+    data: 2020.speakers
+    size: 1
+    alias: speaker
+permalink: "2020/speaker/{{ speaker.code }}/"
+---
+
+<h1>{{ speaker.name }}</h1>
+
+<img src="{{speaker.avatar}}">
+
+<div class="biography">{{ speaker.biography }}</div>
+
+<ul>
+{% for submission in speaker.submissions %}
+    {% assign talk = 2020.talks | find: "code", submission %}
+    <li>
+        <a href="/2020/talk/{{talk.code}}">
+            {{talk.title}}
+        </a>
+    </li>
+{% endfor %}
+</ul>

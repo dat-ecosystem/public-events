@@ -1,0 +1,37 @@
+---
+pagination:
+    data: 2020.talks
+    size: 1
+    alias: talk
+permalink: "2020/talk/{{ talk.code }}/"
+---
+
+<h1>{{ talk.title }}</h1>
+
+<div class="abstract">
+  {{ talk.abstract }}
+</div>
+
+<div class="description">
+  {{ talk.description }}
+</div>
+
+<div class="duration">
+  {{ talk.duration }}
+</div>
+
+<div class="slot">
+  {{ talk.slot.start }} - {{ talk.slot.end }}
+</div>
+
+Speakers:
+<ul>
+  {% for speaker in talk.speakers %}
+  <li>
+    <a href="/2020/speaker/{{speaker.code}}">{{speaker.name}}</a>
+  </li>
+  {% endfor %}
+</ul>
+
+{% for resource in talk.resources %}
+{% endfor %}
