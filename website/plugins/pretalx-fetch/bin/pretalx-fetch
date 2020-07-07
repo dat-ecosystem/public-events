@@ -1,0 +1,27 @@
+#!/usr/bin/env node
+
+const runfetch = require('../runfetch')
+runfetch({
+  // Where should data files reside
+  targetDomain: 'events.dat.foundation',
+  ttl: 60,
+
+  // All the feeds we wish to gather for use in the build
+  conferences: [
+    {
+      domain: 'conf.consento.org',
+      prefix: '2020',
+      event: 'template-test'
+    }
+  ],
+
+  cache: {
+    // TODO: maybe implement a cache?
+    has () { return false },
+    save () {}
+  }
+})
+  .catch(err => {
+    console.log(err.stack || err.message || err)
+    process.exit(1)
+  })
