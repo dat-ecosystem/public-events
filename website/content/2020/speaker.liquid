@@ -10,7 +10,7 @@ permalink: "2020/speaker/{{ speaker.code }}/"
 
 <img src="{{speaker.avatar}}">
 
-<div class="biography">{{ speaker.biography }}</div>
+<div class="biography">{{ speaker.biography | md }}</div>
 
 <ul>
 {% for submission in speaker.submissions %}

@@ -8,12 +8,14 @@ permalink: "2020/talk/{{ talk.code }}/"
 
 <h1>{{ talk.title }}</h1>
 
+<h2>Abstract</h2>
 <div class="abstract">
-  {{ talk.abstract }}
+  {{ talk.abstract | md }}
 </div>
 
+<h2>Description</h2>
 <div class="description">
-  {{ talk.description }}
+  {{ talk.description | md  }}
 </div>
 
 <div class="duration">
