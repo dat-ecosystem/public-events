@@ -1,26 +1,38 @@
 #!/usr/bin/env node
 
+const toml = require('toml')
+const fs = require('fs').promises
 const runfetch = require('../runfetch')
-runfetch({
-  // Where should data files reside
-  targetDomain: 'events.dat.foundation',
-  ttl: 60,
+const path = require('path')
 
-  // All the feeds we wish to gather for use in the build
-  conferences: [
-    {
-      domain: 'conf.consento.org',
-      prefix: '2020',
-      event: 'template-test'
-    }
-  ],
-
-  cache: {
-    // TODO: maybe implement a cache?
-    has () { return false },
-    save () {}
+;(async () => {
+  const tomlLocation = path.join(process.cwd(), 'netlify.toml')
+  let raw
+  try {
+    raw = await fs.readFile(tomlLocation, 'utf8')
+  } catch (err) {
+    err.message = `For the cli-skript to run we need a netlify.toml configuration at ${tomlLocation}.\nCause:` + err.message
+    throw err
   }
-})
+  const data = toml.parse(raw)
+  const base = data.build && data.build.base
+
+  if (!base) {
+    throw new Error(`For the cli-skript to run we need a build.base definition in ${tomlLocation}`)
+  }
+
+  const pluginConfig = data.plugins && data.plugins.find(plugin => /(^netlify-plugin-|\/)pretalx-fetch$/.test(plugin.package))
+
+  if (!pluginConfig) {
+    throw new Error(`No configuration for pretalx-fetch plugin found at ${tomlLocation}`)
+  }
+
+  if (!pluginConfig.inputs) {
+    throw new Error(`No inputs for pretalx-fetch plugin found at ${tomlLocation}`)
+  }
+
+  await runfetch(path.join(process.cwd(), base), pluginConfig.inputs)
+})()
   .catch(err => {
     console.log(err.stack || err.message || err)
     process.exit(1)

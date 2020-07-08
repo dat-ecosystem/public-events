@@ -1,10 +1,13 @@
 {
   "private": true,
+  "name": "netlify-plugin-pretalx-fetch",
   "dependencies": {
     "base32.js": "^0.1.0",
+    "cachedir": "^2.3.0",
     "chalk": "^4.1.0",
     "lodash.flatten": "^4.4.0",
-    "node-fetch": "^2.6.0"
+    "make-fetch-happen": "^8.0.7",
+    "toml": "^3.0.0"
   },
   "scripts": {
     "lint": "standard",

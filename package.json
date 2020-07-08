@@ -2,7 +2,7 @@
   "private": "true",
   "scripts": {
     "build": "netlify build",
-    "postinstall": "cd website; echo 'installing website dependencies'; npm i; echo 'installing plugin dependencies'; cd plugins/pretalx-fetch; npm i"
+    "postinstall": "cd website; echo 'installing website dependencies'; npm i"
   },
   "devDependencies": {
     "netlify-cli": "^2.58.0"

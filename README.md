@@ -12,9 +12,8 @@ Built with [Eleventy](https://www.11ty.dev/) and deployed through Netlify.
 
 To develop locally:
 ```bash
-npm i # install locally
-npm run build # download latest data & build latest version
 cd website
+npm run i
 npm run dev
 ```
 
@@ -24,3 +23,8 @@ npm run build
 ```
 
 The static export then is in `website/dist`.
+
+### Notes
+
+The build process will download files in a cache (see build log), this may grow large and it might be a good
+idea to clean it every now and then.
