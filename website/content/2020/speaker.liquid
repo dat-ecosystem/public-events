@@ -10,9 +10,9 @@ layout: layout-2020
 
 <h1>{{ speaker.name }}</h1>
 
-<img src="{{speaker.avatar}}">
+<img src="{{speaker.avatar}}" />
 
-<div class="biography">{{ speaker.biography | md }}</div>
+<div class="biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
 
 <ul>
 {% for submission in speaker.submissions %}

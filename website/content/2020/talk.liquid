@@ -20,18 +20,21 @@ layout: layout-2020
 </div>
 
 <div class="duration">
-  {{ talk.duration }}
+  Expected duration: {{ talk.duration }} hours
 </div>
 
 <div class="slot">
-  {{ talk.slot.start }} - {{ talk.slot.end }}
+  Time slot:
+  <span class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
+    {{ talk.slot.start }} - {{ talk.slot.end }}
+  </span>
 </div>
 
 <h4>Speakers:</h4>
 <ul>
   {% for speaker in talk.speakers %}
   <li>
-    <a href="/2020/speaker/{{speaker.code}}">{{speaker.name}}</a>
+    <a href="/2020/speakers/#{{speaker.code}}">{{speaker.name}}</a>
   </li>
   {% endfor %}
 </ul>
@@ -44,3 +47,4 @@ layout: layout-2020
   </li>
 {% endfor %}
 </ul>
+

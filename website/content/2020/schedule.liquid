@@ -1,36 +1,62 @@
 ---
 layout: layout-2020
-
+header_title: <h1>Dat Conference 2020</h1>
+splash_img: /assets/dat-bg-2020.png
+splash_text: |
+    <h1>Agenda</h1>
+    <h2>July 30-31<br />Online</h2>
 ---
 {% assign conference = 2020.schedule.schedule.conference %}
 <h1>{{conference.title}}</h1>
-<a href="/assets/2020-schedule.ics">iCal file</a>
+<p>
+  <a href="/assets/2020-schedule.ics">iCal file</a>
+</p>
 
+<p>
 The schedule is not yet fixed, but if you subscribe to the iCal file
 as a web calendar, it will update whenever there is an update!
+</p>
 
 {% for day in conference.days %}
-  <h2>Day #{{ day.index }} - {{ day.date }}</h2>
   {% for entry in day.rooms %}
     {% assign roomName = entry[0] %}
     {% assign room = entry[1] %}
     {% assign roomInfo = 2020.rooms  | find: "name.en", roomName %}
-    <h3>{{ roomName }}</h3>
+    
+    <div class="schedule-head-day">
+      <h2>Day #{{ day.index }} - {{ day.date }}</h2>
+      <h3>{{ roomName }}</h3>
+    </div>
     <div class="description">
       {{ roomInfo.description.en | md }}
     </div>
-    {% for slot in room %}
-      {% assign slug = slot.slug %}
-      {% assign talk = 2020.talks | find: "code", slug %}
-      <div>
-        <a href="/2020/talk/{{talk.code}}">{{talk.title}}</a> at {{talk.slot.start}}-{{talk.slot.end}} by
-        <ul>
-        {% for speaker in talk.speakers %}
-          <li><a href="/2020/speaker/{{speaker.code}}"">{{speaker.name}}</a></li>
-        {% endfor %}
-        </ul>
+
+    <div class="schedule-table">
+      <div class="row-header">
+        <div>Title</div>
+        <div>Speaker(s)</div>
+        <div>When <span class="tzselector-indicator">(in <span class="tzselector-btn">(TZ?)</span>)</span></div>
       </div>
-      <hr/>
-    {% endfor %}
+      {% for slot in room %}
+        <div class="row-body">
+        {% assign slug = slot.slug %}
+        {% assign talk = 2020.talks | find: "code", slug %}
+          <div>
+            <a href="/2020/talk/{{talk.code}}">{{talk.title}}</a>
+          </div>
+          <ul>
+          {% for speaker in talk.speakers %}
+          <li><a href="/2020/speakers/#{{speaker.code}}"">{{speaker.name}}</a></li>
+          {% endfor %}
+          </ul>
+          <div>
+            <div class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
+               {{talk.slot.start}} - {{talk.slot.end}}
+            </div>
+          </div>
+        </div> 
+      {% endfor %}
+    </div>
+
   {% endfor %}
 {% endfor %}

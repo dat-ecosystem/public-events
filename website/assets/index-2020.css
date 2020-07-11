@@ -28,6 +28,7 @@
 
 :root {
   --datgreen: #2aca4b;
+  --darkmain: #293648;
 }
 body {
   font-size: 18px;
@@ -272,4 +273,91 @@ hr {
 iframe {
   background-color: #fff;
   background-image: url("/assets/loading.gif") no-repeat;
+}
+
+
+.schedule-head-day h2 {
+  float: right;
+}
+
+.schedule-head-day h3 {
+  float: left;
+}
+
+.description {
+  clear: both;
+}
+
+
+.schedule-table {
+  display: block;
+}
+.schedule-table > * {
+  display: flex;
+  margin-bottom: 1em;
+  border-radius: 15px;
+  padding: 15px;
+}
+
+.schedule-table > * > :nth-child(1) {
+  flex: 2 0 250px;
+}
+.schedule-table > * > :nth-child(2) {
+  flex: 1 0 250px;
+}
+.schedule-table > * > :nth-child(3) {
+  flex: 1 0 165px;
+}
+
+.schedule-table > :nth-child(even) {
+  background-color: #ddd;
+  color: var(--darkmain);
+}
+.schedule-table > :nth-child(odd) {
+  background-color: #aaa;
+  color: var(--darkmain);
+}
+.schedule-table > :nth-child(1) {
+  background-color: inherit;
+  color: white;
+}
+.schedule-table a {
+  color: var(--darkmain);
+  font-weight: bold;
+}
+
+.schedule-table .row-body ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.when-datespan {
+  font-size: 0.65em;
+}
+.schedule-table .when-tz {
+  text-align: center;
+}
+
+.tzselector-indicator {
+  font-size: 0.65em;
+}
+
+.speaker-grid {
+  display: flex;
+  flex-flow: wrap;
+}
+.speaker-grid img {
+  height: 200px;
+}
+
+.speaker-grid .speaker-ident {
+  border: 1px solid var(--datgreen);
+  border-radius: 5px 5px;
+  margin: 0.4rem;
+  padding: 0.4rem;
+  flex: 0 0 20rem;
+  text-align: center;
 }

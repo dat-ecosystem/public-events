@@ -2,6 +2,28 @@
 layout: layout-2020
 
 ---
-{% for speaker in 2020.speakers %}
-<a href="/2020/speaker/{{speaker.code}}">{{speaker.name}}</a>
-{% endfor %}
+
+<div class="speaker-grid">
+    {% for speaker in 2020.speakers %}
+        <div id="{{speaker.code}}" class="speaker-ident">
+
+        <img src="{{speaker.avatar | default: "http://placekitten.com/400/400"}}" />
+        <h2>{{ speaker.name }}</h2>
+        <div class="biography">
+            {{ speaker.biography | default: "This person has not written a bio yet." | md }}
+        </div>
+
+        <ul>
+        {% for submission in speaker.submissions %}
+            {% assign talk = 2020.talks | find: "code", submission %}
+            <li>
+                <a href="/2020/talk/{{talk.code}}">
+                    {{talk.title}}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+
+        </div>
+    {% endfor %}
+</div>
