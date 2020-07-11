@@ -2,7 +2,7 @@
 [build]
   base = "website"
   command = "npm i; npm run build"
-  publish = "website/dist"
+  publish = "dist"
 
 [[redirects]]
   # Redirect default Netlify subdomain to primary domain
