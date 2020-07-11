@@ -3,3 +3,4 @@ website/dist
 yarn.lock
 package-lock.json
 _site
+.netlify
