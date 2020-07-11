@@ -4,25 +4,15 @@ layout: layout-2020
 header_title: <h1>Dat Conference 2020</h1>
 ---
 
-<div id="eventbrite-widget-container-112923713868"></div>
-
-<script src="https://www.eventbrite.com/static/widgets/eb_widgets.js"></script>
-
 <script type="text/javascript">
-    var exampleCallback = function() {
-        console.log('Order complete!');
-    };
-
-    window.EBWidgets.createWidget({
-        // Required
-        widgetType: 'checkout',
-        eventId: '112923713868',
-        iframeContainerId: 'eventbrite-widget-container-112923713868',
-
-        // Optional
-        iframeContainerHeight: 525,  // Widget height in pixels. Defaults to a minimum of 425px if not provided
-        onOrderComplete: exampleCallback  // Method called when an order has successfully completed
-    });
+  document.write(
+    '<iframe'
+      + ' src="https://www.eventbrite.com/checkout-external?eid=112923713868&parent=' + encodeURIComponent(document.location.href) + '"'
+      + ' scrolling="auto"'
+      + ' style="width: 100%;border: 0;"'
+      + ' height="100%"'
+    + '></iframe>'
+  )
 </script>
 <style type="text/css">
   html {
