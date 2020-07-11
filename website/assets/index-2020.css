@@ -354,7 +354,7 @@ iframe {
 }
 
 .speaker-grid .speaker-ident {
-  border: 1px solid var(--datgreen);
+  border: 1px solid var(--darkmain);
   border-radius: 5px 5px;
   margin: 0.4rem;
   padding: 0.4rem;
