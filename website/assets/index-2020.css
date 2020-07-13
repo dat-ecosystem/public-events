@@ -368,6 +368,8 @@ iframe {
 }
 
 .cal-day {
+  padding: 0!important;
+  display: table;
   width: 100%;
   background: #eee;
 }
