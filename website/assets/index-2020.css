@@ -408,6 +408,9 @@ iframe {
   background: #fff;
   border: 1px solid #2aca4b;
   width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
   overflow: hidden;
 }
 .cal-entry:hover {
