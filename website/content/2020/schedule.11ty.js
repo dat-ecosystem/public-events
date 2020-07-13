@@ -68,12 +68,14 @@ class Schedule {
     const { conference } = schedule
     const { timezone: timeZone } = event
 
-    return `<a href="/assets/2020-schedule.ics">iCal file</a>
+    return `${this.md(`
+[iCal file][ical]
 
-    <p>
-    The schedule is not yet fixed, but if you subscribe to the iCal file
-    as a web calendar, it will update whenever there is an update!
-    </p>
+The schedule is not yet fixed, but if you subscribe to [the iCal file][ical]
+as a web calendar, it will update whenever there is an update!
+
+[ical]: /assets/2020-schedule.ics
+    `)}
 
     ${list(
       conference.days, 
