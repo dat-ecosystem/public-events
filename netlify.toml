@@ -14,7 +14,7 @@
 [[redirects]]
   # Redirect default Netlify subdomain to primary domain
   from = "https://events.datproject.org/*"
-  to = "https://events.dat.foundation/:splat "
+  to = "https://events.dat.foundation/:splat"
   status = 301
   force = true
 
