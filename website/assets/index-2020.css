@@ -361,3 +361,37 @@ iframe {
   flex: 0 0 20rem;
   text-align: center;
 }
+
+.cal-day {
+  width: 100%;
+}
+
+.cal-day > tbody > tr, .cal-entries {
+  height: 120px;
+}
+
+.cal-entries {
+  position: relative;
+}
+
+.cal-entry {
+  position: absolute;
+  border-radius: 5px;
+  background: #ddd;
+  font-size: 0.75em;
+  width: 100%;
+}
+
+.cal-day td,.cal-day th {
+  border-bottom: 1px solid #aaa;
+}
+
+.cal-timezone {
+  font-size: 0.75em;
+  color: #aaa;
+  text-align: center;
+}
+
+.cal-entry-content {
+  margin: 5px;
+}
