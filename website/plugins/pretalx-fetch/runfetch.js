@@ -28,16 +28,16 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     const apiUrl = `https://${domain}/api/events/${event}`
     const scheduleUrl = `https://${domain}/${event}/schedule/export/schedule`
     return [
-      { name: `${base}/content/_data/${prefix}/talks.json`, url: `${apiUrl}/talks/?format=json`, api: true },
-      { name: `${base}/content/_data/${prefix}/speakers.json`, url: `${apiUrl}/speakers/?format=json`, api: true },
-      { name: `${base}/content/_data/${prefix}/rooms.json`, url: `${apiUrl}/rooms/?format=json`, api: true },
+      { name: `${base}/content/_data/${prefix}/talks.json`, url: `${apiUrl}/talks/?format=json`, paging: true },
+      { name: `${base}/content/_data/${prefix}/speakers.json`, url: `${apiUrl}/speakers/?format=json`, paging: true },
+      { name: `${base}/content/_data/${prefix}/rooms.json`, url: `${apiUrl}/rooms/?format=json`, paging: true },
       { name: `${base}/content/_data/${prefix}/schedule.json`, url: `${scheduleUrl}.json` },
       { name: `${base}/assets/${prefix}-schedule.ics`, url: `${scheduleUrl}.ics` }
     ]
   }))
 
   for (const entry of entries) {
-    if (entry.api) {
+    if (entry.paging) {
       await fetchAndSave(
         entry.name,
         async () => {
