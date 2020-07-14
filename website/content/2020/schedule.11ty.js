@@ -55,7 +55,7 @@ function list (iterable, mapper, sep='', lastSep) {
   return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
 }
 
-class Schedule {
+module.exports = class Schedule {
   data () {
     return {
       layout: 'layout-2020',
