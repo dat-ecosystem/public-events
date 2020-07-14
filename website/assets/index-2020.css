@@ -1,0 +1,254 @@
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Regular.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Italic.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-Bold.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-BoldItalic.ttf");
+}
+
+:root {
+  --datgreen: #2aca4b;
+}
+body {
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: white;
+}
+
+body.darkbg {
+  background-color: #293648;
+  color: white;
+}
+
+a {
+  color: var(--datgreen, green);
+}
+
+body main,
+body > header {
+  position: relative;
+  z-index: 10;
+}
+
+body > main, body > * > main {
+  max-width: 44rem;
+  margin: 2rem auto;
+  padding: 0 2rem;
+}
+
+body > header {
+  background: #293648;
+  color: white;
+}
+
+main > h2 {
+  color: #293648;
+  font-size: 40px;
+}
+
+#menu {
+  display: flex;
+  max-width: 44rem;
+  padding: 2rem 2rem;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.conference #menu {
+  justify-content: flex-end;
+}
+
+.conference .splash {
+  color: #293648;
+  margin: 0 auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  padding: 4em 0em 2em 0em;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.conference .splash > * {
+  max-width: 44rem;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+.conference .splash > h2 {
+  color: var(--datgreen);
+  font-size: 1.5em;
+  margin: 10px auto;
+}
+
+
+#menu-dat-link:after {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 100px;
+  height: 100px;
+  z-index: 100;
+  background-image: url("logo.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: transform 1s ease-in-out;
+}
+
+#menu-dat-link:hover:after {
+  transform: rotate(-360deg);
+}
+
+#menu > * {
+  display: block;
+  margin: 0 2rem 0 0;
+}
+
+#menu h2 {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+#menu a {
+  color: white;
+  text-decoration: unset;
+}
+
+#menu a.active {
+  text-decoration: underline;
+}
+#menu a:hover {
+  color: var(--datgreen);
+}
+
+#menu h2 a {
+  text-decoration: none;
+}
+
+#menu a:hover {
+  text-decoration: underline;
+}
+
+body > header > h1 {
+  max-width: 44rem;
+  padding: 0;
+  margin-top: -30px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  flex-wrap: wrap;
+  font-size: 72px;
+}
+
+@media only screen and (max-width: 650px) {
+  body > header > h1 {
+    font-size: 10vw;
+  }
+}
+
+#index-hero {
+  font-size: 2rem;
+  margin: 4rem -1rem;
+}
+
+#index-hero > a {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  color: black;
+  text-decoration: none;
+}
+
+#index-hero > a:hover {
+  background: black;
+  color: white;
+}
+
+#index-hero > a span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+#index-hero > a em {
+  color: red;
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+@media only screen and (max-width: 930px) {
+  #menu-dat-link:after {
+    display: none;
+  }
+}
+
+p.submission-link-btn {
+    margin-top: 4rem;
+}
+
+.submission-link-btn > a {
+    background-color: var(--datgreen);
+    color: #fff;
+    font-weight: bold;
+    padding: 0.8rem;
+    transition: background 400ms;
+    text-decoration: unset;
+    border-radius: 5px 5px;
+    box-shadow: none;
+}
+
+.submission-link-btn > a:hover {
+  background: #919ba4;
+}
+
+.splash .submission-link-btn > a {
+  box-shadow: 2px 2px 2px 1px #919ba4;
+}
+
+.splash .submission-link-btn > a:hover {
+    background: #293648;
+}
+
+
+.darkbg, .darkbg > main {
+  background-color: #293648;
+  color: white;
+}
+
+.page-register main {
+  margin: auto;
+  width: inherit;
+  align-items: center;
+  padding: 0;
+  flex-grow: 1;
+}
+
+iframe {
+  background-color: #fff;
+  background-image: url("/assets/loading.gif") no-repeat;
+}
