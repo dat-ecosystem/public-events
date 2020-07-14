@@ -122,35 +122,35 @@ main > h2 {
   transform: rotate(-360deg);
 }
 
-#menu > * {
-  display: block;
+.menu-link {
+  display: inline-block;
+  position: relative;
+  color: white;
   margin: 0 2rem 0 0;
-}
-
-#menu h2 {
-  color: white;
-  font-size: 1.5rem;
-  font-weight: normal;
-}
-
-#menu a {
-  color: white;
   text-decoration: unset;
+  white-space: nowrap;
 }
-
-#menu a.active {
+a.menu-link.active {
   text-decoration: underline;
 }
-#menu a:hover {
+a.menu-link:hover {
   color: var(--datgreen);
-}
-
-#menu h2 a {
-  text-decoration: none;
-}
-
-#menu a:hover {
   text-decoration: underline;
+}
+.menu-link-inactive span {
+  z-index: 2;
+  position: relative;
+}
+.menu-link-inactive::before {
+  content: '';
+  background-color: #2aca4b;
+  width: 110%;
+  height: 40%;
+  margin-top: 0.7em;
+  margin-left: -5%;
+  opacity: 0.7;
+  position: absolute;
+  z-index: 1;
 }
 
 body > header > h1 {

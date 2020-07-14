@@ -9,12 +9,17 @@
     </head>
     <body class="conference{% if splash_img %} darkbg{%endif%} page-{{ page.fileSlug }}">
       <header>
+        <a id="menu-dat-link" href="/" aria-label="Dat events index" style="margin:0"></a>
         <nav id="menu">
-          <a id="menu-dat-link" href="/" aria-label="Dat events index" style="margin:0"></a>
-          <a href="/2020/">About</a>
-          <a href="/2020/agenda/">Agenda</a>
-          <a href="/2020/coc/">Code of conduct</a>
-          <a href="/2020/register/">Register</a>
+          {% for entry in 2020.nav %}
+            {% if entry.slug == page.fileSlug %}
+            <div class="menu-link menu-link-{{ entry.skug }} menu-link-inactive">
+              <span>{{ entry.title }}</span>
+            </div>
+            {% else %}
+            <a href="{{ entry.href | url }}" class="menu-link menu-link-{{ entry.skug }} menu-link-active">{{ entry.title }}</a>
+            {% endif %}
+          {% endfor %}
         </nav>
         {{ header_title }}
       </header>
