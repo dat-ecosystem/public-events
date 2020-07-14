@@ -12,7 +12,7 @@ splash_text: |
 
   [Ask Question][ask-question] {.submission-link-btn}
 
-  [register-now]: /2020/register
+  [register-now]: /2020/register/
   [ask-question]: https://github.com/datproject/public-events/issues/new?labels=question
 ---
 
@@ -46,7 +46,7 @@ still be able to fit you in: [→ Submit late proposal][late-submission].
 
  [bbb]: https://bigbluebutton.org/
  [stream]: /2020/stream/
- [register-now]: /2020/register
+ [register-now]: /2020/register/
  [late-submission]: https://conf.consento.org/dat-event-2020/cfp
  [ask-question]: https://github.com/datproject/public-events/issues/new?labels=question
 
