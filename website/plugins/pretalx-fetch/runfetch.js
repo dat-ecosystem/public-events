@@ -101,7 +101,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
   async function _fetchImage (imageUrl) {
     const urlHash = hash(imageUrl)
     const localPath = `assets/pretalx/${urlHash}${path.extname(imageUrl)}`
-    await fetchFile(`${base}/localPath`, imageUrl)
+    await fetchFile(`${base}/${localPath}`, imageUrl)
     return localPath
   }
 
