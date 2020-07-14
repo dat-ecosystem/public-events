@@ -4,8 +4,9 @@ layout: layout-2020
 ---
 
 <div class="speaker-grid">
-    {% for speaker in 2020.speakers %}
-        <div id="{{speaker.code}}" class="speaker-ident">
+    {% assign speakers = 2020.speakers | sort: "name" %}
+    {% for speaker in speakers %}
+        <div id="speaker-{{speaker.code}}" class="speaker-ident">
 
         <img src="{{speaker.avatar | default: "http://placekitten.com/400/400"}}" />
         <h2>{{ speaker.name }}</h2>
