@@ -55,7 +55,7 @@ function list (iterable, mapper, sep='', lastSep) {
   return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
 }
 
-class Schedule {
+module.exports = class Schedule {
   data () {
     return {
       layout: 'layout-2020',
@@ -64,7 +64,7 @@ class Schedule {
   }
 
   render (input) {
-    const { '2020': { event, talks, rooms: roomMeta, schedule: { schedule } }} = input
+    const { '2020': { event, rooms: roomMeta, schedule: { schedule } }} = input
     const { conference } = schedule
     const { timezone: timeZone } = event
 
