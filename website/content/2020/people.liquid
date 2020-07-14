@@ -19,10 +19,10 @@ layout: layout-2020
                     <path d="{{ shapes | forIndex: forloop.index }}" fill="black" />
                 </mask>
                 {% if speaker.avatar %}
-                    <rect width=360 height=360 fill="#efefef" />
+                    <rect x=1 y=1 width=358 height=358 fill="#efefef" />
                     <image href="{{speaker.avatar}}" x=20 y=24 width=325 height=325 />
                 {% else %}
-                    <rect width=360 height=360 fill="url(#speaker-gradient)" />
+                    <rect x=1 y=1 width=358 height=358 fill="url(#speaker-gradient)" />
                 {% endif %}
                 <rect width=360 height=360 fill="white" mask="url(#speaker-mask-{{speaker.code}})" />
             </svg>
