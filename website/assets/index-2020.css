@@ -362,6 +362,11 @@ iframe {
   text-align: center;
 }
 
+.page-schedule main {
+  padding: 0;
+  margin: 0 auto;
+}
+
 .cal-day {
   width: 100%;
 }
