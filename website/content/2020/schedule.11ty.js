@@ -55,7 +55,7 @@ function list (iterable, mapper, sep='', lastSep) {
   return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
 }
 
-module.exports = class Schedule {
+class Schedule {
   data () {
     return {
       layout: 'layout-2020',
@@ -134,7 +134,6 @@ as a web calendar, it will update whenever there is an update!
                         const durationP = (durationMinutes / 0.6) | 0
                         return `
                           <div class="cal-entry cal-entry-${entry.slug}"
-                            data-start="${entry.start}" data-duration="${entry.duration}"
                             style="top: ${diffP}%; height: ${durationP}%; min-height: ${durationP}%;">
                             <div class="cal-entry-content">
                               <span class="cal-entry-time">${entry.start}-${endTime.toString()}</span>

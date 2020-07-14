@@ -24,9 +24,9 @@ layout: layout-2020
 </div>
 
 <div class="slot">
-  Time slot:
+  Time slot (in <span class="tzselector-btn">{{ 2020.event.timezone }}</span>):
   <span class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
-    {{ talk.slot.start }} - {{ talk.slot.end }}
+    {{ talk.slot.start | onlytime }} - {{ talk.slot.end | onlytime }}
   </span>
 </div>
 

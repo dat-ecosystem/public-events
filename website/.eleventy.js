@@ -1,6 +1,7 @@
 const at = require('lodash.at')
 const shapes = require('./content/_data/shapes.json')
 const speakers = require('./content/_data/2020/speakers.json')
+const { Temporal } = require('proposal-temporal')
 
 function sort (input, property, desc) {
   if (!Array.isArray(input)) {
@@ -64,6 +65,10 @@ function speakerImage (speaker) {
   `
 }
 
+function onlyTime (dateTimeStr) {
+  return Temporal.Time.from(dateTimeStr).toString()
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -79,6 +84,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('md', input => markdownIt.render(input))
   eleventyConfig.addFilter('sort', sort)
   eleventyConfig.addFilter('forIndex', forIndex)
+  eleventyConfig.addFilter('onlytime', onlyTime)
   eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {
     for (const entry of input) {
