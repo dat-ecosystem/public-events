@@ -10,7 +10,7 @@ layout: layout-2020
 
 <h1>{{ speaker.name }}</h1>
 
-<img src="{{speaker.avatar}}" />
+{{ speaker | speakerImage }}
 
 <div class="biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
 
