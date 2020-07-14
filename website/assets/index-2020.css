@@ -398,6 +398,11 @@ ul.speaker-list svg.speaker-image {
 .page-schedule main > p {
   margin: 1em;
 }
+.page-schedule main > h3 {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
 
 .cal-day {
   padding: 0!important;
