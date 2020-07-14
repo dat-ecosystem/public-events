@@ -239,3 +239,16 @@ p.submission-link-btn {
   background-color: #293648;
   color: white;
 }
+
+.page-register main {
+  margin: auto;
+  width: inherit;
+  align-items: center;
+  padding: 0;
+  flex-grow: 1;
+}
+
+iframe {
+  background-color: #fff;
+  background-image: url("/assets/loading.gif") no-repeat;
+}
