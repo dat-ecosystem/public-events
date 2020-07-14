@@ -369,10 +369,30 @@ iframe {
 
 .cal-day {
   width: 100%;
+  background: #eee;
+}
+.cal-day thead {
+  background: #f6f6f6;
 }
 
-.cal-day > tbody > tr, .cal-entries {
+.cal-day > tbody > tr,
+.cal-entries {
   height: 120px;
+}
+
+.cal-day > thead tr:last-child td,
+.cal-day > thead tr:last-child th,
+.cal-day > tbody td,
+.cal-day > tbody th {
+  border-bottom: 1px solid #aaa;
+}
+
+.cal-day p {
+  display: inline;
+}
+
+.cal-day > thead td {
+  text-align: center;
 }
 
 .cal-entries {
@@ -382,13 +402,22 @@ iframe {
 .cal-entry {
   position: absolute;
   border-radius: 5px;
-  background: #ddd;
-  font-size: 0.75em;
+  /* background: #eee; */
+  background: #fff;
+  border: 1px solid #2aca4b;
   width: 100%;
+  overflow: hidden;
 }
-
-.cal-day td,.cal-day th {
-  border-bottom: 1px solid #aaa;
+.cal-entry:hover {
+  height: auto!important;
+}
+.cal-entry-time {
+  top: 5px;
+  right: 7px;
+  font-size: 0.75em;
+  position: absolute;
+  margin-top: -0.25em;
+  color: #aaa;
 }
 
 .cal-timezone {
@@ -398,5 +427,12 @@ iframe {
 }
 
 .cal-entry-content {
-  margin: 5px;
+  margin: 0.2em;
+}
+.cal-entry-person {
+  white-space: nowrap;
+}
+.cal-entry-text {
+  display: block;
+  margin: 0 3.5em 0.2em 0.2em;
 }

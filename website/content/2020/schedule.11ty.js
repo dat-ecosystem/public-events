@@ -89,8 +89,8 @@ class Schedule {
           return ''
         }
         const dayRange = getRange(day)
-        return `<h3>Day #${day.index} - ${day.date}</h3>
-      <table class="cal-day" id="cal-day-${day.index}" cellspacing=0 data-start-hour="${dayRange.start.hour}" data-end-hour="${dayRange.end.hour}">
+        return `<h3>Day ${day.index} - ${day.date}</h3>
+      <table class="cal-day" id="cal-day-${day.index}" cellspacing=0 cellpadding=0 data-start-hour="${dayRange.start.hour}" data-end-hour="${dayRange.end.hour}">
         <thead>
           <tr>
             <td></td>
@@ -133,7 +133,7 @@ class Schedule {
                         return `
                           <div class="cal-entry cal-entry-${entry.slug}"
                             data-start="${entry.start}" data-duration="${entry.duration}"
-                            style="top: ${diffP}%; height: ${durationP}%">
+                            style="top: ${diffP}%; height: ${durationP}%; min-height: ${durationP}%;">
                             <div class="cal-entry-content">
                               <span class="cal-entry-time">${entry.start}-${endTime.toString()}</span>
                               <span class="cal-entry-text">
