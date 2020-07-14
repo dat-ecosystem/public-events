@@ -31,20 +31,13 @@ layout: layout-2020
 </div>
 
 <h4>Persons:</h4>
-<ul>
+<ul class="speaker-list">
   {% for speaker in talk.speakers %}
   <li>
-    <a href="/2020/person/{{speaker.code}}">{{speaker.name}}</a>
+    <a href="/2020/person/{{speaker.code}}">
+      {{ speaker | speakerImage }}
+      <span>{{speaker.name}}</span>
+    </a>
   </li>
   {% endfor %}
 </ul>
-
-<h4>Resources:</h4>
-<ul>
-{% for resource in talk.resources %}
-  <li>
-    <a href="{{resource.resource}}">{{resource.description}}</a>
-  </li>
-{% endfor %}
-</ul>
-

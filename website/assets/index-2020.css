@@ -369,6 +369,27 @@ iframe {
   color: #293648;
 }
 
+.speaker-image {
+  height: 128px;
+}
+
+.left {
+  float: left;
+}
+
+.submission-list {
+  clear: both;
+}
+
+ul.speaker-list {
+  list-style: none;
+  line-height: 128px;
+}
+ul.speaker-list svg.speaker-image {
+  vertical-align: middle;
+  margin-right: 2em;
+}
+
 .page-schedule main {
   padding: 0;
   margin: 0 auto;

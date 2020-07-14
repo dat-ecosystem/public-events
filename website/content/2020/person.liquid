@@ -10,11 +10,13 @@ layout: layout-2020
 
 <h1>{{ speaker.name }}</h1>
 
-{{ speaker | speakerImage }}
+<div class="left">
+    {{ speaker | speakerImage }}
+</div>
 
 <div class="biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
 
-<ul>
+<ul class="submission-list">
 {% for submission in speaker.submissions %}
     {% assign talk = 2020.talks | find: "code", submission %}
     <li>

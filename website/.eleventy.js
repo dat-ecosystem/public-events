@@ -61,7 +61,6 @@ function speakerImage (speaker) {
       }
       <rect width=360 height=360 fill="white" mask="url(#speaker-mask-${ speaker.code })" />
   </svg>
-  <span class="speaker-name">${ speaker.name }</span>
   `
 }
 
