@@ -1,3 +1,5 @@
+const at = require('lodash.at')
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -8,7 +10,14 @@ module.exports = function (eleventyConfig) {
   })
   const markdownItAttrs = require("markdown-it-attrs")
 
-  eleventyConfig.setLibrary("md", markdownIt.use(markdownItAttrs))
+  const mdIt = markdownIt.use(markdownItAttrs)
+  eleventyConfig.setLibrary("md", mdIt)
+  eleventyConfig.addFilter("md", input => markdownIt.render(input))
+  eleventyConfig.addFilter("find", (input, path, expected) => {
+    for (entry of input) {
+      if (at(entry, [path])[0] == expected) return entry
+    }
+  })
 
   return {
     dir: {
