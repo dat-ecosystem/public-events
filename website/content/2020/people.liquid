@@ -8,14 +8,23 @@ layout: layout-2020
     {% for speaker in speakers %}
         <a href="/2020/person/{{speaker.code}}" id="speaker-{{speaker.code}}" class="speaker-ident">
             <svg viewBox="0 0 360 360">
+                <defs>
+                    <linearGradient id="speaker-gradient" x1="0" x2="0" y1="0" y2="1">
+                        <stop offset="0%" style="stop-color: #4C5869;"/>
+                        <stop offset="100%" style="stop-color: #61A76F;"/>
+                    </linearGradient>
+                </defs>
                 <mask id="speaker-mask-{{speaker.code}}">
-                    <path d="{{ shapes | forIndex: forloop.index }}" fill="white" />
+                    <rect width="360" height="360" fill="white" />
+                    <path d="{{ shapes | forIndex: forloop.index }}" fill="black" />
                 </mask>
                 {% if speaker.avatar %}
-                    <image href="{{speaker.avatar}}" mask="url(#speaker-mask-{{speaker.code}})" width="360" height="360" />
+                    <rect width=360 height=360 fill="#efefef" />
+                    <image href="{{speaker.avatar}}" x=20 y=24 width=325 height=325 />
                 {% else %}
-                    <rect width="360" height="360" fill="red" mask="url(#speaker-mask-{{speaker.code}})" />
+                    <rect width=360 height=360 fill="url(#speaker-gradient)" />
                 {% endif %}
+                <rect width=360 height=360 fill="white" mask="url(#speaker-mask-{{speaker.code}})" />
             </svg>
             <span class="speaker-name">{{ speaker.name }}</span>
         </a>
