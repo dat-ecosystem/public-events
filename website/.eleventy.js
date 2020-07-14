@@ -30,7 +30,6 @@ function forIndex (input, index) {
     input = Array.from(input)
   }
   let res = (index - 1) % input.length
-  console.log({ index, res, len: input.length })
   return input[res]
 }
 
