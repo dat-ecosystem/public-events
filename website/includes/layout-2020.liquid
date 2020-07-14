@@ -25,7 +25,7 @@
       </header>
       {% if splash_img %}
         <div class="splash" style="background-image: url({{splash_img|escape }})">
-        {{ splash_text }}
+        {{ splash_text | md }}
         </div>
       {% endif %}
       <main>

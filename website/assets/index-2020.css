@@ -207,19 +207,40 @@ body > header > h1 {
   }
 }
 
-p.submission-link-btn {
-    margin-top: 4rem;
+ul.submission-list {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-top: 2em;
+  margin-bottom: 3em;
+}
+ul.submission-list,
+ul.submission-list li {
+  list-style-type: none;
+  padding: 0;
+}
+ul.submission-list li {
+  margin: 0.2em;
+}
+
+hr {
+  border-color: #ffffff35
+}
+
+.submission-link-btn {
+  margin-top: 4rem;
+  display: inline-block;
 }
 
 .submission-link-btn > a {
-    background-color: var(--datgreen);
-    color: #fff;
-    font-weight: bold;
-    padding: 0.8rem;
-    transition: background 400ms;
-    text-decoration: unset;
-    border-radius: 5px 5px;
-    box-shadow: none;
+  background-color: var(--datgreen);
+  color: #fff;
+  font-weight: bold;
+  padding: 0.8rem;
+  transition: background 400ms;
+  text-decoration: unset;
+  border-radius: 5px 5px;
+  box-shadow: none;
 }
 
 .submission-link-btn > a:hover {
