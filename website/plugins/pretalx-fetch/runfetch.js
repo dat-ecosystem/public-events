@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const path = require('path')
 const hash = require('./hash')
 const getCacheManager = require('./getCacheManager')
+const imtype = require('imtype')
 
 async function fixIcs (base, { domain, event, prefix }, targetDomain) {
   const icsPath = `${base}/assets/${prefix}-schedule.ics`
@@ -87,22 +88,67 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
   }
 
   async function fetchFile (localPath, url) {
-    return fetchAndSave(
+    let contentType
+    await fetchAndSave(
       localPath,
       () => {
         console.log(`Fetching file ${chalk.green(localPath)} from ${chalk.green(url)}`)
         return fetch(url)
-          .then(res => res.arrayBuffer())
+          .then(res => {
+            contentType = res.headers.get('content-type')
+            return res.arrayBuffer()
+          })
           .then(buffer => new Uint8Array(buffer))
       }
     )
+    return contentType
   }
 
   async function _fetchImage (imageUrl) {
     const urlHash = hash(imageUrl)
-    const localPath = `assets/pretalx/${urlHash}${path.extname(imageUrl)}`
-    await fetchFile(`${base}/${localPath}`, imageUrl)
+    let ext = path.extname(imageUrl).toLowerCase()
+    if (ext === '.jpeg') {
+      ext = '.jpg'
+    }
+    let localPath = `assets/pretalx/${urlHash}${ext}`
+    const contentType = await fetchFile(`${base}/${localPath}`, imageUrl)
+    if (/image\/jpe?g/i.test(contentType)) {
+      if (ext !== '.jpg') {
+        return await moveFile('jpg')
+      }
+    }
+    if (/image\/gif/i.test(contentType)) {
+      if (ext !== '.gif') {
+        return await moveFile('gif')
+      }
+    }
+    if (/image\/png/i.test(contentType)) {
+      if (ext !== '.png') {
+        return await moveFile('png')
+      }
+    }
+    if (/^\s*$/.test(ext)) {
+      const buf = await fs.readFile(`${base}/${localPath}`)
+      if (imtype.isGIF(buf)) {
+        ext = 'gif'
+      } else if (imtype.isJPG(buf)) {
+        ext = 'jpg'
+      } else if (imtype.isPNG(buf)) {
+        ext = 'png'
+      } else {
+        return localPath
+      }
+
+      return await moveFile(ext)
+    }
     return localPath
+
+    async function moveFile (ext) {
+      const newLocalPath = `assets/pretalx/${urlHash}.${ext}`
+      console.log(`Rename ${localPath} → ${newLocalPath}`)
+      await fs.rename(`${base}/${localPath}`, `${base}/${newLocalPath}`)
+      return newLocalPath
+    }
   }
 
   async function fetchImage (imageUrl) {
@@ -118,6 +164,9 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     const replaceImage = async imageUrl => {
       if (!imageUrl) {
         return imageUrl
+      }
+      if (/^https:\/\/(www\.)?gravatar\.com/.test(imageUrl)) {
+        imageUrl = `${imageUrl}?s=512`
       }
       if (imageUrl.charAt(0) === '/') {
         imageUrl = `https://${domain}${imageUrl}`
