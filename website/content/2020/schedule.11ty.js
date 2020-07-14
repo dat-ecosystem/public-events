@@ -142,7 +142,7 @@ as a web calendar, it will update whenever there is an update!
                               <a class="cal-entry-talk cal-link-talk" href="/2020/talk/${entry.slug}" title="${entry.subtitle}">${entry.title}</a>
                               <span class="cal-entry-by">by ${list(
                                 entry.persons,
-                                person => `<a class="cal-entry-person cal-link-person" href="/2020/speaker/${person.code}">${person.public_name}</a>`,
+                                person => `<a class="cal-entry-person cal-link-person" href="/2020/person/${person.code}">${person.public_name}</a>`,
                                 ', ', ' and ')}
                               </span>
                               </span>
