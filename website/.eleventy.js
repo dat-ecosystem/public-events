@@ -38,6 +38,7 @@ function forIndex (input, index) {
 
 function speakerImage (speaker) {
   const index = speakers.findIndex(otherSpeaker => speaker.code === otherSpeaker.code)
+  const avatar = speakers[index].avatar
   return `<svg class="speaker-image" viewBox="0 0 360 360">
       <defs>
           <linearGradient id="speaker-gradient" x1="0" x2="0" y1="0" y2="1">
@@ -50,10 +51,10 @@ function speakerImage (speaker) {
           <path d="${ forIndex(shapes, index + 1 ) }" fill="black" />
       </mask>
       ${
-        speaker.avatar
+        avatar
         ? `
           <rect x=1 y=1 width=358 height=358 fill="#efefef" />
-          <image href="${ speaker.avatar }" x=20 y=24 width=325 height=325 />
+          <image href="${ avatar }" x=20 y=24 width=325 height=325 />
           `
         : `
           <rect x=1 y=1 width=358 height=358 fill="url(#speaker-gradient)" />
