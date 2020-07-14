@@ -6,14 +6,28 @@
 
 [[redirects]]
   # Redirect default Netlify subdomain to primary domain
-  from = "https://dat-events.netlify.com/*"
-  to = "https://events.dat.foundation/:splat"
+  from = "https://events.datproject.org"
+  to = "https://events.dat.foundation"
   status = 301
   force = true
 
 [[redirects]]
   # Redirect default Netlify subdomain to primary domain
   from = "https://events.datproject.org/*"
+  to = "https://events.dat.foundation/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Redirect default Netlify subdomain to primary domain
+  from = "https://dat-events.netlify.app"
+  to = "https://events.dat.foundation/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  # Redirect default Netlify subdomain to primary domain
+  from = "https://dat-events.netlify.app/*"
   to = "https://events.dat.foundation/:splat"
   status = 301
   force = true
