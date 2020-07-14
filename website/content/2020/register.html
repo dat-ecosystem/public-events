@@ -9,7 +9,6 @@ header_title: <h1>Dat Conference 2020</h1>
     '<iframe'
       + ' src="https://www.eventbrite.com/checkout-external?eid=112923713868&parent=' + encodeURIComponent(document.location.href) + '"'
       + ' scrolling="auto"'
-      + ' style="width: 100%;border: 0;"'
       + ' height="100%"'
     + '></iframe>'
   )
@@ -26,6 +25,15 @@ header_title: <h1>Dat Conference 2020</h1>
   }
   iframe {
     background: url('/assets/loading.gif') no-repeat center, #F8F7FA;
+    border: 1px solid #eeedf2;
+    border-top: 0;
+    border-bottom: 0;
+    width: 100%
+  }
+  @media only screen and (max-width: 44rem) {
+    iframe {
+      border: 0;
+    }
   }
   #eventbrite-widget-container-112923713868 {
     max-width: 48rem;
