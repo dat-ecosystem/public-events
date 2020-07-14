@@ -25,6 +25,15 @@ function sort (input, property, desc) {
   return input
 }
 
+function forIndex (input, index) {
+  if (!Array.isArray(input)) {
+    input = Array.from(input)
+  }
+  let res = (index - 1) % input.length
+  console.log({ index, res, len: input.length })
+  return input[res]
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -39,6 +48,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.setLibrary('md', mdIt)
   eleventyConfig.addFilter('md', input => markdownIt.render(input))
   eleventyConfig.addFilter('sort', sort)
+  eleventyConfig.addFilter('forIndex', forIndex)
   eleventyConfig.addFilter('find', (input, path, expected) => {
     for (entry of input) {
       if (at(entry, [path])[0] == expected) return entry

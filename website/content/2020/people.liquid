@@ -6,25 +6,18 @@ layout: layout-2020
 <div class="speaker-grid">
     {% assign speakers = 2020.speakers | sort: "name" %}
     {% for speaker in speakers %}
-        <div id="speaker-{{speaker.code}}" class="speaker-ident">
-
-        <img src="{{speaker.avatar | default: "http://placekitten.com/400/400"}}" />
-        <h2>{{ speaker.name }}</h2>
-        <div class="biography">
-            {{ speaker.biography | default: "This person has not written a bio yet." | md }}
-        </div>
-
-        <ul>
-        {% for submission in speaker.submissions %}
-            {% assign talk = 2020.talks | find: "code", submission %}
-            <li>
-                <a href="/2020/talk/{{talk.code}}">
-                    {{talk.title}}
-                </a>
-            </li>
-        {% endfor %}
-        </ul>
-
-        </div>
+        <a href="/2020/person/{{speaker.code}}" id="speaker-{{speaker.code}}" class="speaker-ident">
+            <svg viewBox="0 0 360 360">
+                <mask id="speaker-mask-{{speaker.code}}">
+                    <path d="{{ shapes | forIndex: forloop.index }}" fill="white" />
+                </mask>
+                {% if speaker.avatar %}
+                    <image href="{{speaker.avatar}}" mask="url(#speaker-mask-{{speaker.code}})" width="360" height="360" />
+                {% else %}
+                    <rect width="360" height="360" fill="red" mask="url(#speaker-mask-{{speaker.code}})" />
+                {% endif %}
+            </svg>
+            <span class="speaker-name">{{ speaker.name }}</span>
+        </a>
     {% endfor %}
 </div>

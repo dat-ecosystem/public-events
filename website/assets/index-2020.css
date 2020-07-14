@@ -348,18 +348,23 @@ iframe {
 .speaker-grid {
   display: flex;
   flex-flow: wrap;
+  justify-content: space-between;
 }
-.speaker-grid img {
-  height: 200px;
+.speaker-grid svg {
+  width: 100%;
 }
 
-.speaker-grid .speaker-ident {
-  border: 1px solid var(--darkmain);
-  border-radius: 5px 5px;
-  margin: 0.4rem;
+.speaker-ident {
   padding: 0.4rem;
-  flex: 0 0 20rem;
   text-align: center;
+  width: 30%;
+  text-decoration: none;
+}
+
+.speaker-name {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: #293648;
 }
 
 .page-schedule main {
