@@ -166,5 +166,3 @@ as a web calendar, it will update whenever there is an update!
     `
   }
 }
-
-module.exports = Schedule
