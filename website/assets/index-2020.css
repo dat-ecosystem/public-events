@@ -395,6 +395,10 @@ ul.speaker-list svg.speaker-image {
   margin: 0 auto;
 }
 
+.page-schedule main > p {
+  margin: 1em;
+}
+
 .cal-day {
   padding: 0!important;
   display: table;
