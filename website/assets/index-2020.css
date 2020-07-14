@@ -363,6 +363,8 @@ iframe {
 
 .speaker-name {
   font-size: 1.2em;
+  line-height: 1.1em;
+  display: block;
   text-decoration: none;
   color: #293648;
 }
