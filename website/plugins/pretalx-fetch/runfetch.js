@@ -63,21 +63,38 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
   }
 
   for (const conference of conferences) {
+    await removeSpeakersWithoutTalks(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
   }
   return
+  
+  async function removeSpeakersWithoutTalks ({ prefix }) {
+    const { json: talks } = await loadJSON(prefix, 'talks.json')
+    await processJSON(prefix, 'speakers.json', (speakers) => {
+      return speakers.filter(speaker => {
+        const { submissions } = speaker
+        const found = talks.find(talk => submissions.includes(talk.code))
+        return found !== null && found !== undefined
+      })
+    })
+  }
 
-  async function processJSON (prefix, file, handler) {
+  async function loadJSON (prefix, file) {
     const jsonPath = `${base}/content/_data/${prefix}/${file}`
-    let json
     try {
       const raw = await fs.readFile(jsonPath, 'utf-8')
-      json = JSON.parse(raw)
+      return {
+        jsonPath,
+        json: JSON.parse(raw)
+      }
     } catch (err) {
-      err.message += `\n while loading ${jsonPath}`
-      throw err
+      throw new Error(`${err.message}\n while loading ${jsonPath}`)
     }
+  }
+
+  async function processJSON (prefix, file, handler) {
+    let { jsonPath, json } = await loadJSON(prefix, file)
     json = await handler(json)
     await fs.writeFile(jsonPath, JSON.stringify(json, null, 2))
   }
