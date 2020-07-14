@@ -1,4 +1,6 @@
 const at = require('lodash.at')
+const shapes = require('./content/_data/shapes.json')
+const speakers = require('./content/_data/2020/speakers.json')
 
 function sort (input, property, desc) {
   if (!Array.isArray(input)) {
@@ -33,6 +35,35 @@ function forIndex (input, index) {
   return input[res]
 }
 
+function speakerImage (speaker) {
+  const index = speakers.findIndex(otherSpeaker => speaker.code === otherSpeaker.code)
+  return `<svg class="speaker-image" viewBox="0 0 360 360">
+      <defs>
+          <linearGradient id="speaker-gradient" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" style="stop-color: #4C5869;"/>
+              <stop offset="100%" style="stop-color: #61A76F;"/>
+          </linearGradient>
+      </defs>
+      <mask id="speaker-mask-${ speaker.code }">
+          <rect width="360" height="360" fill="white" />
+          <path d="${ forIndex(shapes, index + 1 ) }" fill="black" />
+      </mask>
+      ${
+        speaker.avatar
+        ? `
+          <rect x=1 y=1 width=358 height=358 fill="#efefef" />
+          <image href="${ speaker.avatar }" x=20 y=24 width=325 height=325 />
+          `
+        : `
+          <rect x=1 y=1 width=358 height=358 fill="url(#speaker-gradient)" />
+          `
+      }
+      <rect width=360 height=360 fill="white" mask="url(#speaker-mask-${ speaker.code })" />
+  </svg>
+  <span class="speaker-name">${ speaker.name }</span>
+  `
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -48,8 +79,9 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('md', input => markdownIt.render(input))
   eleventyConfig.addFilter('sort', sort)
   eleventyConfig.addFilter('forIndex', forIndex)
+  eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {
-    for (entry of input) {
+    for (const entry of input) {
       if (at(entry, [path])[0] == expected) return entry
     }
   })
