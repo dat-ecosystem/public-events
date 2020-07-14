@@ -29,25 +29,27 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     const apiUrl = `https://${domain}/api/events/${event}`
     const scheduleUrl = `https://${domain}/${event}/schedule/export/schedule`
     return [
-      { name: `${base}/content/_data/${prefix}/event.json`, url: `${apiUrl}` },
-      { name: `${base}/content/_data/${prefix}/talks.json`, url: `${apiUrl}/talks/?format=json`, paging: true },
-      { name: `${base}/content/_data/${prefix}/speakers.json`, url: `${apiUrl}/speakers/?format=json`, paging: true },
-      { name: `${base}/content/_data/${prefix}/rooms.json`, url: `${apiUrl}/rooms/?format=json`, paging: true },
-      { name: `${base}/content/_data/${prefix}/schedule.json`, url: `${scheduleUrl}.json` },
-      { name: `${base}/assets/${prefix}-schedule.ics`, url: `${scheduleUrl}.ics` }
+      { local: `${base}/content/_data/${prefix}/event.json`, url: `${apiUrl}` },
+      { local: `${base}/content/_data/${prefix}/talks.json`, url: `${apiUrl}/talks/?format=json`, paging: true },
+      { local: `${base}/content/_data/${prefix}/speakers.json`, url: `${apiUrl}/speakers/?format=json`, paging: true, process: (speakers) => {
+        return speakers.filter(speaerk)
+      } },
+      { local: `${base}/content/_data/${prefix}/rooms.json`, url: `${apiUrl}/rooms/?format=json`, paging: true },
+      { local: `${base}/content/_data/${prefix}/schedule.json`, url: `${scheduleUrl}.json` },
+      { local: `${base}/assets/${prefix}-schedule.ics`, url: `${scheduleUrl}.ics` }
     ]
   }))
 
   for (const entry of entries) {
     if (entry.paging) {
       await fetchAndSave(
-        entry.name,
+        entry.local,
         async () => {
           let next = entry.url
           let result = []
           let no = 1
           while (next) {
-            console.log(`Fetching page[${no}] for ${chalk.green(entry.name)} from ${chalk.green(next)}`)
+            console.log(`Fetching page[${no}] for ${chalk.green(entry.local)} from ${chalk.green(next)}`)
             const data = await (await fetch(next)).json()
             result = result.concat(data.results)
             next = data.next
@@ -58,7 +60,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
         ttl
       )
     } else {
-      await fetchFile(entry.name, entry.url)
+      await fetchFile(entry.local, entry.url)
     }
   }
 
