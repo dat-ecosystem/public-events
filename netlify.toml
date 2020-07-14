@@ -1,7 +1,7 @@
 # Config for the Netlify Build Plugin: netlify-plugin-fetch-feeds
 [build]
   base = "website"
-  command = "npm i; npm run build"
+  command = "npm i && (npm run fetch; npm run build)"
   publish = "dist"
 
 [[redirects]]

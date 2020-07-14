@@ -5,15 +5,28 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "eleventy",
-    "dev": "npm run fetch && eleventy --serve",
+    "build": "npm run build:js && npm run build:site",
+    "build:js": "npx rollup -f iife --name site -p @rollup/plugin-json -p @rollup/plugin-commonjs -p rollup-plugin-sizes -p @rollup/plugin-babel -p @rollup/plugin-node-resolve -p rollup-plugin-multi-input --input src/*.js --dir assets",
+    "build:site": "eleventy",
+    "dev": "npm run fetch && concurrently -n js,site \"npm run build:js --  --watch\" \"eleventy --serve\"",
     "postinstall": "echo 'installing plugin dependencies'; cd plugins/pretalx-fetch; npm i",
     "fetch": "cd .. && ./website/plugins/pretalx-fetch/bin/pretalx-fetch"
   },
-  "dependencies": {
+  "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
+    "@babel/core": "^7.10.4",
+    "@rollup/plugin-babel": "^5.1.0",
+    "@rollup/plugin-commonjs": "^13.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "concurrently": "^5.2.0",
     "lodash.at": "^4.6.0",
     "markdown-it-attrs": "^3.0.2",
+    "rollup": "^2.21.0",
+    "rollup-plugin-multi-input": "^1.1.1",
+    "rollup-plugin-sizes": "^1.0.2"
+  },
+  "dependencies": {
     "proposal-temporal": "^0.2.0"
   }
 }
