@@ -1,7 +1,7 @@
 # Config for the Netlify Build Plugin: netlify-plugin-fetch-feeds
 [build]
   base = "website"
-  command = "npm i; npm run build"
+  command = "npm i && (npm run fetch; npm run build)"
   publish = "dist"
 
 [[redirects]]
@@ -44,3 +44,18 @@
   pretty_urls = true
 [build.processing.images]
   compress = true
+
+[[plugins]]
+  package = "/plugins/pretalx-fetch"
+
+  [plugins.inputs]
+    # Where should data files reside
+    targetDomain = "events.dat.foundation"
+    ttl = 60 # cache for 1 minute
+
+    # All the feeds we wish to gather for use in the build
+
+    [[plugins.inputs.conferences]]
+      domain = "conf.consento.org"
+      prefix = "2020"
+      event = "dat-event-2020"

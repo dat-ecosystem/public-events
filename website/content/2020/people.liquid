@@ -1,0 +1,14 @@
+---
+layout: layout-2020
+
+---
+
+<div class="speaker-grid">
+    {% assign speakers = 2020.speakers | sort: "name" %}
+    {% for speaker in speakers %}
+        <a href="/2020/person/{{speaker.code}}" id="speaker-{{speaker.code}}" class="speaker-ident">
+            {{ speaker | speakerImage }}
+            {{ speaker.name }}
+        </a>
+    {% endfor %}
+</div>
