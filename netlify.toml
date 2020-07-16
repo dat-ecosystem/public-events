@@ -46,7 +46,7 @@
   compress = true
 
 [[plugins]]
-  package = "/plugins/pretalx-fetch"
+  package = "netlify-plugin-pretalx-fetch"
 
   [plugins.inputs]
     # Where should data files reside

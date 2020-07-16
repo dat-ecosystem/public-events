@@ -4,9 +4,10 @@ const toml = require('toml')
 const fs = require('fs').promises
 const runfetch = require('../runfetch')
 const path = require('path')
+const cwd = path.resolve(process.cwd(), process.argv[2])
 
 ;(async () => {
-  const tomlLocation = path.join(process.cwd(), 'netlify.toml')
+  const tomlLocation = path.join(cwd, 'netlify.toml')
   let raw
   try {
     raw = await fs.readFile(tomlLocation, 'utf8')
@@ -31,7 +32,7 @@ const path = require('path')
     throw new Error(`No inputs for pretalx-fetch plugin found at ${tomlLocation}`)
   }
 
-  await runfetch(path.join(process.cwd(), base), pluginConfig.inputs)
+  await runfetch(path.join(cwd, base), pluginConfig.inputs)
 })()
   .catch(err => {
     console.log(err.stack || err.message || err)

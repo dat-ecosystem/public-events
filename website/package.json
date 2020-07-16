@@ -10,7 +10,7 @@
     "build:site": "eleventy",
     "dev": "npm run fetch && concurrently -n js,site \"npm run build:js --  --watch\" \"eleventy --serve\"",
     "postinstall": "echo 'installing plugin dependencies'; cd plugins/pretalx-fetch; npm i",
-    "fetch": "cd .. && ./website/plugins/pretalx-fetch/bin/pretalx-fetch"
+    "fetch": "$(node -p \"require.resolve('netlify-plugin-pretalx-fetch/bin/pretalx-fetch')\") .."
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.11.0",
@@ -24,7 +24,8 @@
     "markdown-it-attrs": "^3.0.2",
     "rollup": "^2.21.0",
     "rollup-plugin-multi-input": "^1.1.1",
-    "rollup-plugin-sizes": "^1.0.2"
+    "rollup-plugin-sizes": "^1.0.2",
+    "netlify-plugin-pretalx-fetch": "file://./plugins/pretalx-fetch"
   },
   "dependencies": {
     "proposal-temporal": "^0.2.0"

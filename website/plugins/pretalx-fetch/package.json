@@ -1,6 +1,9 @@
 {
   "private": true,
   "name": "netlify-plugin-pretalx-fetch",
+  "bin": {
+    "pretalx-fetch": "./bin/pretalx-fetch"
+  },
   "dependencies": {
     "base32.js": "^0.1.0",
     "cachedir": "^2.3.0",
