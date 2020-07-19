@@ -75,6 +75,29 @@ function militaryTime (dateTimeStr) {
   return iso.replace(/-|:/g, '').replace(/.\d+Z/, 'Z')
 }
 
+function personlist (person_list) {
+  function list (iterable, mapper, sep='', lastSep) {
+    if (lastSep === undefined) {
+      lastSep = sep
+    }
+    const entries = Array.from(iterable).map(mapper)
+    if (entries.length === 0) {
+      return ''
+    }
+    if (entries.length === 1) {
+      return entries[0]
+    }
+    return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
+  }
+
+  return list(
+    person_list,
+    person => person.name,
+    ', ',
+    ' and '
+  )
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -92,6 +115,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('forIndex', forIndex)
   eleventyConfig.addFilter('onlytime', onlyTime)
   eleventyConfig.addFilter('militarytime', militaryTime)
+  eleventyConfig.addFilter('personlist', personlist)
   eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {
     for (const entry of input) {
