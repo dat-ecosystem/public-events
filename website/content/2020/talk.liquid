@@ -7,6 +7,11 @@ permalink: "2020/talk/{{ talk.code }}/"
 layout: layout-2020
 ---
 
+
+<aside class="add-to-gcal right submission-link-btn">
+  <a href="https://calendar.google.com/calendar/r/eventedit?text={{ talk.title | urlencode }}&dates={{ talk.slot.start | militarytime }}/{{ talk.slot.end | militarytime }}&details=Link+to+the+talk+at:+https://events.dat.foundation/talks/{{ talk.code }}">Add to GCal</a>
+</aside>
+
 <h1>{{ talk.title }}</h1>
 
 <h3>Abstract</h3>

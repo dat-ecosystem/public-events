@@ -69,6 +69,12 @@ function onlyTime (dateTimeStr) {
   return Temporal.Time.from(dateTimeStr).toString()
 }
 
+function militaryTime (dateTimeStr) {
+  const dt = new Date(dateTimeStr)
+  const iso = dt.toISOString()
+  return iso.replace(/-|:/g, '').replace(/.\d+Z/, 'Z')
+}
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy('assets')
 
@@ -85,6 +91,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('sort', sort)
   eleventyConfig.addFilter('forIndex', forIndex)
   eleventyConfig.addFilter('onlytime', onlyTime)
+  eleventyConfig.addFilter('militarytime', militaryTime)
   eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {
     for (const entry of input) {

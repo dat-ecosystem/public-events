@@ -275,6 +275,10 @@ iframe {
   background-image: url("/assets/loading.gif") no-repeat;
 }
 
+aside.right {
+  float:right;
+}
+
 
 .schedule-head-day h2 {
   float: right;
