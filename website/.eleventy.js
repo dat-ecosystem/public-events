@@ -2,6 +2,7 @@ const at = require('lodash.at')
 const shapes = require('./content/_data/shapes.json')
 const speakers = require('./content/_data/2020/speakers.json')
 const { Temporal } = require('proposal-temporal')
+const domain = require('./content/_data/domain.js')()
 
 function sort (input, property, desc) {
   if (!Array.isArray(input)) {
@@ -54,7 +55,7 @@ function speakerImage (speaker) {
         avatar
         ? `
           <rect x=1 y=1 width=358 height=358 fill="#efefef" />
-          <image href="${ avatar }" x=20 y=24 width=325 height=325 />
+          <image href="${ domain.image }${ avatar }" x=20 y=24 width=325 height=325 />
           `
         : `
           <rect x=1 y=1 width=358 height=358 fill="url(#speaker-gradient)" />

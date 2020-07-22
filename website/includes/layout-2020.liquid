@@ -7,7 +7,7 @@ og_description_default: "Virtual peer to peer event about local-first tech and m
 {% unless og_image -%}
 {% assign og_image = "bg-sns-card.png" -%}
 {% endunless -%}
-{% capture og_image %}https://events.dat.foundation/assets/{{ og_image }}{% endcapture -%}
+{% capture og_image %}{{ domain.image }}/assets/{{ og_image }}{% endcapture -%}
 {% assign siteTitle = "Dat Conference 2020" -%}
 {% unless title -%}
 {% assign title = siteTitle -%}
@@ -40,13 +40,13 @@ og_description_default: "Virtual peer to peer event about local-first tech and m
         {%- else -%}
         {{ og_description_default }}
         {%- endif -%}"/>
-        <meta property="og:url" content="https://events.dat.foundation/2020/"/>
+        <meta property="og:url" content="{{ domain.url }}/2020/"/>
         <meta property="og:site_name" content="{{ siteTitle }}"/>
         <meta property="og:image" content="{{ og_image }}"/>
         <meta property="og:type" content="website"/>
         <meta name="twitter:title" content="{{ title }}" />
         <meta name="twitter:image" content="{{ og_image }}" />
-        <meta name="twitter:url" content="https://events.dat.foundation/2020/" />
+        <meta name="twitter:url" content="{{ domain.url }}/2020/" />
         <meta name="twitter:card" content="summary_large_image" />
         {% if preJsFiles %}
         {% for jsFile in preJsFiles %}
