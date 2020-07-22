@@ -40,13 +40,13 @@ og_description_default: "Virtual peer to peer event about local-first tech and m
         {%- else -%}
         {{ og_description_default }}
         {%- endif -%}"/>
-        <meta property="og:url" content="{{ domain.url }}/2020/"/>
+        <meta property="og:url" content="{{ domain.url }}{{ page.url }}"/>
         <meta property="og:site_name" content="{{ siteTitle }}"/>
         <meta property="og:image" content="{{ og_image }}"/>
         <meta property="og:type" content="website"/>
         <meta name="twitter:title" content="{{ title }}" />
         <meta name="twitter:image" content="{{ og_image }}" />
-        <meta name="twitter:url" content="{{ domain.url }}/2020/" />
+        <meta name="twitter:url" content="{{ domain.url }}{{ page.url }}" />
         <meta name="twitter:card" content="summary_large_image" />
         {% if preJsFiles %}
         {% for jsFile in preJsFiles %}
