@@ -1,5 +1,5 @@
 ---
-title: Code of Conduct · Dat Conference 2020
+title: Code of Conduct
 layout: layout-2020
 ---
 

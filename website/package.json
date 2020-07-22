@@ -21,10 +21,10 @@
     "concurrently": "^5.2.0",
     "lodash.at": "^4.6.0",
     "markdown-it-attrs": "^3.0.2",
+    "netlify-plugin-pretalx-fetch": "file://./plugins/pretalx-fetch",
     "rollup": "^2.21.0",
     "rollup-plugin-multi-input": "^1.1.1",
-    "rollup-plugin-sizes": "^1.0.2",
-    "netlify-plugin-pretalx-fetch": "file://./plugins/pretalx-fetch"
+    "rollup-plugin-sizes": "^1.0.2"
   },
   "dependencies": {
     "proposal-temporal": "^0.2.0"

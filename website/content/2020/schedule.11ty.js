@@ -41,23 +41,10 @@ function * getRoomEntries (room) {
   }
 }
 
-function list (iterable, mapper, sep='', lastSep) {
-  if (lastSep === undefined) {
-    lastSep = sep
-  }
-  const entries = Array.from(iterable).map(mapper)
-  if (entries.length === 0) {
-    return ''
-  }
-  if (entries.length === 1) {
-    return entries[0]
-  }
-  return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
-}
-
 module.exports = class Schedule {
   data () {
     return {
+      title: 'Agenda',
       layout: 'layout-2020',
       header_title: '<h1>Agenda</h1>'
     }
@@ -67,8 +54,9 @@ module.exports = class Schedule {
     const { '2020': { event, rooms: roomMeta, schedule: { schedule } }} = input
     const { conference } = schedule
     const { timezone: timeZone } = event
+    const { list, md, personlist } = this
 
-    return `${this.md(`
+    return `${md(`
 [iCal file][ical]
 
 The schedule is not yet fixed, but if you subscribe to [the iCal file][ical]
@@ -139,10 +127,7 @@ as a web calendar, it will update whenever there is an update!
                               <span class="cal-entry-time">${entry.start}-${endTime.toString()}</span>
                               <span class="cal-entry-text">
                               <a class="cal-entry-talk cal-link-talk" href="/2020/talk/${entry.slug}" title="${entry.subtitle}">${entry.title}</a>
-                              <span class="cal-entry-by">by ${list(
-                                entry.persons,
-                                person => `<a class="cal-entry-person cal-link-person" href="/2020/person/${person.code}">${person.public_name}</a>`,
-                                ', ', ' and ')}
+                              <span class="cal-entry-by">by ${personlist(entry.persons, true)}
                               </span>
                               </span>
                             </div>

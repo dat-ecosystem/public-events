@@ -5,6 +5,7 @@ const path = require('path')
 const hash = require('./hash')
 const getCacheManager = require('./getCacheManager')
 const imtype = require('imtype')
+const { Temporal } = require('proposal-temporal')
 
 async function fixIcs (base, { domain, event, prefix }, targetDomain) {
   const icsPath = `${base}/assets/${prefix}-schedule.ics`
@@ -68,8 +69,45 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     await removeSpeakersWithoutTalks(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
+    await writeSimpleTalks(conference, targetDomain)
   }
   return
+
+  function byLine (speakers) {
+    if (speakers.length === 0) {
+      return '<nobody>'
+    }
+    if (speakers.length === 1) {
+      return speakers[0].name
+    }
+    let last = speakers.length - 1
+    let result = speakers.slice(0, last).map(speaker => speaker.name).join(', ')
+    return result + ' and ' + speakers[last].name
+  }
+
+  async function writeSimpleTalks ({ prefix }, targetDomain) {
+    const { json: { timezone } } = await loadJSON(prefix, 'event.json')
+    const { json: talks } = await loadJSON(prefix, 'talks.json')
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      month: 'long',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      timeZone: timezone,
+      hour12: false,
+      timeZoneName: 'short'
+    })
+    const simpleTalks = talks.map(talk => {
+      return {
+        code: talk.code,
+        title: talk.title,
+        byLine: `by ${byLine(talk.speakers)}`,
+        url: `https://${targetDomain}/${prefix}/talk/${talk.code}`,
+        time: `${formatter.format(Temporal.DateTime.from(talk.slot.start))} (${timezone})`
+      }
+    })
+    await fs.writeFile(`${base}/content/_data/${prefix}/talks_simple.json`, JSON.stringify(simpleTalks, null, 2))
+  }
   
   async function removeSpeakersWithoutTalks ({ prefix }) {
     const { json: talks } = await loadJSON(prefix, 'talks.json')

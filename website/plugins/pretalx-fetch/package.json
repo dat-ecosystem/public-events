@@ -11,6 +11,7 @@
     "imtype": "^1.0.0",
     "lodash.flatten": "^4.4.0",
     "make-fetch-happen": "^8.0.7",
+    "proposal-temporal": "^0.2.0",
     "toml": "^3.0.0"
   },
   "scripts": {

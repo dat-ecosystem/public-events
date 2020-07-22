@@ -1,5 +1,4 @@
 ---
-title: Dat Conference 2020
 layout: layout-2020
 header_title: <h1>Dat Conference 2020</h1>
 splash_img: /assets/dat-bg-2020_small.png
