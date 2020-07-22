@@ -58,6 +58,7 @@ function list (iterable, mapper, sep='', lastSep) {
 module.exports = class Schedule {
   data () {
     return {
+      title: 'Agenda',
       layout: 'layout-2020',
       header_title: '<h1>Agenda</h1>'
     }
