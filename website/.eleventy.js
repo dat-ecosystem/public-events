@@ -75,24 +75,30 @@ function militaryTime (dateTimeStr) {
   return iso.replace(/-|:/g, '').replace(/.\d+Z/, 'Z')
 }
 
-function personlist (person_list) {
-  function list (iterable, mapper, sep='', lastSep) {
-    if (lastSep === undefined) {
-      lastSep = sep
-    }
-    const entries = Array.from(iterable).map(mapper)
-    if (entries.length === 0) {
-      return ''
-    }
-    if (entries.length === 1) {
-      return entries[0]
-    }
-    return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
+function list (iterable, mapper, sep='', lastSep) {
+  if (lastSep === undefined) {
+    lastSep = sep
   }
+  const entries = Array.from(iterable).map(mapper)
+  if (entries.length === 0) {
+    return ''
+  }
+  if (entries.length === 1) {
+    return entries[0]
+  }
+  return `${entries.slice(0, entries.length - 1).join(sep)}${lastSep}${entries[entries.length-1]}`
+}
 
+function personlist (person_list, link=false) {
   return list(
     person_list,
-    person => person.name,
+    person => {
+      const name = person.public_name || person.name
+      if (link) {
+        return `<a class="cal-entry-person cal-link-person" href="/2020/person/${person.code}">${name}</a>`
+      }
+      return name
+    },
     ', ',
     ' and '
   )
@@ -115,6 +121,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('forIndex', forIndex)
   eleventyConfig.addFilter('onlytime', onlyTime)
   eleventyConfig.addFilter('militarytime', militaryTime)
+  eleventyConfig.addFilter('list', list)
   eleventyConfig.addFilter('personlist', personlist)
   eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {
