@@ -8,3 +8,5 @@ inputs:
     required: true
   - name: conferences
     required: true
+  - name: personPriority
+    required: false

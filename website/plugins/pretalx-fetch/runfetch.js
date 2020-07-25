@@ -69,7 +69,9 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
     await removeSpeakersWithoutTalks(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
-    await adjustSpeakerOrder(conference, personPriority)
+    if (personPriority) {
+      await adjustSpeakerOrder(conference, personPriority)
+    }
     await writeSimpleTalks(conference, targetDomain)
   }
   return
