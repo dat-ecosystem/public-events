@@ -17,7 +17,7 @@ async function fixIcs (base, { domain, event, prefix }, targetDomain) {
   await fs.writeFile(icsPath, ics)
 }
 
-module.exports = async function (base, { conferences, ttl, targetDomain }) {
+module.exports = async function (base, { conferences, ttl, targetDomain, personPriority }) {
   const _imageMemory = new Map()
   const cacheManager = getCacheManager(base)
   console.log(`Cachedir ${chalk.green(cacheManager)}`)
@@ -69,6 +69,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     await removeSpeakersWithoutTalks(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
+    await adjustSpeakerOrder(conference, personPriority)
     await writeSimpleTalks(conference, targetDomain)
   }
   return
@@ -83,6 +84,39 @@ module.exports = async function (base, { conferences, ttl, targetDomain }) {
     let last = speakers.length - 1
     let result = speakers.slice(0, last).map(speaker => speaker.name).join(', ')
     return result + ' and ' + speakers[last].name
+  }
+
+  async function adjustSpeakerOrder ({ prefix }, personPriority) {
+    const priorityMap = personPriority.reduce(
+      (priorityMap, entry) => {
+        priorityMap[entry.person] = entry.priority
+        return priorityMap
+      },
+      {}
+    )
+    const priority = speaker =>
+      priorityMap[speaker.code] || 0
+
+    const speakerSort = (speakerA, speakerB) =>
+      priority(speakerB) - priority(speakerA)
+
+    await processJSON(prefix, 'schedule.json', schedule => {
+      for (const day of schedule.schedule.conference.days) {
+        for (const room of Object.values(day.rooms)) {
+          for (const talk of room) {
+            console.log({ talk })
+            talk.persons = talk.persons.sort(speakerSort)
+          }
+        }
+      }
+      return schedule
+    })
+    await processJSON(prefix, 'talks.json', talks => {
+      for (const talk of talks) {
+        talk.speakers = talk.speakers.sort(speakerSort)
+      }
+      return talks
+    })
   }
 
   async function writeSimpleTalks ({ prefix }, targetDomain) {
