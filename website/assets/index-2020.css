@@ -63,6 +63,10 @@ body > header {
   color: white;
 }
 
+main h1 {
+  line-height: 1.1em;
+}
+
 main > h2 {
   color: #293648;
   font-size: 40px;
