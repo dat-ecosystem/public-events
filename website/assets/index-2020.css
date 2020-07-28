@@ -29,6 +29,7 @@
 :root {
   --datgreen: #2aca4b;
   --darkmain: #293648;
+  --lightgrey: #c2c9ce;
 }
 body {
   font-size: 18px;
@@ -437,6 +438,7 @@ iframe {
 
 .talk-head h1 {
   flex-grow: 1;
+  margin: 0.2em 0 0.2em 0;
 }
 
 .left {
@@ -557,4 +559,20 @@ ul.speaker-list svg.speaker-image {
 .cal-entry-text {
   display: block;
   margin: 0 3.5em 0.2em 0.2em;
+}
+
+
+.slot .when-tz {
+  color: var(--datgreen);
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+.slot .tzselector-btn {
+  color: var(--lightgrey);
+  margin-top: -8px;
+}
+.slot .relative-when {
+  font-size: 1.15em;
+  color: var(--darkmain);
 }

@@ -6,6 +6,8 @@ pagination:
 permalink: "2020/talk/{{ talk.code }}/"
 layout: layout-2020
 header_title: <h2>Talk information</h2>
+preJsFiles:
+  - /assets/2020-schedule.js
 ---
 
 <div class="talk-head">
@@ -14,6 +16,16 @@ header_title: <h2>Talk information</h2>
     <a href="{{domain.url}}/{{ talk.ical }}">Get iCal</a>
   </aside>
   <h1>{{ talk.title }}</h1>
+</div>
+
+<div class="slot">
+  <div class="row">
+    <span class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
+      {{ talk.slot.start | dayFormat }} - {{ talk.slot.end | onlytime }}
+    </span> —
+    <span class="relative-when" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}"></span>
+  </div>
+  <div class="tzselector-btn">{{ 2020.event.timezone }}</div>
 </div>
 
 <h3>Description</h3>
@@ -30,12 +42,6 @@ header_title: <h2>Talk information</h2>
   Expected duration: {{ talk.duration | duration_to_human }}
 </div>
 
-<div class="slot">
-  Time slot (in <span class="tzselector-btn">{{ 2020.event.timezone }}</span>):
-  <span class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
-    {{ talk.slot.start | dayFormat }} - {{ talk.slot.end | onlytime }}
-  </span>
-</div>
 
 <h4>Conducted by</h4>
 <ul class="speaker-list">
