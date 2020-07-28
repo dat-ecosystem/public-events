@@ -15,7 +15,23 @@ header_title: <h1>Person details</h1>
     <div class="speaker-content">
         <h1>{{ speaker.name }}</h1>
 
+        {% assign twitter = speaker.simpleAnswers['Twitter'] %}
+        {% assign github = speaker.simpleAnswers['Github Account'] %}
 
+        {% if twitter or github %}
+        <ul class="sns-link">
+        {% if twitter %}
+        <li>
+            <a href="https://twitter.com/{{twitter}}" class="sns-link-twitter">@{{twitter}}</a>
+        </li>
+        {% endif %}
+        {% if github %}
+        <li>
+            <a href="https://github.com/{{github}}" class="sns-link-github">https://github.com/{{github}}</a>
+        </li>
+        {% endif %}
+        </ul>
+        {% endif %}
         <div class="speaker-biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
     </div>
 </div>
