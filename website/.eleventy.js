@@ -72,6 +72,22 @@ const hourFormat = new Intl.DateTimeFormat('en', {
   hour12: false
 })
 
+const _dayHourFormat = new Intl.DateTimeFormat('en', {
+  month: 'long',
+  day: 'numeric',
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false
+})
+
+const _dayOnlyFormat = new Intl.DateTimeFormat('en-SE', {
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+  hour12: false
+})
+
+
 function event (entry, dayRange) {
   const startTime = Temporal.Absolute.from(entry.slot.start)
   const endTime = Temporal.Absolute.from(entry.slot.end) 
@@ -104,10 +120,35 @@ function onlyTime (dateTimeStr) {
   return Temporal.Time.from(dateTimeStr).toString()
 }
 
+function dayFormat (dateTimeStr) {
+  const date = Temporal.DateTime.from(dateTimeStr)
+  return _dayHourFormat.format(date)
+}
+function to_date (dateTimeStr) {
+  const date = Temporal.DateTime.from(dateTimeStr)
+  return _dayOnlyFormat.format(date)
+}
+
 function militaryTime (dateTimeStr) {
   const dt = new Date(dateTimeStr)
   const iso = dt.toISOString()
   return iso.replace(/-|:/g, '').replace(/.\d+Z/, 'Z')
+}
+
+function talksForSpeakerCode (talks, speakerCode) {
+  return talks.filter(e => e.speakers.filter(s => s.code == speakerCode).length != 0)
+}
+
+function sortBySlotStart (talks) {
+  return talks.sort((a, b) => {
+    if (a.slot.start < b.slot.start) {
+      return -1
+    } else if (a.slot.start > b.slot.start) {
+      return 1
+    } else {
+      return 0
+    }
+  })
 }
 
 function list (iterable, mapper, sep='', lastSep) {
@@ -155,6 +196,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('sort', sort)
   eleventyConfig.addFilter('forIndex', forIndex)
   eleventyConfig.addFilter('onlytime', onlyTime)
+  eleventyConfig.addFilter('dayFormat', dayFormat)
+  eleventyConfig.addFilter('talksForSpeakerCode', talksForSpeakerCode)
+  eleventyConfig.addFilter('sortBySlotStart', sortBySlotStart)
+  eleventyConfig.addFilter('to_date', to_date)
   eleventyConfig.addFilter('militarytime', militaryTime)
   eleventyConfig.addFilter('list', list)
   eleventyConfig.addFilter('event', event)
