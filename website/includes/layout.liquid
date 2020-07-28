@@ -4,7 +4,11 @@
         <meta charset="utf-8">
         <title>{{ title }}</title>
         <link rel="stylesheet" href="{{ '/assets/normalize.css' | url }}">
-        <link rel="stylesheet" href="{{ '/assets/index.css' | url }}">
+        <link rel="stylesheet" href="{{ '/assets/index.css' | url }}">        {% if preJsFiles %}
+        {% for jsFile in preJsFiles %}
+        <script type="text/javascript" src="{{jsFile}}"></script>
+        {% endfor %}
+        {% endif %}
     </head>
     <body>
       <header>

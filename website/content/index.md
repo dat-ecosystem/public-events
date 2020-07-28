@@ -1,10 +1,12 @@
 ---
 title: Dat Events
 layout: layout
+preJsFiles:
+  - assets/current-redirect.js
 ---
 
 <div id="index-hero">
-<a href="/2020/"><span>2020</span>Virtual Dat Conference<em>Upcoming!</em></a>
+<a href="/2020/"><span>2020</span>Dat Conference<em>Upcoming!</em></a>
 <a href="/2019/"><span>2019</span>Dat Hack Meeting</a>
 </div>
 
