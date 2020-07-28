@@ -6,6 +6,7 @@ const hash = require('./hash')
 const getCacheManager = require('./getCacheManager')
 const imtype = require('imtype')
 const { Temporal } = require('proposal-temporal')
+const ical = require('ical-generator')
 
 async function fixIcs (base, { domain, event, prefix }, targetDomain) {
   const icsPath = `${base}/assets/${prefix}-schedule.ics`
@@ -74,6 +75,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
       await adjustSpeakerOrder(conference, personPriority)
     }
     await writeSimpleTalks(conference, targetDomain)
+    await writeTalkIcal(conference, targetDomain)
   }
   return
 
@@ -325,6 +327,35 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
         for (const speaker of talk.speakers) {
           speaker.code = speaker.code.toLowerCase()
         }
+      }
+      return talks
+    })
+  }
+
+  async function writeTalkIcal ({ prefix }, targetDomain) {
+    const { json: { timezone } } = await loadJSON(prefix, 'event.json')
+    await processJSON(prefix, 'talks.json', async talks => {
+      for (const talk of talks) {
+        const cal = ical({ domain: targetDomain })
+        cal.prodId({
+          company: 'dat-foundation',
+          product: 'pretalx-fetch'
+        })
+        const icalPath = `assets/pretalx/event-${prefix}-${talk.code.toLowerCase()}.ics`
+        const icalUrl = `https://${targetDomain}/${prefix}/talk/${talk.code.toLowerCase()}/`
+        cal.url(`https://${targetDomain}/${icalPath}`)
+        cal.timezone(timezone)
+        cal.createEvent({
+          uid: `${prefix}-${talk.code}@${targetDomain}`,
+          start: new Date(talk.slot.start),
+          end: new Date(talk.slot.end),
+          summary: `${talk.title} by ${byLine(talk.speakers)}`,
+          description: talk.abstract,
+          url: icalUrl
+        })
+        talk.ical = icalPath
+        console.log(`Writing ${chalk.green(icalPath)}`)
+        await fs.writeFile(`${base}/${icalPath}`, cal.toString())
       }
       return talks
     })
