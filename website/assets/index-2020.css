@@ -182,7 +182,7 @@ body > header > h2 {
 }
 
 @media only screen and (max-width: 650px) {
-  body > header > h1 {
+  body > header > h1, body > header > h2 {
     font-size: 10vw;
   }
 }
@@ -435,6 +435,13 @@ iframe {
 
 .left {
   float: left;
+}
+.right {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
 }
 
 .submission-list {
