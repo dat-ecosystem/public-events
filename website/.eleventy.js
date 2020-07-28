@@ -129,6 +129,13 @@ function to_date (dateTimeStr) {
   return _dayOnlyFormat.format(date)
 }
 
+function duration_to_human (durationStr) {
+  let [_, h, m] = durationStr.match('([0-9]+):([0-9]+)')
+  h = parseInt(h)
+  m = parseInt(m)
+  return `${!!h?`${h} hours and `:""}${m} minutes`
+}
+
 function militaryTime (dateTimeStr) {
   const dt = new Date(dateTimeStr)
   const iso = dt.toISOString()
@@ -199,6 +206,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('dayFormat', dayFormat)
   eleventyConfig.addFilter('talksForSpeakerCode', talksForSpeakerCode)
   eleventyConfig.addFilter('sortBySlotStart', sortBySlotStart)
+  eleventyConfig.addFilter('duration_to_human', duration_to_human)
   eleventyConfig.addFilter('to_date', to_date)
   eleventyConfig.addFilter('militarytime', militaryTime)
   eleventyConfig.addFilter('list', list)

@@ -27,7 +27,7 @@ header_title: <h2>Talk information</h2>
 {% endif %}
 
 <div class="duration talk-duration">
-  Expected duration: {{ talk.duration }} hours
+  Expected duration: {{ talk.duration | duration_to_human }}
 </div>
 
 <div class="slot">
