@@ -429,6 +429,12 @@ iframe {
   align-content: left;
 }
 
+@media only screen and (max-width: 650px) {
+  .talk-head {
+    flex-direction: column;
+  }
+}
+
 .talk-head h1 {
   flex-grow: 1;
 }
