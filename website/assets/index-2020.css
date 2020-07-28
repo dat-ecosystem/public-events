@@ -377,6 +377,21 @@ iframe {
   height: 128px;
 }
 
+.speaker-section {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1em;
+}
+
+.speaker-section h1 {
+  margin-bottom: 0;
+}
+
+.speaker-section div.speaker-image {
+  margin-top: 1.2em;
+  margin-right: 0.5em;
+}
+
 .left {
   float: left;
 }
