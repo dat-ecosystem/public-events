@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "npm run build:js && npm run build:site",
-    "build:js": "npx rollup -f iife --name site -p @rollup/plugin-json -p @rollup/plugin-commonjs -p rollup-plugin-sizes -p @rollup/plugin-babel -p @rollup/plugin-node-resolve -p rollup-plugin-multi-input --input src/*.js --dir assets",
+    "build:js": "npx rollup -f esm --name site -p @rollup/plugin-json -p @rollup/plugin-commonjs -p @rollup/plugin-babel -p @rollup/plugin-node-resolve -p rollup-plugin-multi-input --input 'src/*.js' --dir assets",
     "build:site": "eleventy",
     "dev": "npm run fetch && concurrently -n js,site \"npm run build:js --  --watch\" \"eleventy --serve\"",
     "fetch": "$(node -p \"require.resolve('netlify-plugin-pretalx-fetch/bin/pretalx-fetch')\") .."
