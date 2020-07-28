@@ -144,7 +144,9 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
         time: `${formatter.format(Temporal.DateTime.from(talk.slot.start))} (${timezone})`
       }
     })
-    await fs.writeFile(`${base}/content/_data/${prefix}/talks_simple.json`, JSON.stringify(simpleTalks, null, 2))
+    const jsonPath = `${base}/content/_data/${prefix}/talks_simple.json`
+    console.log(`Writing simple talks file to ${chalk.green(jsonPath)}`)
+    await fs.writeFile(jsonPath, JSON.stringify(simpleTalks, null, 2))
   }
   
   async function removeSpeakersWithoutTalks ({ prefix }) {
