@@ -6,20 +6,31 @@ const { Temporal } = require('proposal-temporal')
  */
 function temporal_duration_to_human (duration) {
     window.last_duration = duration
-    const plural_day = duration.days != 1 ? "s" : ""
-    const plural_hour = duration.hour != 1 ? "s" : ""
-    const plural_minute = duration.minute != 1 ? "s" : ""
-    return `${
-        !!duration.days
-        ? `${duration.days} day${plural_day}, `
-        : ""
-    }${
-        !!duration.hours
-        ? `${duration.hours} hour${plural_hour} and `
-        : ""
-    }${duration.minutes} minute${plural_minute}`
-  }
-  
+    let result = []
+    const daysRequired = (!duration.hours && !duration.minutes)
+    const hoursRequired = (!duration.days && !duration.minutes)
+    const minutesRequired = (!duration.days && !duration.hours)
+    if (!duration.days && daysRequired) {
+        return 'now'
+    }
+    if (!!duration.days || daysRequired) {
+        const plural_day = duration.days != 1 ? "s" : ""
+        result.push(`${duration.days} day${plural_day}`)
+    }
+    if (!!duration.hours || hoursRequired) {
+        const plural_hour = duration.hours != 1 ? "s" : ""
+        result.push(`${duration.hours} hour${plural_hour}`)
+    }
+    if (!!duration.minutes || minutesRequired) {
+        const plural_minute = duration.minutes != 1 ? "s" : ""
+        result.push(`${duration.minutes} minute${plural_minute}`)
+    }
+    if (result.length > 1) {
+        const last = result.pop()
+        return `${result.join(', ')} and ${last}`
+    }
+    return result[0]
+}
 
 function add_relative_time (domNode) {
     const start = Temporal.Absolute.from(domNode.dataset.start)
