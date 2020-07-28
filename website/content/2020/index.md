@@ -7,6 +7,8 @@ splash_text: |
 
   ## July 30-31<br />Online
 
+  <div id="about-countdown"></div>
+
   [Register Now!][register-now] {.submission-link-btn}
 
   [How to join][how-to-join] {.submission-link-btn}
@@ -14,6 +16,8 @@ splash_text: |
   [register-now]: /2020/register/
   [how-to-join]: /2020/how-to-join/
   [datconf2020]: https://twitter.com/hashtag/datconf2020
+preJsFiles:
+  - /assets/2020-schedule.js
 ---
 
 [Dat](https://dat.foundation) is a community ecosystem of peer-to-peer projects. They build on a shared set of technologies called the [Hypercore protocol](https://hypercore-protocol.org). 
@@ -37,6 +41,17 @@ If you have any questions or want to discuss your ideas in advance, please just 
 * [Register Now!][register-now] {.submission-link-btn}
 * [How to join?][how-to-join] {.submission-link-btn}
 {.submission-list}
+
+<script type="text/javascript">
+const node = document.getElementById("about-countdown")
+if(node) node.classList.add('relative-when')
+node.dataset.start = "{{ 2020.schedule.schedule.conference.days[0].day_start }}"
+node.dataset.end = "{{ 2020.schedule.schedule.conference.days[1].day_end }}"
+node.dataset.preStartText = "Starts in DURATION"
+node.dataset.preEndText = "Now live, started DURATION ago"
+node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
+update_all_relative_times()
+</script>
 
 
  [bbb]: https://bigbluebutton.org/
