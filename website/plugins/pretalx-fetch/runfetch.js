@@ -69,6 +69,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
   for (const conference of conferences) {
     await removeSpeakersWithoutTalks(conference)
     await lowerCaseCodes(conference)
+    await simplifyAnswers(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
     if (personPriority) {
@@ -331,6 +332,20 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
         }
       }
       return talks
+    })
+  }
+
+  async function simplifyAnswers ({ prefix }) {
+    await processJSON(prefix, 'speakers.json', async speakers => {
+      for (const speaker of speakers) {
+        speaker.simpleAnswers = (speaker.answers || [])
+          .reduce((answers, answer) => {
+            // TODO: doesn't support answerfiles (not used in dat-event)
+            answers[answer.question.question.en] = answer.answer
+            return answers
+          }, {})
+      }
+      return speakers
     })
   }
 
