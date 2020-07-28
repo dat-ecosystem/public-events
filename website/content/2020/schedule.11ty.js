@@ -65,10 +65,7 @@ module.exports = class Schedule {
     const { list, md, event: renderEvent } = this
 
     return `${md(`
-[iCal file][ical]
-
-The schedule is not yet fixed, but if you subscribe to [the iCal file][ical]
-as a web calendar, it will update whenever there is an update!
+[iCal file][ical] {.submission-link-btn}
 
 [ical]: /assets/2020-schedule.ics
     `)}
