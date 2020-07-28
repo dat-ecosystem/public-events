@@ -67,6 +67,7 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
 
   for (const conference of conferences) {
     await removeSpeakersWithoutTalks(conference)
+    await lowerCaseCodes(conference)
     await fixIcs(base, conference, targetDomain)
     await downloadImages(conference)
     if (personPriority) {
@@ -292,6 +293,38 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
           for (const resource of talk.resources) {
             resource.resource = await replaceImage(resource.resource)
           }
+        }
+      }
+      return talks
+    })
+  }
+
+  async function lowerCaseCodes ({ prefix }) {
+    await processJSON(prefix, 'schedule.json', async json => {
+      for (const day of json.schedule.conference.days) {
+        for (const room of Object.values(day.rooms)) {
+          for (const slot of room) {
+            slot.slug = slot.slug.toLowerCase()
+            for (const person of slot.persons) {
+              person.code = person.code.toLowerCase()
+            }
+          }
+        }
+      }
+      return json
+    })
+    await processJSON(prefix, 'speakers.json', async speakers => {
+      for (const speaker of speakers) {
+        speaker.code = speaker.code.toLowerCase()
+        speaker.submissions = speaker.submissions.map(code => code.toLowerCase())
+      }
+      return speakers
+    })
+    await processJSON(prefix, 'talks.json', async talks => {
+      for (const talk of talks) {
+        talk.code = talk.code.toLowerCase()
+        for (const speaker of talk.speakers) {
+          speaker.code = speaker.code.toLowerCase()
         }
       }
       return talks
