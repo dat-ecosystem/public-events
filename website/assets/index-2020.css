@@ -392,6 +392,22 @@ iframe {
   margin-right: 0.5em;
 }
 
+.sns-link, .sns-link li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sns-link {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.sns-link li {
+  margin-right: 0.5em;
+}
+
 .left {
   float: left;
 }
