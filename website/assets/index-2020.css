@@ -408,6 +408,16 @@ iframe {
   margin-right: 0.5em;
 }
 
+.talk-head {
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: left;
+}
+
+.talk-head h1 {
+  flex-grow: 1;
+}
+
 .left {
   float: left;
 }
