@@ -37,8 +37,15 @@ header_title: <h1>Person details</h1>
 </div>
 
 <div class="speaker-talks">
-{% for submission in speaker.submissions %}
-    {% assign talk = 2020.talks | find: "code", submission %}
+{% assign lastShownDate = null %}
+{% assign speakerTalks = 2020.talks | talksForSpeakerCode: speaker.code %}
+{% assign sortedTalks =  speakerTalks | sortBySlotStart %}
+
+{% for talk in sortedTalks %}
+    {% assign currentEventDay = talk.slot.start | to_date %}
+    {% if lastShownDate != currentEventDay %}
+    Day {{ currentEventDay }}
+    {% endif %}
+    {% assign lastShownDate = currentEventDay %}
     {{ talk | event }}
 {% endfor %}
-</div>
