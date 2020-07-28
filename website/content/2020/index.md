@@ -3,7 +3,7 @@ layout: layout-2020
 header_title: <h1>Dat Conference 2020</h1>
 splash_img: /assets/dat-bg-2020_small.png
 splash_text: |
-  Virtual peer to peer event about local-first tech and meetup space for everyone interested in the decentralized web.
+  Virtual peer to peer event about local-first tech and meetup space for everyone interested in the decentralized web. [#datconf2020][datconf2020]
 
   ## July 30-31<br />Online
 
