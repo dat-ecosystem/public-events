@@ -1,6 +1,7 @@
 ---
 title: Code of Conduct
 layout: layout-2020
+header_title: <h1>Dat Conference 2020</h1>
 ---
 
 # Conference Code of Conduct
