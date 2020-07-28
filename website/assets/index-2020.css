@@ -484,7 +484,6 @@ ul.speaker-list svg.speaker-image {
 }
 
 .cal-entry {
-  position: absolute;
   border-radius: 5px;
   /* background: #eee; */
   background: #fff;
@@ -493,8 +492,16 @@ ul.speaker-list svg.speaker-image {
   width: -moz-available;
   width: -webkit-fill-available;
   width: fill-available;
-  overflow: hidden;
+  margin-bottom: 0.2em;
+  position: relative;
 }
+
+.cal-day .cal-entry {
+  position: absolute;
+  overflow: hidden;
+  margin-bottom: 0;
+}
+
 .cal-entry:hover {
   height: auto!important;
 }
