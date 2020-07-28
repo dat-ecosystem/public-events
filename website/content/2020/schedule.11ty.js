@@ -65,7 +65,9 @@ module.exports = class Schedule {
     const { list, md, event: renderEvent } = this
 
     return `${md(`
-[iCal file][ical] {.submission-link-btn}
+[Get iCal][ical] {.submission-link-btn .right}
+
+{.clear-both}
 
 [ical]: /assets/2020-schedule.ics
     `)}
