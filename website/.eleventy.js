@@ -66,6 +66,40 @@ function speakerImage (speaker) {
   `
 }
 
+const hourFormat = new Intl.DateTimeFormat('en', {
+  hour: '2-digit',
+  minute: '2-digit',
+  hour12: false
+})
+
+function event (entry, dayRange) {
+  const startTime = Temporal.Absolute.from(entry.slot.start)
+  const endTime = Temporal.Absolute.from(entry.slot.end) 
+  const duration = endTime.difference(startTime)
+  const durationMinutes = duration.seconds / 60
+  const durationP = (durationMinutes / 0.6) | 0
+  let style = `height: ${durationP}%; min-height: ${durationP}%;`
+  if (dayRange) {
+    const diff = startTime.difference(dayRange.start)
+    const diffMinutes = diff.seconds / 60
+    const diffP = (diffMinutes / 0.6) | 0
+    style = `${style}top: ${diffP}%;`
+  }
+  return `
+    <div class="cal-entry cal-entry-${entry.code}"
+      style="${style}">
+      <div class="cal-entry-content">
+        <span class="cal-entry-time">${hourFormat.format(startTime.inTimeZone('Europe/Copenhagen'))}-${hourFormat.format(endTime.inTimeZone('Europe/Copenhagen'))}</span>
+        <span class="cal-entry-text">
+        <a class="cal-entry-talk cal-link-talk" href="/2020/talk/${entry.code}" title="${entry.abstract}">${entry.title}</a>
+        <span class="cal-entry-by">by ${personlist(entry.speakers, true)}
+        </span>
+        </span>
+      </div>
+    </div>
+  `
+}
+
 function onlyTime (dateTimeStr) {
   return Temporal.Time.from(dateTimeStr).toString()
 }
@@ -123,6 +157,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('onlytime', onlyTime)
   eleventyConfig.addFilter('militarytime', militaryTime)
   eleventyConfig.addFilter('list', list)
+  eleventyConfig.addFilter('event', event)
   eleventyConfig.addFilter('personlist', personlist)
   eleventyConfig.addFilter('speakerImage', speakerImage.bind(this))
   eleventyConfig.addFilter('find', (input, path, expected) => {

@@ -8,22 +8,37 @@ layout: layout-2020
 header_title: <h1>Person details</h1>
 
 ---
+<div class="speaker-section">
+    <div class="speaker-image">
+        {{ speaker | speakerImage }}
+    </div>
+    <div class="speaker-content">
+        <h1>{{ speaker.name }}</h1>
 
-<h1>{{ speaker.name }}</h1>
+        {% assign twitter = speaker.simpleAnswers['Twitter'] %}
+        {% assign github = speaker.simpleAnswers['Github Account'] %}
 
-<div class="left">
-    {{ speaker | speakerImage }}
+        {% if twitter or github %}
+        <ul class="sns-link">
+        {% if twitter %}
+        <li>
+            <a href="https://twitter.com/{{twitter}}" class="sns-link-twitter">@{{twitter}}</a>
+        </li>
+        {% endif %}
+        {% if github %}
+        <li>
+            <a href="https://github.com/{{github}}" class="sns-link-github">https://github.com/{{github}}</a>
+        </li>
+        {% endif %}
+        </ul>
+        {% endif %}
+        <div class="speaker-biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
+    </div>
 </div>
 
-<div class="biography">{{ speaker.biography | default: "This person has not written a bio yet." | md }}</div>
-
-<ul class="submission-list">
+<div class="speaker-talks">
 {% for submission in speaker.submissions %}
     {% assign talk = 2020.talks | find: "code", submission %}
-    <li>
-        <a href="/2020/talk/{{talk.code}}">
-            {{talk.title}}
-        </a>
-    </li>
+    {{ talk | event }}
 {% endfor %}
-</ul>
+</div>
