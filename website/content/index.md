@@ -1,6 +1,8 @@
 ---
 title: Dat Events
 layout: layout
+preJsFiles:
+  - assets/current-redirect.js
 ---
 
 <div id="index-hero">
