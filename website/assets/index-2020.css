@@ -229,8 +229,13 @@ hr {
 }
 
 .submission-link-btn {
-  margin-top: 4rem;
   display: inline-block;
+  margin-top: 0.8rem;
+  white-space: nowrap;
+}
+
+.page-2020 .submission-link-btn {
+  margin-top: 4rem;
 }
 
 .submission-link-btn > a {
@@ -274,11 +279,6 @@ iframe {
   background-color: #fff;
   background-image: url("/assets/loading.gif") no-repeat;
 }
-
-aside.right {
-  float:right;
-}
-
 
 .schedule-head-day h2 {
   float: right;

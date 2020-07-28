@@ -8,12 +8,13 @@ layout: layout-2020
 header_title: <h1>Talk information</h1>
 ---
 
-
-<aside class="add-to-gcal right submission-link-btn">
-  <a href="https://calendar.google.com/calendar/r/eventedit?text={{ talk.title | urlencode }}&dates={{ talk.slot.start | militarytime }}/{{ talk.slot.end | militarytime }}&details=Link+to+the+talk+at:+https://events.dat.foundation/talks/{{ talk.code }}">Add to GCal</a>
-</aside>
-
-<h1>{{ talk.title }}</h1>
+<div class="talk-head">
+  <aside class="add-to-gcal submission-link-btn">
+    <a href="https://calendar.google.com/calendar/r/eventedit?text={{ talk.title | urlencode }}&dates={{ talk.slot.start | militarytime }}/{{ talk.slot.end | militarytime }}&details=Link+to+the+talk+at:+https://events.dat.foundation/talks/{{ talk.code }}">Add to GCal</a>
+    <a href="{{domain.url}}/{{ talk.ical }}">Get iCal</a>
+  </aside>
+  <h1>{{ talk.title }}</h1>
+</div>
 
 <h3>Abstract</h3>
 <div class="abstract">
