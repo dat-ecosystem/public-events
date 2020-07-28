@@ -107,7 +107,6 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
       for (const day of schedule.schedule.conference.days) {
         for (const room of Object.values(day.rooms)) {
           for (const talk of room) {
-            console.log({ talk })
             talk.persons = talk.persons.sort(speakerSort)
           }
         }
