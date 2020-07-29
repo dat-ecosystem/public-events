@@ -5,7 +5,7 @@ header_title: <h1>People</h1>
 ---
 
 <div class="speaker-grid">
-    {% assign speakers = 2020.speakers | sort: "name" %}
+    {% assign speakers = 2020.speakers | speakerSort %}
     {% for speaker in speakers %}
         <a href="/2020/person/{{speaker.code}}" id="speaker-{{speaker.code}}" class="speaker-ident">
             {{ speaker | speakerImage }}
