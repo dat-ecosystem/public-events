@@ -576,3 +576,23 @@ ul.speaker-list svg.speaker-image {
   font-size: 1.15em;
   color: var(--darkmain);
 }
+
+.tpc-ok-only {
+  display: none;
+}
+.tpc-fail-only {
+  display: none;
+}
+.tpc-loading {
+  display: block;
+}
+body.tpc-ok .tpc-loading,
+body.tpc-fail .tpc-loading {
+  display: none;
+}
+body.tpc-ok .tpc-ok-only {
+  display: block;
+}
+body.tpc-fail .tpc-fail-only {
+  display: block;
+}
