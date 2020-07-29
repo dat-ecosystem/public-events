@@ -136,6 +136,24 @@ function duration_to_human (durationStr) {
   return `${!!h?`${h} hours and `:""}${m} minutes`
 }
 
+function eventStartDateTime (talks) {
+  let earliest = talks[0].slot.start
+  talks.forEach(talk => {
+    if (earliest > talk.slot.start)
+      earliest = talk.slot.start
+  })
+  return earliest
+}
+
+function eventFinishDateTime (talks) {
+  let latest = talks[0].slot.end
+  talks.forEach(talk => {
+    if (latest < talk.slot.end)
+      latest = talk.slot.end
+  })
+  return latest
+}
+
 function militaryTime (dateTimeStr) {
   const dt = new Date(dateTimeStr)
   const iso = dt.toISOString()
@@ -208,6 +226,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('sortBySlotStart', sortBySlotStart)
   eleventyConfig.addFilter('duration_to_human', duration_to_human)
   eleventyConfig.addFilter('to_date', to_date)
+  eleventyConfig.addFilter('eventStartDateTime', eventStartDateTime)
+  eleventyConfig.addFilter('eventFinishDateTime', eventFinishDateTime)
   eleventyConfig.addFilter('militarytime', militaryTime)
   eleventyConfig.addFilter('list', list)
   eleventyConfig.addFilter('event', event)

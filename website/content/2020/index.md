@@ -45,8 +45,8 @@ If you have any questions or want to discuss your ideas in advance, please just 
 <script type="text/javascript">
 const node = document.getElementById("about-countdown")
 if(node) node.classList.add('relative-when')
-node.dataset.start = "{{ 2020.schedule.schedule.conference.days[0].day_start }}"
-node.dataset.end = "{{ 2020.schedule.schedule.conference.days[1].day_end }}"
+node.dataset.start = "{{ 2020.talks | eventStartDateTime }}"
+node.dataset.end = "{{ 2020.talks | eventFinishDateTime }}"
 node.dataset.preStartText = "Starts in DURATION"
 node.dataset.preEndText = "Now live, started DURATION ago"
 node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
