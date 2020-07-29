@@ -96,10 +96,12 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
     const priorityMap = personPriority.reduce(
       (priorityMap, entry) => {
         priorityMap[entry.person] = entry.priority
+        priorityMap[entry.person.toLowerCase()] = entry.priority
         return priorityMap
       },
       {}
     )
+    console.log('Adjusting speaker priorities.')
     const priority = speaker =>
       priorityMap[speaker.code] || 0
 
