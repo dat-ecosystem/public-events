@@ -133,7 +133,17 @@ function duration_to_human (durationStr) {
   let [_, h, m] = durationStr.match('([0-9]+):([0-9]+)')
   h = parseInt(h)
   m = parseInt(m)
-  return `${!!h?`${h} hours and `:""}${m} minutes`
+  let res = ''
+  if (!!h) {
+    res = `${h} hour${h != 1 ? 's' : ''}`
+  }
+  if (!!m) {
+    if (res !== '') {
+      res += ' and '
+    }
+    res = `${m} minute${m != 1 ? 's' : ''}`
+  }
+  return res
 }
 
 function militaryTime (dateTimeStr) {
