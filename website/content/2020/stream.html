@@ -3,6 +3,11 @@ title: Stream
 layout: layout-2020
 ---
 {% assign playlist = "PL7sG5SCUNyeYx8wnfMOUpsh7rM_g0w_cu" %}
+{% capture ytlink %}https://www.youtube.com/watch?v=Cm9fwxnXg9k&list={{playlist}}{% endcapture %}
+{% comment %}
+
+<!-- Doesn't work with Youtube \_(-_-)_/ -->
+
 <div class="tpc-loading">
   <h3>Loading live stream...</h3>
   <p>
@@ -97,3 +102,10 @@ layout: layout-2020
     height: 100% !important;
   }
 </style>
+{% endcomment %}
+<script type="text/javascript">
+  setTimeout(function () {
+    document.location.href = "{{ytlink}}"
+  }, 10)
+</script>
+
