@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/assets/normalize.css"></link>
+    <style type="text/css">
+      body, html {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: no-repeat center url(/assets/dat-bg-2020_small.png);
+        background-size: cover;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      Time now <span id="time"></span>
+    </div>
+  </body>
+  <script type="text/javascript">
+    const time = document.getElementById('time')
+    setInterval(() => {
+      time.innerHTML = new Date().toLocaleString()
+    }, 80)
+  </script>
+</html>
