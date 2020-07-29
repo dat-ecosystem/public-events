@@ -142,9 +142,12 @@ module.exports = async function (base, { conferences, ttl, targetDomain, personP
       return {
         code: talk.code,
         title: talk.title,
+        abstract: talk.abstract,
+        description: talk.description,
         byLine: `by ${byLine(talk.speakers)}`,
         url: `https://${targetDomain}/${prefix}/talk/${talk.code}`,
-        time: `${formatter.format(Temporal.DateTime.from(talk.slot.start))} (${timezone})`
+        time: `${formatter.format(Temporal.DateTime.from(talk.slot.start))} (${timezone})`,
+        timeMS: Temporal.Absolute.from(talk.slot.start).getEpochMilliseconds() 
       }
     })
     const jsonPath = `${base}/content/_data/${prefix}/talks_simple.json`
