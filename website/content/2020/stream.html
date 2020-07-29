@@ -19,9 +19,9 @@ layout: layout-2020
     We have checked that you don't allow third-party cookies being set. This prevents websites such as YouTube from properly working when embedded from this page
     In order to respect that choice, you will have to see the event live-stream there from your browser.
   </p>
-  <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">You can watcn the live-stream on Youtube from this link!</a>
+  <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">You can watch the live-stream on Youtube from this link!</a>
 </div>
-<iframe class="tpc-ok-only" style="width: 100vw; height: 100vh;" src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe class="tpc-ok-only" src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <script type="text/javascript">
 ;(function () {
   if (document.getElementById('tpc-test')) {
@@ -73,6 +73,17 @@ layout: layout-2020
   body > main {
     max-width: none;
     margin: 0;
+    padding: 0;
+    display: flex;
+    flex-grow: 1;
+  }
+  body > header {
+    height: 126px;
+  }
+
+  .tpc-fail-only, .tpc-loading {
+    max-width: 44rem;
+    margin: auto;
     padding: 0;
   }
 
