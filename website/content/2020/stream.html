@@ -4,12 +4,20 @@ layout: layout-2020
 ---
 {% assign playlist = "PL7sG5SCUNyebK_ip9gGJvf8HOpe1cpmyn" %}
 <div class="tpc-loading">
-  Loading.
+  <h3>Loading live stream...</h3>
+  <p>
+    We are finding out if your browser can see the YouTube video
+    embedded. You need to enable third-party cookies for this to work.
+  </p>
+  <p>If you are blocking third-party network requests, this will never load.</p>
+  <p>Too slow/not working? See the event directly from <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">the YouTube playlist</a>.</p>
+
 </div>
 <div class="tpc-fail-only">
-  <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">Follow our live-stream on Youtube!</a>
+  <p>It seems we cannot embed a YouTube video with your current browser settings.</p>
+  <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">Come follow our live-stream on Youtube!</a>
 </div>
-<iframe class="tpc-ok-only" width="100%" height="315" src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe class="tpc-ok-only" width="100%" height="410" src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <script type="text/javascript">
 ;(function () {
   if (document.getElementById('tpc-test')) {
