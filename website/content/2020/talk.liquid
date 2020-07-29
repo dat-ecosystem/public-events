@@ -23,7 +23,13 @@ preJsFiles:
     <span class="when-tz" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}">
       {{ talk.slot.start | dayFormat }} - {{ talk.slot.end | onlytime }}
     </span> —
-    <span class="relative-when" data-start="{{talk.slot.start}}" data-end="{{talk.slot.end}}"></span>
+    <span class="relative-when"
+      data-start="{{talk.slot.start}}"
+      data-end="{{talk.slot.end}}"
+      data-pre-start-text="in DURATION"
+      data-pre-end-text="live now, started DURATION ago"
+      data-post-end-text="ended DURATION ago"
+      ></span>
   </div>
   <div class="tzselector-btn">{{ 2020.event.timezone }}</div>
 </div>

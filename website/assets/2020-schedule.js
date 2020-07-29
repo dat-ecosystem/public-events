@@ -12921,6 +12921,9 @@ function temporal_duration_to_human(duration) {
 function add_relative_time(domNode) {
   const start = Temporal.Absolute.from(domNode.dataset.start);
   const end = Temporal.Absolute.from(domNode.dataset.end);
+  const preStart = domNode.dataset.preStartText;
+  const preEnd = domNode.dataset.preEndText;
+  const postEnd = domNode.dataset.postEndText;
   const now = Temporal.now.absolute();
 
   if (Temporal.Absolute.compare(now, start) < 0) {
@@ -12928,19 +12931,19 @@ function add_relative_time(domNode) {
     const diff = start.difference(now, {
       largestUnit: 'days'
     });
-    domNode.innerHTML = `in ${temporal_duration_to_human(diff)}`;
+    domNode.innerHTML = preStart.replace('DURATION', temporal_duration_to_human(diff));
   } else if (Temporal.Absolute.compare(now, end) < 0) {
     // Has started already but hasn't ended
     const diff = now.difference(start, {
       largestUnit: 'days'
     });
-    domNode.innerHTML = `live now, started ${temporal_duration_to_human(diff)} ago`;
+    domNode.innerHTML = preEnd.replace('DURATION', temporal_duration_to_human(diff));
   } else {
     // Has ended
     const diff = now.difference(end, {
       largestUnit: 'days'
     });
-    domNode.innerHTML = `ended ${temporal_duration_to_human(diff)} ago`;
+    domNode.innerHTML = postEnd.replace('DURATION', temporal_duration_to_human(diff));
   }
 }
 
@@ -12950,5 +12953,6 @@ function update_all_relative_times() {
   });
 }
 
+window.update_all_relative_times = update_all_relative_times;
 document.addEventListener("DOMContentLoaded", update_all_relative_times);
 setInterval(update_all_relative_times, 30000);
