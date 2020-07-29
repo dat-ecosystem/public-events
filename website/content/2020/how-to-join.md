@@ -44,7 +44,7 @@ For those unfamiliar with discord: It allows you to create groups with other par
 
 If you have any questions, please feel free to ask them in the chat or raise an issue on [our github repo](https://github.com/datproject/public-events/issues/new).
 
-That's it, we hope you enjoy the event! :wave: :tada: [#datconf2020](https://twitter.com/hashtag/datconf2020)
+That's it, we hope you enjoy the event! [#datconf2020](https://twitter.com/hashtag/datconf2020)
 
 The event working group:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Martin](https://discordapp.com/users/531578097737400330), [Diego](https://discordapp.com/users/600743789652344834), [Santiago](https://discordapp.com/users/401800351671386113) and [Franz](https://discordapp.com/users/458255921752047616)
