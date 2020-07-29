@@ -174,6 +174,11 @@ function talksForSpeakerCode (talks, speakerCode) {
   return talks.filter(e => e.speakers.filter(s => s.code == speakerCode).length != 0)
 }
 
+function speakerSort (speakers) {
+  speakers.sort((a, b) => a.name.localeCompare(b.name, 'en', { sensitivity: 'base' }))
+  return speakers
+}
+
 function sortBySlotStart (talks) {
   return talks.sort((a, b) => {
     if (a.slot.start < b.slot.start) {
@@ -233,6 +238,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('onlytime', onlyTime)
   eleventyConfig.addFilter('dayFormat', dayFormat)
   eleventyConfig.addFilter('talksForSpeakerCode', talksForSpeakerCode)
+  eleventyConfig.addFilter('speakerSort', speakerSort)
   eleventyConfig.addFilter('sortBySlotStart', sortBySlotStart)
   eleventyConfig.addFilter('duration_to_human', duration_to_human)
   eleventyConfig.addFilter('to_date', to_date)
