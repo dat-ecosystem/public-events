@@ -13902,7 +13902,7 @@ function render(renderState, time, end) {
     return `
       <div class="intro">
         <sub>
-          Starting in <strong>${render_duration_human(index.Temporal.absolute.from(nextTalk.slot.start), time, true)}</strong>:
+          Starting in <strong>${render_duration_human(index.Temporal.Absolute.from(nextTalk.slot.start), time, true)}</strong>:
         </sub>
       </div>
       <div class="main">
