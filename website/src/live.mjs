@@ -133,7 +133,7 @@ function render (renderState, time, end) {
         </sub>
       </div>
       <div class="main">
-        ${renderEvent(previousTalk)}
+        ${renderEvent(currentTalk || previousTalk)}
       </div>
     `
   }
