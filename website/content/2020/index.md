@@ -9,11 +9,9 @@ splash_text: |
 
   <div id="about-countdown"></div>
 
-  [Register Now!][register-now] {.submission-link-btn}
+  [Join!][how-to-join] {.submission-link-btn}
 
-  [How to join][how-to-join] {.submission-link-btn}
-
-  [Join!]: /2020/how-to-join/
+  [how-to-join]: /2020/how-to-join/
   [datconf2020]: https://twitter.com/hashtag/datconf2020
 site_scripts: true
 ---
