@@ -1,6 +1,5 @@
 website/dist
 yarn.lock
-package-lock.json
 _site
 .netlify
 website/content/_data/2020
