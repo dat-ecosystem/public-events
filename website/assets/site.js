@@ -1,4 +1,4 @@
-var site=(function(exports,findLastIndex){'use strict';findLastIndex=findLastIndex&&Object.prototype.hasOwnProperty.call(findLastIndex,'default')?findLastIndex['default']:findLastIndex;var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+var site=(function(exports){'use strict';var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
 function unwrapExports (x) {
 	return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, 'default') ? x['default'] : x;
@@ -12882,12 +12882,17 @@ var index = /*@__PURE__*/unwrapExports(proposalTemporal);/**
  * @param {Temporal.Duration} duration 
  */
 
-function temporal_duration_to_human(duration) {
+function temporal_duration_to_human(duration, showSeconds) {
   window.last_duration = duration;
   let result = [];
   const daysRequired = !duration.hours && !duration.minutes;
   const hoursRequired = !duration.days && !duration.minutes;
   const minutesRequired = !duration.days && !duration.hours;
+
+  if (minutesRequired && duration.minutes === 0 && showSeconds) {
+    const plural_second = duration.seconds != 1 ? "s" : "";
+    return `${duration.seconds} second${plural_second}`;
+  }
 
   if (!duration.days && daysRequired) {
     return 'now';
@@ -12915,49 +12920,58 @@ function temporal_duration_to_human(duration) {
 
   return result[0];
 }
-
-function add_relative_time(domNode) {
-  const start = index.Temporal.Absolute.from(domNode.dataset.start);
-  const end = index.Temporal.Absolute.from(domNode.dataset.end);
-  const preStart = domNode.dataset.preStartText;
-  const preEnd = domNode.dataset.preEndText;
-  const postEnd = domNode.dataset.postEndText;
-  const now = index.Temporal.now.absolute();
+function render_duration_human(absA, absB, showSeconds) {
+  const diff = absA.difference(absB, {
+    largestUnit: 'days'
+  });
+  return temporal_duration_to_human(diff, showSeconds);
+}
+function render_relative_time(dataSet, now, showSeconds) {
+  const {
+    start: startRaw,
+    end: endRaw,
+    preStartText,
+    preEndText,
+    postEndText
+  } = dataSet;
+  now = now || index.Temporal.now.absolute();
+  const start = index.Temporal.Absolute.from(startRaw);
+  const end = index.Temporal.Absolute.from(endRaw);
+  let template;
+  let duration;
 
   if (index.Temporal.Absolute.compare(now, start) < 0) {
     // Hasn't started yet
-    const diff = start.difference(now, {
-      largestUnit: 'days'
-    });
-    domNode.innerHTML = preStart.replace('DURATION', temporal_duration_to_human(diff));
+    template = preStartText;
+    duration = render_duration_human(start, now, showSeconds);
   } else if (index.Temporal.Absolute.compare(now, end) < 0) {
     // Has started already but hasn't ended
-    const diff = now.difference(start, {
-      largestUnit: 'days'
-    });
-    domNode.innerHTML = preEnd.replace('DURATION', temporal_duration_to_human(diff));
+    template = preEndText;
+    duration = render_duration_human(now, start, showSeconds);
   } else {
     // Has ended
-    const diff = now.difference(end, {
-      largestUnit: 'days'
-    });
-    domNode.innerHTML = postEnd.replace('DURATION', temporal_duration_to_human(diff));
+    template = postEndText;
+    duration = render_duration_human(now, end, showSeconds);
   }
-}
 
-function update_all_relative_times() {
-  Array.from(document.querySelectorAll(".relative-when")).forEach(node => {
-    add_relative_time(node);
-  });
-}
+  if (!template) {
+    return duration;
+  }
 
-function relativeTime() {
-  window.update_all_relative_times = update_all_relative_times;
-  document.addEventListener("DOMContentLoaded", update_all_relative_times);
-  setInterval(update_all_relative_times, 30000);
+  return template.replace('DURATION', duration);
+}
+function add_relative_time(domNode, now) {
+  domNode.innerHTML = render_relative_time(domNode.dataset, now);
+}
+function update_all_relative_times(now) {
+  for (const node of document.querySelectorAll(".relative-when")) {
+    add_relative_time(node, now);
+  }
 }function automatic() {
-  relativeTime();
-}var talks = [
+  document.addEventListener("DOMContentLoaded", () => update_all_relative_times);
+  setInterval(update_all_relative_times, 30000);
+  update_all_relative_times();
+}var talksRaw = [
 	{
 		code: "cfn3kw",
 		speakers: [
@@ -13126,8 +13140,8 @@ function relativeTime() {
 		},
 		track: null,
 		state: "confirmed",
-		abstract: "Idili is a personal data storage and social sharing platform, run on a portable computer such as a Rasberry Pi. It uses dat/hypercore for decentralized identity management and the plan is to also use it for data sharing purposes at least in part.",
-		description: "Idili is just reaching a minimal viable product point and I'm looking forward to introducing it to people.",
+		abstract: "Idili is a personal data storage and social sharing platform, run on a portable computer such as a Rasberry Pi. The plan is to use dat/hypercore for decentralized identity management and to find a way to use it for data sharing purposes at least in part.",
+		description: "Idili is just reaching a minimal viable product point and I'm looking forward to introducing it to people and finding collaborators.\r\n\r\nThe current codebase is available at https://git.sr.ht/~rschulman/idili",
 		duration: "00:45",
 		slot_count: 1,
 		do_not_record: false,
@@ -13712,51 +13726,238 @@ function relativeTime() {
 		],
 		ical: "assets/pretalx/event-2020-a99cc3.ics"
 	}
-];sortTalks(talks);
+];const talks = sortTalks(talksRaw);
 
-function sortTalks(talks) {
-  talks.sort((a, b) => {
-    return a.slot.start < b.slot.start;
+function findLastIndex(arr, matcher) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    const item = arr[i];
+
+    if (matcher(item, i)) {
+      return i;
+    }
+  }
+
+  return -1;
+}
+
+function findLast(arr, matcher) {
+  const idx = findLastIndex(arr, matcher);
+
+  if (idx !== -1) {
+    return arr[idx];
+  }
+
+  return undefined;
+}
+
+function sortTalks(talksRaw) {
+  return talksRaw.sort((a, b) => {
+    const aTime = index.Temporal.Absolute.from(a.slot.start);
+    const bTime = index.Temporal.Absolute.from(b.slot.start);
+    return index.Temporal.Absolute.compare(aTime, bTime);
   });
-  return talks;
+}
+
+function isBefore(a, b) {
+  return index.Temporal.Absolute.compare(a, b) < 0;
+}
+
+function isBeforeOrAt(a, b) {
+  return index.Temporal.Absolute.compare(a, b) <= 0;
 }
 
 function getRenderState(time) {
-  findLastIndex(talks, e => {
+  const currentTalkIndex = talks.findIndex(e => {
+    const start = index.Temporal.Absolute.from(e.slot.start);
     const end = index.Temporal.Absolute.from(e.slot.end);
-    return index.Temporal.Absolute.compare(end, now) < 0;
+    return isBeforeOrAt(start, time) && isBefore(time, end);
   });
-  const previousTalk =  {};
-  const currentTalk =  {};
-  const nextTalk =  {};
-  const isInBreak = previousTalk !== null && currentTalk == null && nextTalk !== null;
-  const isAfterEvent = currentTalk == null && nextTalk == null;
-  const isBeforeEvent = previousTalk === null && currentTalk == null;
+  const currentTalk = currentTalkIndex != -1 ? talks[currentTalkIndex] : undefined;
+  let previousTalk;
+  let nextTalk;
+
+  if (currentTalk) {
+    previousTalk = talks[currentTalkIndex - 1];
+    nextTalk = talks[currentTalkIndex + 1];
+  } else {
+    previousTalk = findLast(talks, e => {
+      const end = index.Temporal.Absolute.from(e.slot.end);
+      return isBefore(end, time);
+    });
+    nextTalk = talks.find(e => {
+      const start = index.Temporal.Absolute.from(e.slot.start);
+      return isBefore(time, start);
+    });
+  }
+
+  let state;
+
+  if (currentTalk) {
+    state = 'session';
+  } else if (!!previousTalk) {
+    if (!!nextTalk) {
+      state = 'break';
+    } else {
+      state = 'after';
+    }
+  } else {
+    state = 'before';
+  }
+
+  const isFirstSession = state === 'session' && !previousTalk;
+  const isLastSession = state === 'session' && !nextTalk;
   return {
-    isBeforeEvent,
+    state,
+    isInSession: state === 'session',
+    isBeforeEvent: state === 'before',
+    isFirstSession,
+    isLastSession,
     previousTalk,
     currentTalk,
     nextTalk,
-    isInBreak,
-    isAfterEvent
+    isInBreak: state === 'break',
+    isAfterEvent: state === 'after'
   };
 }
 
-const timeBeforeEvent = index.Temporal.Absolute.from("2020-07-30T16:20:00+02:00");
-const timeDuringFirstSession = index.Temporal.Absolute.from("2020-07-30T17:01:00+02:00");
-const timeBetweenFirstAndSecondSession = index.Temporal.Absolute.from("2020-07-30T18:05:00+02:00");
-const timeDuringSecondSession = index.Temporal.Absolute.from("2020-07-30T18:16:00+02:00");
-const timeAfterEvent = index.Temporal.Absolute.from("2020-07-31T23:25:00+02:00");
-function live() {
-  const output = document.getElementById('output');
-  const beforeEvent = getRenderState();
-  const duringFirstSession = getRenderState();
-  const betweenFirstAndSecondSession = getRenderState();
-  const duringSecondSession = getRenderState();
-  const afterEvent = getRenderState();
-  setInterval(() => {
-    output.innerHTML = `
-      ${new Date().toLocaleString()}
+function renderEvent(event) {
+  let byLine = '';
+  let otherSpeakers = event.speakers.map(speaker => `<strong>${speaker.name}</strong>`);
+  let last = otherSpeakers.pop();
+
+  if (otherSpeakers.length > 0) {
+    byLine = otherSpeakers.join(', ') + ' and ';
+  }
+
+  byLine += last;
+  return `
+    <h2>${event.title}</h2>
+    <p>by ${byLine}</p>
+  `;
+}
+
+function render(renderState, time, end) {
+  const {
+    isInBreak,
+    nextTalk,
+    isBeforeEvent,
+    isFirstSession,
+    isInSession,
+    currentTalk,
+    previousTalk
+  } = renderState;
+
+  if (isBeforeEvent || isFirstSession) {
+    let inTime;
+    let talk;
+
+    if (isFirstSession) {
+      inTime = '<strong>shortly<strong>';
+      talk = currentTalk;
+    } else {
+      inTime = `in <strong>${render_duration_human(index.Temporal.Absolute.from(nextTalk.slot.start), time, true)}</strong>`;
+      talk = nextTalk;
+    }
+
+    return `
+      <div class="intro">
+        <h1>Welcome to the DAT Conference 2020!</h1>
+        <sub>
+          We will be starting ${inTime} with
+        </sub>
+      </div>
+      <div class="main">
+        ${renderEvent(talk)}
+      </div>
     `;
-  }, 80);
-}exports.automatic=automatic;exports.live=live;exports.relativeTime=relativeTime;return exports;}({},findLastIndex));//# sourceMappingURL=site.js.map
+  }
+
+  if (end) {
+    return `
+      <div class="intro">
+        <sub>
+          Thank you for joining!
+        </sub>
+      </div>
+      <div class="main">
+        ${renderEvent(previousTalk)}
+      </div>
+    `;
+  }
+
+  if (isInSession) {
+    return `
+      <div class="intro">
+        <sub>
+          We will be starting shortly!
+        </sub>
+      </div>
+      <div class="main">
+        ${renderEvent(currentTalk)}
+      </div>
+    `;
+  }
+
+  if (isInBreak) {
+    return `
+      <div class="intro">
+        <sub>
+          Starting in <strong>${render_duration_human(index.Temporal.absolute.from(nextTalk.slot.start), time, true)}</strong>:
+        </sub>
+      </div>
+      <div class="main">
+        ${renderEvent(nextTalk)}
+      </div>
+    `;
+  }
+
+  return `
+    <div class="intro">
+      <h1>Thank you for joining<br> the Dat Conference 2020!</h1>
+    </div>
+    <div class="main">
+      <h2>We hope to meet you again!</h2>
+    </div>
+  `;
+}
+
+function live(end) {
+  const output = document.getElementById('output');
+  const timeSecondsBeforeEvent = index.Temporal.Absolute.from("2020-07-30T16:59:29+02:00");
+  const timeBeforeEvent = index.Temporal.Absolute.from("2020-07-30T16:58:40+02:00");
+  const timeDuringFirstSession = index.Temporal.Absolute.from("2020-07-30T17:01:00+02:00");
+  const timeBetweenFirstAndSecondSession = index.Temporal.Absolute.from("2020-07-30T18:05:00+02:00");
+  const timeDuringSecondSession = index.Temporal.Absolute.from("2020-07-30T18:16:00+02:00");
+  const timeDuringLastSession = index.Temporal.Absolute.from("2020-07-31T21:51:00+02:00");
+  const timeAfterEvent = index.Temporal.Absolute.from("2020-07-31T23:25:00+02:00");
+  /*
+  // Tests
+   const beforeEvent = getRenderState(timeBeforeEvent)
+  const duringFirstSession = getRenderState(timeDuringFirstSession)
+  const betweenFirstAndSecondSession = getRenderState(timeBetweenFirstAndSecondSession)
+  const duringSecondSession = getRenderState(timeDuringSecondSession)
+  const afterEvent = getRenderState(timeAfterEvent)
+  const duringLastSession = getRenderState(timeDuringLastSession)
+   console.log({
+    beforeEvent,
+    duringFirstSession,
+    betweenFirstAndSecondSession,
+    duringSecondSession,
+    duringLastSession,
+    afterEvent
+  })
+  */
+
+  const start = index.Temporal.now.absolute();
+
+  const renderNow = () => {
+    const now = index.Temporal.now.absolute(); // const difference = now.difference(start)
+    // const time = timeBeforeEvent.plus(difference)
+
+    const time = now;
+    output.innerHTML = render(getRenderState(time), time, end);
+  };
+
+  setInterval(renderNow, 80);
+  renderNow();
+}exports.automatic=automatic;exports.live=live;return exports;}({}));//# sourceMappingURL=site.js.map

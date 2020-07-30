@@ -1,0 +1,90 @@
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Regular.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 400;
+  src: url("/assets/SourceSansPro-Italic.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: normal;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-Bold.ttf");
+}
+
+@font-face {  
+  font-family: 'Source Sans Pro';
+  font-style: italic;
+  font-weight: 700;
+  src: url("/assets/SourceSansPro-BoldItalic.ttf");
+}
+
+:root {
+  --datgreen: #2aca4b;
+  --darkmain: #293648;
+  --lightgrey: #c2c9ce;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background: no-repeat center url(dat-bg-2020_small.png) white;
+  background-size: cover;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 3vmin;
+  line-height: 1.6;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+sub {
+  font-size: 0.8em;
+  margin-top: 0.4em;
+  font-weight: normal;
+  display: block;
+  text-align: center;
+}
+sub b {
+  color: var(--datgreen);
+  margin-top: 1em;
+}
+p {
+  margin: 0;
+  text-align: center;
+  display: block;
+}
+
+h1, h2 {
+  line-height: 1.1em;
+  text-align: center;
+  margin: 0;
+  display: block;
+}
+
+h1 {
+  color: var(--darkmain);
+  font-size: 1.5em;
+}
+
+h2 {
+  color: var(--datgreen);
+  font-size: 2.5em;
+  padding: 0 3em;
+}
+.main {
+  margin-top: 1.3em;
+}
