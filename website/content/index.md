@@ -1,8 +1,6 @@
 ---
 title: Dat Events
 layout: layout
-preJsFiles:
-  - assets/current-redirect.js
 ---
 
 <div id="index-hero">
@@ -12,3 +10,9 @@ preJsFiles:
 
 ### What is Dat?
 [Dat](https://dat.foundation) is a community ecosystem of peer-to-peer projects. They build on a shared set of technologies called the [Hypercore protocol](https://hypercore-protocol.org).
+
+<script type="text/javascript">
+setTimeout(function() {
+    window.location.href = window.location.href.replace(/\/?$/, '/2020/')
+}, 5000)
+</script>

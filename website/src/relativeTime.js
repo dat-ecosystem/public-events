@@ -1,4 +1,4 @@
-const { Temporal } = require('proposal-temporal')
+import { Temporal } from 'proposal-temporal'
 
 /**
  * 
@@ -60,7 +60,10 @@ function update_all_relative_times () {
         add_relative_time(node)
     })
 }
-window.update_all_relative_times = update_all_relative_times
 
-document.addEventListener("DOMContentLoaded", update_all_relative_times);
-setInterval(update_all_relative_times, 30000);
+export function relativeTime () {
+    window.update_all_relative_times = update_all_relative_times
+    
+    document.addEventListener("DOMContentLoaded", update_all_relative_times);
+    setInterval(update_all_relative_times, 30000);
+}

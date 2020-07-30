@@ -16,8 +16,7 @@ splash_text: |
   [register-now]: /2020/register/
   [how-to-join]: /2020/how-to-join/
   [datconf2020]: https://twitter.com/hashtag/datconf2020
-preJsFiles:
-  - /assets/2020-schedule.js
+site_scripts: true
 ---
 
 [Dat](https://dat.foundation) is a community ecosystem of peer-to-peer projects. They build on a shared set of technologies called the [Hypercore protocol](https://hypercore-protocol.org). 
@@ -50,7 +49,6 @@ node.dataset.end = "{{ 2020.talks | eventFinishDateTime }}"
 node.dataset.preStartText = "Starts in DURATION"
 node.dataset.preEndText = "Now live, started DURATION ago"
 node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
-update_all_relative_times()
 </script>
 
 

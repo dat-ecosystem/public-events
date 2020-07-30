@@ -78,10 +78,16 @@ og_description_default: "Virtual peer to peer event about local-first tech and m
       <main>
         {{ content }}
       </main>
+      {% if site_scripts %}
+      {% endif %}
       {% if postJsFiles %}
       {% for jsFile in postJsFiles %}
       <script type="text/javascript" src="{{jsFile}}">
       {% endfor %}
+      {% endif %}
+      {% if site_scripts %}
+        <script type="text/javascript" src="/assets/site.js"></script>
+        <script type="text/javascript">site.automatic()</script>
       {% endif %}
   </body>
 </html>
