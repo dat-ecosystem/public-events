@@ -13,8 +13,7 @@ splash_text: |
 
   [How to join][how-to-join] {.submission-link-btn}
 
-  [register-now]: /2020/register/
-  [how-to-join]: /2020/how-to-join/
+  [Join!]: /2020/how-to-join/
   [datconf2020]: https://twitter.com/hashtag/datconf2020
 site_scripts: true
 ---
@@ -37,8 +36,7 @@ If you have any questions or want to discuss your ideas in advance, please just 
 
 ---
 
-* [Register Now!][register-now] {.submission-link-btn}
-* [How to join?][how-to-join] {.submission-link-btn}
+* [Join!][how-to-join] {.submission-link-btn}
 {.submission-list}
 
 <script type="text/javascript">
@@ -46,7 +44,7 @@ const node = document.getElementById("about-countdown")
 if(node) node.classList.add('relative-when')
 node.dataset.start = "{{ 2020.talks | eventStartDateTime }}"
 node.dataset.end = "{{ 2020.talks | eventFinishDateTime }}"
-node.dataset.preStartText = "Starts in DURATION"
+node.dataset.preStartText = "We are taking a break and starting again in DURATION"
 node.dataset.preEndText = "Now live, started DURATION ago"
 node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
 </script>
@@ -54,7 +52,6 @@ node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
 
  [bbb]: https://bigbluebutton.org/
  [stream]: /2020/stream/
- [register-now]: /2020/register/
  [late-submission]: https://conf.consento.org/dat-event-2020/cfp
  [ask-question]: https://github.com/datproject/public-events/issues/new?labels=question
  [how-to-join]: /2020/how-to-join/
