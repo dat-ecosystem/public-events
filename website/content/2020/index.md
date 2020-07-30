@@ -42,7 +42,7 @@ const node = document.getElementById("about-countdown")
 if(node) node.classList.add('relative-when')
 node.dataset.start = "{{ 2020.talks | eventStartDateTime }}"
 node.dataset.end = "{{ 2020.talks | eventFinishDateTime }}"
-node.dataset.preStartText = "We are taking a break and starting again in DURATION"
+node.dataset.preStartText = "We are taking a break and starting again<br> in DURATION"
 node.dataset.preEndText = "Now live, started DURATION ago"
 node.dataset.postEndText = "Event finished DURATION ago, thanks everybody!"
 </script>

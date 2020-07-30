@@ -146,10 +146,12 @@ function duration_to_human (durationStr) {
   return res
 }
 
+const secondDay = '2020-07-30T23:30:00+02:00'
+
 function eventStartDateTime (talks) {
   let earliest = talks[0].slot.start
   talks.forEach(talk => {
-    if (earliest > talk.slot.start)
+    if (earliest > talk.slot.start && talk.slot.start > secondDay)
       earliest = talk.slot.start
   })
   return earliest
