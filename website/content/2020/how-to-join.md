@@ -23,7 +23,7 @@ _Please note that our [Code of Conduct](https://events.dat.foundation/2020/coc/)
 
 The Conference runs in a single, virtual audio-video room. This is where the presenters will talk, and also where you can join for Q&A and other interaction. You can join the room using the following invite link: [https://conf.collocall.de/b/dat-zwe-ubk](https://conf.collocall.de/b/dat-zwe-ubk).
 
-This room will also be available as Youtube live stream to watch along. For that reason, be aware that everything in the room is recorded! The live stream is available [directly on YouTube](https://www.youtube.com/watch?v=Cm9fwxnXg9k&list=PL7sG5SCUNyeYx8wnfMOUpsh7rM_g0w_cu).
+This room will also be available as Youtube live stream to watch along. For that reason, be aware that everything in the room is recorded! The live stream is available [directly on YouTube](https://www.youtube.com/watch?v=QQi9KQ9guWw&list=PL7sG5SCUNyeYx8wnfMOUpsh7rM_g0w_cu&index=1).
 
 In the room, there's a chat and shared notes. Feel invited to use these together with others to take notes and ask questions!
 
