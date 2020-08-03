@@ -4,59 +4,7 @@ layout: layout-2020
 ---
 {% assign playlist = "PL7sG5SCUNyeYx8wnfMOUpsh7rM_g0w_cu" %}
 {% capture ytlink %}https://www.youtube.com/watch?v=QQi9KQ9guWw&list={{playlist}}{% endcapture %}
-{% comment %}
-
-<!-- Doesn't work with Youtube \_(-_-)_/ -->
-
-<div class="tpc-loading">
-  <h3>Loading live stream...</h3>
-  <p>
-    We are finding out if your browser can see the YouTube video
-    embedded. You need to enable third-party cookies for this to work.
-  </p>
-  <p>If you are blocking third-party network requests, this will never load.</p>
-  <p>Too slow/not working? See the event directly from <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">the YouTube playlist</a>.</p>
-
-</div>
-<div class="tpc-fail-only">
-  <p>It seems we cannot embed a YouTube video with your current browser settings.</p>
-  <p>
-    We have checked that you don't allow third-party cookies being set. This prevents websites such as YouTube from properly working when embedded from this page
-    In order to respect that choice, you will have to see the event live-stream there from your browser.
-  </p>
-  <a href="https://www.youtube.com/watch?v=VNisTWqjuoI&list={{ playlist }}">You can watch the live-stream on Youtube from this link!</a>
-</div>
-<iframe class="tpc-ok-only" src="https://www.youtube.com/embed/videoseries?list={{ playlist }}" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-<script type="text/javascript">
-;(function () {
-  if (document.getElementById('tpc-test')) {
-    // Prevent duplicate execution
-    return
-  }
-  const body = document.body
-  const tpcDomain = '//tpc.consento.org/'
-  const step1 = document.createElement('script')
-  step1.setAttribute('src', tpcDomain + 'step1.js')
-  const step2 = document.createElement('script')
-  step2.setAttribute('src', tpcDomain + 'step2.js')
-
-  window._3rd_party_test_step1_loaded = function () {
-    body.classList.add('tpc-step-2')
-    body.classList.remove('tpc-step-1')
-    body.removeChild(step1)
-    body.appendChild(step2)
-  }
-  window._3rd_party_test_step2_loaded = function (cookieSuccess) {
-    body.classList.toggle('tpc-ok', cookieSuccess)
-    body.classList.toggle('tpc-fail', !cookieSuccess)
-    body.classList.remove('tpc-step-2')
-    body.removeChild(step2)
-  }
-
-  body.classList.add('tpc-step-1')
-  body.appendChild(step1)
-})()
-</script>
+<iframe src="https://www.youtube.com/embed/videoseries?list={{ playlist }}&playsinline=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 <style type="text/css">
   html {
     overflow: hidden;
@@ -86,12 +34,6 @@ layout: layout-2020
     height: 126px;
   }
 
-  .tpc-fail-only, .tpc-loading {
-    max-width: 44rem;
-    margin: auto;
-    padding: 0;
-  }
-
   @media only screen and (max-width: 44rem) {
     iframe {
       border: 0;
@@ -102,13 +44,3 @@ layout: layout-2020
     height: 100% !important;
   }
 </style>
-{% endcomment %}
-<p>
-  Redirecting to <a href="{{ytlink}}">{{ytlink}}</a>
-</p>
-<script type="text/javascript">
-  setTimeout(function () {
-    document.location.href = "{{ytlink}}"
-  }, 10)
-</script>
-
