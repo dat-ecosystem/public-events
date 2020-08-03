@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-ax9xwj.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-ax9xwj@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T170000Z
+DTEND:20200730T174500Z
+SUMMARY:Hypercore Protocol in Rust by Franz Heinzmann
+DESCRIPTION:First I'll talk a bit about the state of #datrs\, then I'll go
+  into how I went about implementing Hypercore Protocol in Rust: What are t
+ he challenges\, what is the current state of things? Afterwards I want to 
+ have a discussion on how to move forward with #datrs.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/ax9xwj/
+END:VEVENT
+END:VCALENDAR

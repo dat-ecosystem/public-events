@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-edc7ch.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-edc7ch@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T161500Z
+DTEND:20200730T164500Z
+SUMMARY:Changing to \"Hyper\" and the future of the Dat ecosystem by Paul 
+ Frazee
+DESCRIPTION:This year\, we renamed the Dat protocol to the Hypercore proto
+ col. In this talk\, we'll review what's changed and what the future holds 
+ for the Dat ecosystem.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/edc7ch/
+END:VEVENT
+END:VCALENDAR

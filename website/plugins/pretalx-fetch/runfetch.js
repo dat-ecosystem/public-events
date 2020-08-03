@@ -19,6 +19,9 @@ async function fixIcs (base, { domain, event, prefix }, targetDomain) {
 }
 
 module.exports = async function (base, { conferences, ttl, targetDomain, personPriority }) {
+  if (!Array.isArray(conferences)) {
+    return
+  }
   const _imageMemory = new Map()
   const cacheManager = getCacheManager(base)
   console.log(`Cachedir ${chalk.green(cacheManager)}`)

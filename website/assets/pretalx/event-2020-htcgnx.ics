@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-htcgnx.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-htcgnx@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T204500Z
+DTEND:20200730T213000Z
+SUMMARY:The Latest in Beaker Land by Paul Frazee and Andrew Osheroff
+DESCRIPTION:A quick overview of the Beaker's current status\, what's new\,
+  and what's coming
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/htcgnx/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-uuzhuz.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-uuzhuz@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T152000Z
+DTEND:20200731T155000Z
+SUMMARY:Hypercores mapped to IPLD by Jim Pick
+DESCRIPTION:The Hypercore data structure is built on top of a Merkle tree\
+ , and can be represented as a DAG - Directed Acyclic Graph. In this presen
+ tation\, we will describe the data structure\, and show how to construct a
+  representation using the IPLD (Interplanetary Linked Data) library that i
+ s used by IPFS and Filecoin (also works standalone). Finally\, we will sho
+ w how to implement a storage provider that retrieves hypercore data from a
+ n IPLD-based datastore.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/uuzhuz/
+END:VEVENT
+END:VCALENDAR

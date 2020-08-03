@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-g7wtne.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-g7wtne@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T080000Z
+DTEND:20200731T093000Z
+SUMMARY:Inclusive indexing of research outputs through decentralized web b
+ y Vinodh Ilangovan
+DESCRIPTION:The primary goal of this facilitated discussion is to spark co
+ nversations and thoughts on the ways new knowledge is currently indexed\, 
+ searched and integrated.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/g7wtne/
+END:VEVENT
+END:VCALENDAR

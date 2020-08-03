@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-amcn33.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-amcn33@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T114500Z
+DTEND:20200731T121500Z
+SUMMARY:Building a P2P Web (with Dat!) by Rad
+DESCRIPTION:The developer of the Gateway mobile browser will be discussing
+  the process of building a fully p2p web. First by breaking down the curre
+ nt internet environment and its larger physical context\, then exploring h
+ ow we can sustain the potential change in power that p2p projects like dat
+  have introduced.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/amcn33/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-agznhg.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-agznhg@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T200500Z
+DTEND:20200730T202500Z
+SUMMARY:DatDot - how do can we host hypercores peer-to-peer by Nina Brezni
+ k and Alexander Praetorius
+DESCRIPTION:A walk through the DatDot project - from the concept for p2p h
+ osting\, through the technology behind it and its biggest challenges.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/agznhg/
+END:VEVENT
+END:VCALENDAR

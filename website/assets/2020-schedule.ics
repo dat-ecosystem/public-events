@@ -1,0 +1,288 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-events.dat.foundation
+BEGIN:VTIMEZONE
+TZID:Europe/Copenhagen
+BEGIN:STANDARD
+DTSTART:20001029T030000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=10
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:20000326T020000
+RRULE:FREQ=YEARLY;BYDAY=-1SU;BYMONTH=3
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-LFNMG7@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T170000
+DTEND;TZID=Europe/Copenhagen:20200730T180000
+DESCRIPTION:I'll (mafintosh) will give an overview on where things are tech
+ nically with the Hypercore Protocol\, where it's going etc.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:State of Hyper - Mathias Buus
+URL:https://events.dat.foundation/2020/talk/LFNMG7/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-EDC7CH@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T181500
+DTEND;TZID=Europe/Copenhagen:20200730T184500
+DESCRIPTION:This year\, we renamed the Dat protocol to the Hypercore protoc
+ ol. In this talk\, we'll review what's changed and what the future holds f
+ or the Dat ecosystem.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Changing to "Hyper" and the future of the Dat ecosystem - Paul Fraz
+ ee
+URL:https://events.dat.foundation/2020/talk/EDC7CH/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-AX9XWJ@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T190000
+DTEND;TZID=Europe/Copenhagen:20200730T194500
+DESCRIPTION:First I'll talk a bit about the state of #datrs\, then I'll go 
+ into how I went about implementing Hypercore Protocol in Rust: What are th
+ e challenges\, what is the current state of things? Afterwards I want to h
+ ave a discussion on how to move forward with #datrs.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Hypercore Protocol in Rust - Franz Heinzmann
+URL:https://events.dat.foundation/2020/talk/AX9XWJ/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-A99CC3@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T200000
+DTEND;TZID=Europe/Copenhagen:20200730T210000
+DESCRIPTION:How do different projects use Hypercores? How can the work with
+  each other?\n\nIn this session we will try to give a quick overview of ho
+ w the different projects in the community make use of Hypercores. We'll qu
+ ickly talk about Multifeed\, Hyperdrive\, Corestore\, Kappa Core and how t
+ hese modules differ in their approach to feed and network management - and
+  how projects like Beaker\, Cabal\, Cobox\, DatDot\, Sonar and others use 
+ them.\n\nThen\, for the main part of this session\, we will moderate a dis
+ cussion on different topics of interoperability and possible future collab
+ oration points. Please feel very invited to join this discussion\, both wi
+ th ideas and questions on how the ecosystem could develop.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:The Dat Universe - Interoperability discussion - Franz Heinzmann\, 
+ Nina Breznik
+URL:https://events.dat.foundation/2020/talk/A99CC3/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-MMHFQR@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T211000
+DTEND;TZID=Europe/Copenhagen:20200730T214500
+DESCRIPTION:People from Cabal\, a peer-to-peer group chat\, would like to p
+ resent what we've done with our subjective moderation system with a live d
+ emonstration. The demonstration will be followed by a small Q&A around Cab
+ al and our learnings from the moderation development process
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Cabal's Subjective Moderation System - cblgh\, nickwarner
+URL:https://events.dat.foundation/2020/talk/MMHFQR/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-AGZNHG@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T220500
+DTEND;TZID=Europe/Copenhagen:20200730T222500
+DESCRIPTION:A walk through the DatDot project - from the concept for p2p ho
+ sting\, through the technology behind it and its biggest challenges.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:DatDot - how do can we host hypercores peer-to-peer - Nina Breznik\
+ , Alexander Praetorius
+URL:https://events.dat.foundation/2020/talk/AGZNHG/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-HTCGNX@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200730T224500
+DTEND;TZID=Europe/Copenhagen:20200730T233000
+DESCRIPTION:A quick overview of the Beaker's current status\, what's new\, 
+ and what's coming
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:The Latest in Beaker Land - Paul Frazee\, Andrew Osheroff
+URL:https://events.dat.foundation/2020/talk/HTCGNX/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-R779FR@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T093000
+DTEND;TZID=Europe/Copenhagen:20200731T094500
+DESCRIPTION:The peer-to-peer commons (p2pcommons) is a set of standards for
+  Hyperdrives to improve information sharing\, especially in scholarly rese
+ arch. In this short presentation\, I will introduce the core concepts of t
+ he p2pcommons (e.g.\, provenance\, modules)\, why it is relevant for schol
+ arly research\, and I highlight some of the libraries we provide to develo
+ p software utilising the p2pcommons.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:The p2pcommons: A distributed information layer for research - Chri
+ s Hartgerink
+URL:https://events.dat.foundation/2020/talk/R779FR/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-G7WTNE@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T100000
+DTEND;TZID=Europe/Copenhagen:20200731T113000
+DESCRIPTION:The primary goal of this facilitated discussion is to spark con
+ versations and thoughts on the ways new knowledge is currently indexed\, s
+ earched and integrated.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Inclusive indexing of research outputs through decentralized web - 
+ Vinodh Ilangovan
+URL:https://events.dat.foundation/2020/talk/G7WTNE/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-9EUKKV@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T114500
+DTEND;TZID=Europe/Copenhagen:20200731T124500
+DESCRIPTION:Sovereignty is popping up over the P2P space. But what do we me
+ an by it? Some views and research emerging from cobox.cloud. co-presented 
+ with Jaya Klara Brekke (@jayapapaya) and Dan Hassan (@dan_mi_sun)
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:'Digital Sovereignty' huh? - Dan Hassan\, Jaya Klara Brekke
+URL:https://events.dat.foundation/2020/talk/9EUKKV/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-K9MUTW@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T130000
+DTEND;TZID=Europe/Copenhagen:20200731T133000
+DESCRIPTION:An overview over the open calls in the Next Generation Internet
+ \, manufacturing\, artificial intelligence and more. For projects in need 
+ of funding.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Funding Opportunities in Europe - Pablo Mondragón Fernández\, Dav
+ id Seoane
+URL:https://events.dat.foundation/2020/talk/K9MUTW/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-AMCN33@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T134500
+DTEND;TZID=Europe/Copenhagen:20200731T141500
+DESCRIPTION:The developer of the Gateway mobile browser will be discussing 
+ the process of building a fully p2p web. First by breaking down the curren
+ t internet environment and its larger physical context\, then exploring ho
+ w we can sustain the potential change in power that p2p projects like dat 
+ have introduced.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Building a P2P Web (with Dat!) - Rad
+URL:https://events.dat.foundation/2020/talk/AMCN33/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-BBV7SY@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T143000
+DTEND;TZID=Europe/Copenhagen:20200731T145000
+DESCRIPTION:This talk will introduce a new web browser\, Agregore\, and it'
+ s ideas about leveraging HTTP-like semantics to bring p2p protocols to the
+  web.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Introduction to Agregore - a minimal P2P web browser - Mauve
+URL:https://events.dat.foundation/2020/talk/BBV7SY/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-NRDM9U@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T150500
+DTEND;TZID=Europe/Copenhagen:20200731T152500
+DESCRIPTION:Libraries provide a way for knowledge to be structured and made
+  available to all.  As datasets become as important as books how will a li
+ brary make it possible to find all the datasets?  We will present and demo
+  an implementation of a network library using hypertrie.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Building a network library - James Littlejohn\, Denis Parfenov
+URL:https://events.dat.foundation/2020/talk/NRDM9U/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-9RWDNN@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T154000
+DTEND;TZID=Europe/Copenhagen:20200731T161000
+DESCRIPTION:Regenerative Agriculture\, Agroecology\, Conservation Ecology\,
+  and Urban Resilience increasingly make use of off-grid technologies\; I'd
+  like to review some of the ways in which Dat / Hyper and a 'local first' 
+ approach might be used in these contexts\, with a particular focus on farm
+ ing.  More description of these projects in general at https://edgecollect
+ ive.io/
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Using Dat & the Hyper Stack in Agroecology - Don Blair
+URL:https://events.dat.foundation/2020/talk/9RWDNN/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-MSTA9P@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T162500
+DTEND;TZID=Europe/Copenhagen:20200731T171000
+DESCRIPTION:Idili is a personal data storage and social sharing platform\, 
+ run on a portable computer such as a Rasberry Pi. The plan is to use dat/h
+ ypercore for decentralized identity management and to find a way to use it
+  for data sharing purposes at least in part.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Introducing Idili: A Portable Personal Data Store - Ross Schulman
+URL:https://events.dat.foundation/2020/talk/MSTA9P/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-UUZHUZ@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T172000
+DTEND;TZID=Europe/Copenhagen:20200731T175000
+DESCRIPTION:The Hypercore data structure is built on top of a Merkle tree\,
+  and can be represented as a DAG - Directed Acyclic Graph. In this present
+ ation\, we will describe the data structure\, and show how to construct a 
+ representation using the IPLD (Interplanetary Linked Data) library that is
+  used by IPFS and Filecoin (also works standalone). Finally\, we will show
+  how to implement a storage provider that retrieves hypercore data from an
+  IPLD-based datastore.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Hypercores mapped to IPLD - Jim Pick
+URL:https://events.dat.foundation/2020/talk/UUZHUZ/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-WUR3YG@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T181000
+DTEND;TZID=Europe/Copenhagen:20200731T191000
+DESCRIPTION:This collaborative workshop prompts discussion around precariou
+ s and hidden labour in digital authorship and open source development. Thr
+ ough conversations and drawings\, we will explore tensions between social 
+ purpose vs. free labour\, and our atomization in a competitive content mar
+ ket as creators.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Holistic Digital Authorship - Mai Ishikawa Sutton\, Udit Vira
+URL:https://events.dat.foundation/2020/talk/WUR3YG/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-CFN3KW@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T193000
+DTEND;TZID=Europe/Copenhagen:20200731T213000
+DESCRIPTION:3 part: Presentation\, workshop and planning-group-meeting with
+  the goal to bring structured documentation to JavaScript packages.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Adding structured documentation to Dat - Martin Heidegger\, Sam Mac
+ beth
+URL:https://events.dat.foundation/2020/talk/CFN3KW/
+END:VEVENT
+BEGIN:VEVENT
+UID:pretalx-dat-event-2020-SHVAB3@events.dat.foundation
+DTSTART;TZID=Europe/Copenhagen:20200731T215000
+DTEND;TZID=Europe/Copenhagen:20200731T232000
+DESCRIPTION:This workshop will take people through building a simple app wi
+ th the Dat SDK and making it work in the command line and on a web page.
+DTSTAMP:20200803T035403Z
+LOCATION:Main Room
+SUMMARY:Making stuff with Dat-SDK - Mauve
+URL:https://events.dat.foundation/2020/talk/SHVAB3/
+END:VEVENT
+END:VCALENDAR

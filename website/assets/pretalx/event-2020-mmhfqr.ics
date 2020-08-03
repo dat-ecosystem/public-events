@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-mmhfqr.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-mmhfqr@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T191000Z
+DTEND:20200730T194500Z
+SUMMARY:Cabal's Subjective Moderation System by cblgh and nickwarner
+DESCRIPTION:People from Cabal\, a peer-to-peer group chat\, would like to 
+ present what we've done with our subjective moderation system with a live 
+ demonstration. The demonstration will be followed by a small Q&A around Ca
+ bal and our learnings from the moderation development process
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/mmhfqr/
+END:VEVENT
+END:VCALENDAR

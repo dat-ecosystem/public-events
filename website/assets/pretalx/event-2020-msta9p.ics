@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-msta9p.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-msta9p@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T142500Z
+DTEND:20200731T151000Z
+SUMMARY:Introducing Idili: A Portable Personal Data Store by Ross Schulman
+DESCRIPTION:Idili is a personal data storage and social sharing platform\,
+  run on a portable computer such as a Rasberry Pi. The plan is to use dat/
+ hypercore for decentralized identity management and to find a way to use i
+ t for data sharing purposes at least in part.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/msta9p/
+END:VEVENT
+END:VCALENDAR

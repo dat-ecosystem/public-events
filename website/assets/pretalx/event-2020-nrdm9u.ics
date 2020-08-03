@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-nrdm9u.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-nrdm9u@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T130500Z
+DTEND:20200731T132500Z
+SUMMARY:Building a network library by James Littlejohn and Denis Parfenov
+DESCRIPTION:Libraries provide a way for knowledge to be structured and mad
+ e available to all.  As datasets become as important as books how will a l
+ ibrary make it possible to find all the datasets?  We will present and dem
+ o an implementation of a network library using hypertrie.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/nrdm9u/
+END:VEVENT
+END:VCALENDAR

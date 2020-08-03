@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-lfnmg7.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-lfnmg7@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T150000Z
+DTEND:20200730T160000Z
+SUMMARY:State of Hyper by Mathias Buus
+DESCRIPTION:I'll (mafintosh) will give an overview on where things are tec
+ hnically with the Hypercore Protocol\, where it's going etc.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/lfnmg7/
+END:VEVENT
+END:VCALENDAR

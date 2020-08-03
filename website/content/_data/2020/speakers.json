@@ -1,0 +1,837 @@
+[
+  {
+    "code": "bgdwzh",
+    "name": "Martin Heidegger",
+    "biography": "Martin is an open-source community organizer with a background in user experience and visual coding now focusing on personal security tech. He started his Open Source career in 2004~ish with ActionScript 2 _(3 was a runtime-type-safe language)_ which is a compile-time typed languages to EcmaScript and a predecessor to nowadays ubiquitous TypeScript. And is here to share his insight over many years of dealing with type information.",
+    "submissions": [
+      "cfn3kw"
+    ],
+    "avatar": "/assets/pretalx/enewkzaqsjvzc6gf8bdhd67n8c.jpg",
+    "answers": [
+      {
+        "id": 5,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "leichtgewicht",
+        "answer_file": null,
+        "submission": null,
+        "person": "BGDWZH",
+        "options": []
+      },
+      {
+        "id": 6,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "martinheidegger",
+        "answer_file": null,
+        "submission": null,
+        "person": "BGDWZH",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "leichtgewicht",
+      "Github Account": "martinheidegger"
+    }
+  },
+  {
+    "code": "xs3kqa",
+    "name": "Sam Macbeth",
+    "biography": "Sam works on privacy-preserving web-tech at Cliqz and Ghostery. On the side he an active member of the Dat community, working to bring dat protocol support to Firefox. He created the [dat-fox](https://addons.mozilla.org/en-US/firefox/addon/dat-p2p-protocol/) browser extension for Firefox, and more recently [integrated native Dat support](https://0x65.dev/blog/2020-03-02/implementing-the-dat-protocol-in-cliqz.html) in the Cliqz browser.",
+    "submissions": [
+      "cfn3kw"
+    ],
+    "avatar": "/assets/pretalx/nc5g27wg6khmf0xnkn7hjdjj0r.jpg",
+    "answers": [
+      {
+        "id": 10,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "sammacbeth",
+        "answer_file": null,
+        "submission": null,
+        "person": "XS3KQA",
+        "options": []
+      },
+      {
+        "id": 11,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "sammacbeth",
+        "answer_file": null,
+        "submission": null,
+        "person": "XS3KQA",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "sammacbeth",
+      "Github Account": "sammacbeth"
+    }
+  },
+  {
+    "code": "wjkywt",
+    "name": "Vinodh Ilangovan",
+    "biography": "",
+    "submissions": [
+      "g7wtne"
+    ],
+    "avatar": "/assets/pretalx/cdrzmg9z4s988x2012jz4xk3jw.png",
+    "answers": [
+      {
+        "id": 8,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "I_Vinodh",
+        "answer_file": null,
+        "submission": null,
+        "person": "WJKYWT",
+        "options": []
+      },
+      {
+        "id": 9,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "InquisitiveVi",
+        "answer_file": null,
+        "submission": null,
+        "person": "WJKYWT",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "I_Vinodh",
+      "Github Account": "InquisitiveVi"
+    }
+  },
+  {
+    "code": "dehx9h",
+    "name": "Chris Hartgerink",
+    "biography": "Researcher and director at Liberate Science GmbH. My background is in psychology, applied statistics; I've specialised in meta-research, library- and information sciences. [My PhD dissertation](https://doi.org/10.31237/osf.io/4wtpc) focused on understanding and building sustainable science.",
+    "submissions": [
+      "r779fr"
+    ],
+    "avatar": "/assets/pretalx/16fktbmvyc935fxrqymqy3jw1m.jpg",
+    "answers": [
+      {
+        "id": 23,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "chartgerink",
+        "answer_file": null,
+        "submission": null,
+        "person": "DEHX9H",
+        "options": []
+      },
+      {
+        "id": 24,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "chartgerink",
+        "answer_file": null,
+        "submission": null,
+        "person": "DEHX9H",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "chartgerink",
+      "Github Account": "chartgerink"
+    }
+  },
+  {
+    "code": "3tmslr",
+    "name": "Mai Ishikawa Sutton",
+    "biography": "Mai Ishikawa Sutton is a writer and community organizer with a focus on technology, policy, and solidarity economics. She is the Associate Producer of DWeb Projects with the Internet Archive and was a co-organizer of DWeb Camp 2019. She is a Steward of Sudo Mesh, a community mesh network that also builds other open-source distributed networks in Oakland, CA. She is a Digital Commons Fellow with the Commons Network, a non-profit organization advocating for and developing policies for the commons in Europe. She was previously an organizer and writer for Shareable, and before that was a policy analyst at the Electronic Frontier Foundation focused on advocating for user rights within intellectual property rules in trade agreements and other international lawmaking institutions.",
+    "submissions": [
+      "wur3yg"
+    ],
+    "avatar": "/assets/pretalx/wkmzvte3net6ery3pjcgvcxxwr.jpg",
+    "answers": [
+      {
+        "id": 29,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "maira",
+        "answer_file": null,
+        "submission": null,
+        "person": "3TMSLR",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "maira"
+    }
+  },
+  {
+    "code": "ufuaq8",
+    "name": "Udit Vira",
+    "biography": null,
+    "submissions": [
+      "wur3yg"
+    ],
+    "avatar": null,
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "rz3aga",
+    "name": "Ross Schulman",
+    "biography": "",
+    "submissions": [
+      "msta9p"
+    ],
+    "avatar": null,
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "wmfaxt",
+    "name": "Dan Hassan",
+    "biography": "https://dan.magmacollective.org/",
+    "submissions": [
+      "9eukkv"
+    ],
+    "avatar": "/assets/pretalx/mh70bqa5f4caa6rvz292bas7xc.jpg",
+    "answers": [
+      {
+        "id": 19,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "dan_mi_sun",
+        "answer_file": null,
+        "submission": null,
+        "person": "WMFAXT",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "dan_mi_sun"
+    }
+  },
+  {
+    "code": "zb89jf",
+    "name": "Jaya Klara Brekke",
+    "biography": "Expert advisor to the European Commission on Distributed Ledger Technologies. ESRC fellow at Durham University, with 15+ years working on design and economic justice of technology infrastructures.\r\n\r\nMagma Collective co-founder, Design, UX/UI, Crypto-economist, Research",
+    "submissions": [
+      "9eukkv"
+    ],
+    "avatar": "/assets/pretalx/eqhk512hkh4d3wf97ekz9cee2m.jpg",
+    "answers": [
+      {
+        "id": 22,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "jayapapaya",
+        "answer_file": null,
+        "submission": null,
+        "person": "ZB89JF",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "jayapapaya"
+    }
+  },
+  {
+    "code": "klcp9a",
+    "name": "Rad",
+    "biography": "",
+    "submissions": [
+      "amcn33"
+    ],
+    "avatar": null,
+    "answers": [
+      {
+        "id": 1,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "Calm_Rad",
+        "answer_file": null,
+        "submission": null,
+        "person": "KLCP9A",
+        "options": []
+      },
+      {
+        "id": 2,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "calm-rad",
+        "answer_file": null,
+        "submission": null,
+        "person": "KLCP9A",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "Calm_Rad",
+      "Github Account": "calm-rad"
+    }
+  },
+  {
+    "code": "lxjcfp",
+    "name": "Jim Pick",
+    "biography": "",
+    "submissions": [
+      "uuzhuz"
+    ],
+    "avatar": "/assets/pretalx/dh03kyr8taq4k73xx47ptrh2p0.jpg",
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "xeuqrn",
+    "name": "Mauve",
+    "biography": "",
+    "submissions": [
+      "shvab3",
+      "bbv7sy"
+    ],
+    "avatar": "/assets/pretalx/8k28f4tcjzagrzqqex8gfpffx8.jpg",
+    "answers": [
+      {
+        "id": 12,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "RangerMauve",
+        "answer_file": null,
+        "submission": null,
+        "person": "XEUQRN",
+        "options": []
+      },
+      {
+        "id": 13,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "RangerMauve",
+        "answer_file": null,
+        "submission": null,
+        "person": "XEUQRN",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "RangerMauve",
+      "Github Account": "RangerMauve"
+    }
+  },
+  {
+    "code": "jnzvgq",
+    "name": "Franz Heinzmann",
+    "biography": "",
+    "submissions": [
+      "ax9xwj",
+      "a99cc3"
+    ],
+    "avatar": "/assets/pretalx/wqxd4sdwe6ewkhz76ebdvx0eyg.png",
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "uvdz9n",
+    "name": "Paul Frazee",
+    "biography": "",
+    "submissions": [
+      "htcgnx",
+      "edc7ch"
+    ],
+    "avatar": "/assets/pretalx/46vptmhyexdeqdwvb3fbf9abjg.jpg",
+    "answers": [
+      {
+        "id": 20,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "pfrazee",
+        "answer_file": null,
+        "submission": null,
+        "person": "UVDZ9N",
+        "options": []
+      },
+      {
+        "id": 21,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "pfrazee",
+        "answer_file": null,
+        "submission": null,
+        "person": "UVDZ9N",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "pfrazee",
+      "Github Account": "pfrazee"
+    }
+  },
+  {
+    "code": "pw9ecl",
+    "name": "Andrew Osheroff",
+    "biography": "",
+    "submissions": [
+      "htcgnx"
+    ],
+    "avatar": "/assets/pretalx/qk5978rk0h7a3s4cnknzk7bcw4.jpg",
+    "answers": [
+      {
+        "id": 27,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "andrewosh",
+        "answer_file": null,
+        "submission": null,
+        "person": "PW9ECL",
+        "options": []
+      },
+      {
+        "id": 28,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "andrewosh",
+        "answer_file": null,
+        "submission": null,
+        "person": "PW9ECL",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "andrewosh",
+      "Github Account": "andrewosh"
+    }
+  },
+  {
+    "code": "9hzvr9",
+    "name": "Don Blair",
+    "biography": "",
+    "submissions": [
+      "9rwdnn"
+    ],
+    "avatar": "/assets/pretalx/epkktejvtwp0zqaqx7fdwgyhvm.png",
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "c3lxq3",
+    "name": "cblgh",
+    "biography": "Alexander Cobleigh, cblgh, is a Malmö-based instigator of non-commercial projects having created & finished 30+ projects over the past 8 years. He's currently one of the main contributors of Cabal, a peer-to-peer distributed group chat, and he's also co-running a hackerspace in Malmö called Lodis, as well as co-starting an organic farm on the outskirts of Malmö. \r\n\r\nAt the end of 2019, Alex quit his position at a cybersecurity startup to begin a 2-year sabbatical focused on getting user-friendly peer-to-peer projects out to the broader public. He recently finished researching a trust-based capability management system called TrustNet. If you want to support cblgh's independent research, you can: https://cblgh.org/support.html\r\n\r\nHe is an active member of both the Dat Consortium and the European Scuttlebutt Consortium, having been part of both since their initiation in the autumn of 2019.",
+    "submissions": [
+      "mmhfqr"
+    ],
+    "avatar": "/assets/pretalx/mv9fy2e3qb9ybzf3mh8x805dmm.jpg",
+    "answers": [
+      {
+        "id": 25,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "cblgh",
+        "answer_file": null,
+        "submission": null,
+        "person": "C3LXQ3",
+        "options": []
+      },
+      {
+        "id": 26,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "cblgh",
+        "answer_file": null,
+        "submission": null,
+        "person": "C3LXQ3",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "cblgh",
+      "Github Account": "cblgh"
+    }
+  },
+  {
+    "code": "sjptxr",
+    "name": "nickwarner",
+    "biography": "Nick Warner is a new media artist, technologist, and developer dedicated to designing and building excellent products and experiences that shift dystopia culture to sustainable healthiness, happiness, and helping everyone find joy. Nick's work focuses on making technology, artistic expression, and communication more accessible and fun. Examples of Nick's professional work include designing, 3D modeling, and programming a living, digital replica of Times Square in the Second Life metaverse for Samsung, building App Store Top 10 mobile apps for brands such as Ford Motor Company, American Apparel, and sportsYou, and creating interactive, multimedia web experiences for Estee Lauder, Aveda, MAC Cosmetics, Lexmark, Yellow Pages, and The Game Awards. Nick has worked with startups, enterprise businesses, nonprofits, and open source communities and he is actively working to divert technological dystopia from overcoming the human experience. Nick Warner knows it can be done with efficient engineering, smart human-centered design, and a vision focused on joy.",
+    "submissions": [
+      "mmhfqr"
+    ],
+    "avatar": "/assets/pretalx/bj7b9wdb3be0wfpbaetgjfm900.jpg",
+    "answers": [
+      {
+        "id": 3,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "nickwarner",
+        "answer_file": null,
+        "submission": null,
+        "person": "SJPTXR",
+        "options": []
+      },
+      {
+        "id": 4,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "nikolaiwarner",
+        "answer_file": null,
+        "submission": null,
+        "person": "SJPTXR",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "nickwarner",
+      "Github Account": "nikolaiwarner"
+    }
+  },
+  {
+    "code": "s38gtw",
+    "name": "Nina Breznik",
+    "biography": "",
+    "submissions": [
+      "agznhg",
+      "a99cc3"
+    ],
+    "avatar": "/assets/pretalx/7xh7rxsb828e6ekjmdcja5wf5m.png",
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "3krxgq",
+    "name": "Alexander Praetorius",
+    "biography": "",
+    "submissions": [
+      "agznhg"
+    ],
+    "avatar": null,
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "wjzl3x",
+    "name": "Mathias Buus",
+    "biography": "",
+    "submissions": [
+      "lfnmg7"
+    ],
+    "avatar": "/assets/pretalx/qfd842s38rxjasvbmbnz7b43sw.jpg",
+    "answers": [],
+    "simpleAnswers": {}
+  },
+  {
+    "code": "uctanv",
+    "name": "Pablo Mondragón Fernández",
+    "biography": "Pablo Mondragón Fernández is a Marketing Specialist at FundingBox. With a background in Public Relations and Corporate Communications professional with global experience in the world of communications. During the last 6 years, he has been working in Journalism, PR, and Social Media Marketing in the USA, Brussels, Italy, and Spain. He is currently involved in the communication of different EU initiatives that offer funding opportunities to SMEs and start-ups in fields such as manufacturing, industry 4.0, Next Generation Internet, GDPR, and AI, among others.",
+    "submissions": [
+      "k9mutw"
+    ],
+    "avatar": "/assets/pretalx/epgp4nqs5vxbxj07fs678f4b9w.jpg",
+    "answers": [
+      {
+        "id": 7,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "FundingBox",
+        "answer_file": null,
+        "submission": null,
+        "person": "UCTANV",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "FundingBox"
+    }
+  },
+  {
+    "code": "mks9ad",
+    "name": "David Seoane",
+    "biography": "David Seoane is a Programme Manager at FundingBox with 12 years of experience on fundraising in EU programmes, including proposal preparation and evaluation, and partner search in innovation funding programmes: H2020, INTERREG, ERASMUS+, and LIFE Experience. Managing several EU funded projects under Next Generation Internet, Smart connectivity, Smart manufacturing and Smart grids initiatives.",
+    "submissions": [
+      "k9mutw"
+    ],
+    "avatar": "/assets/pretalx/dnffst1mr3cx8m6ytrw5azpqag.jpg",
+    "answers": [
+      {
+        "id": 14,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "DavidSeoaneVila",
+        "answer_file": null,
+        "submission": null,
+        "person": "MKS9AD",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "DavidSeoaneVila"
+    }
+  },
+  {
+    "code": "fjqgaa",
+    "name": "James Littlejohn",
+    "biography": "James Littlejohn is a hacker, entrepreneur and peer to peer technologist.  Currently, working on building a DIY science network at the healthscience.network project. This involves introducing a new protocol to coordinate the participation in network experiments.  He was an early adopter and developer using bitcoin, ethereum and maidsafe etc. His interest in Peer to Peer technologies developed during his Economics degree from Aberdeen University in 1995 which he followed with three entrepreneurial ventures in fintech, e-commerce and ptop text data mining",
+    "submissions": [
+      "nrdm9u"
+    ],
+    "avatar": "/assets/pretalx/g22qaqkzav7ccj0yy56ahpnpvg.jpg",
+    "answers": [
+      {
+        "id": 15,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "aboynejames",
+        "answer_file": null,
+        "submission": null,
+        "person": "FJQGAA",
+        "options": []
+      },
+      {
+        "id": 16,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "aboynejames",
+        "answer_file": null,
+        "submission": null,
+        "person": "FJQGAA",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "aboynejames",
+      "Github Account": "aboynejames"
+    }
+  },
+  {
+    "code": "vlggar",
+    "name": "Denis Parfenov",
+    "biography": "Denis Parfenov is a founder of the Data Management Hub and co-founder of the Open Knowledge Ireland. He is also a member of the Creative Commons Global Network and a member of the Open Data Governance Board. \r\n\r\nDenis is passionate about empowering evidence-based decision-making by enabling the universal free flow of data with trust through employment of openly licensed distributed data infrastructures. \r\n\r\nDenis is a keen photographer, an avid slackliner and an unconditional dog lover.",
+    "submissions": [
+      "nrdm9u"
+    ],
+    "avatar": "/assets/pretalx/kms6mp3y5cqxrbge1knf6anm6m.jpg",
+    "answers": [
+      {
+        "id": 17,
+        "question": {
+          "id": 2,
+          "question": {
+            "en": "Twitter"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "DaMaHub",
+        "answer_file": null,
+        "submission": null,
+        "person": "VLGGAR",
+        "options": []
+      },
+      {
+        "id": 18,
+        "question": {
+          "id": 3,
+          "question": {
+            "en": "Github Account"
+          },
+          "required": false,
+          "target": "speaker",
+          "options": []
+        },
+        "answer": "damahub",
+        "answer_file": null,
+        "submission": null,
+        "person": "VLGGAR",
+        "options": []
+      }
+    ],
+    "simpleAnswers": {
+      "Twitter": "DaMaHub",
+      "Github Account": "damahub"
+    }
+  }
+]

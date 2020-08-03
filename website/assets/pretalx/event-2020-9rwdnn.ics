@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-9rwdnn.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-9rwdnn@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T134000Z
+DTEND:20200731T141000Z
+SUMMARY:Using Dat & the Hyper Stack in Agroecology by Don Blair
+DESCRIPTION:Regenerative Agriculture\, Agroecology\, Conservation Ecology\
+ , and Urban Resilience increasingly make use of off-grid technologies\; I'
+ d like to review some of the ways in which Dat / Hyper and a 'local first'
+  approach might be used in these contexts\, with a particular focus on far
+ ming.  More description of these projects in general at https://edgecollec
+ tive.io/
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/9rwdnn/
+END:VEVENT
+END:VCALENDAR

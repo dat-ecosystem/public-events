@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-cfn3kw.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-cfn3kw@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T173000Z
+DTEND:20200731T193000Z
+SUMMARY:Adding structured documentation to Dat by Sam Macbeth and Martin H
+ eidegger
+DESCRIPTION:3 part: Presentation\, workshop and planning-group-meeting wit
+ h the goal to bring structured documentation to JavaScript packages.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/cfn3kw/
+END:VEVENT
+END:VCALENDAR

@@ -1,0 +1,19 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-9eukkv.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-9eukkv@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T094500Z
+DTEND:20200731T104500Z
+SUMMARY:'Digital Sovereignty' huh? by Dan Hassan and Jaya Klara Brekke
+DESCRIPTION:Sovereignty is popping up over the P2P space. But what do we m
+ ean by it? Some views and research emerging from cobox.cloud. co-presented
+  with Jaya Klara Brekke (@jayapapaya) and Dan Hassan (@dan_mi_sun)
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/9eukkv/
+END:VEVENT
+END:VCALENDAR

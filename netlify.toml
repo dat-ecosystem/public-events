@@ -59,17 +59,17 @@
     targetDomain = "events.dat.foundation"
     ttl = 60 # cache for 1 minute
 
-    [[plugins.inputs.personPriority]]
-      priority = 1
-      person = "MKS9AD"
-    
-    [[plugins.inputs.personPriority]]
-      priority = 1
-      person = "XS3KQA"
+    # [[plugins.inputs.personPriority]]
+    #  priority = 1
+    #  person = "MKS9AD"
+    #
+    # [[plugins.inputs.personPriority]]
+    #  priority = 1
+    #  person = "XS3KQA"
 
     # All the feeds we wish to gather for use in the build
 
-    [[plugins.inputs.conferences]]
-      domain = "conf.consento.org"
-      prefix = "2020"
-      event = "dat-event-2020"
+    # [[plugins.inputs.conferences]]
+    # domain = "conf.consento.org"
+    #  prefix = "2020"
+    #  event = "dat-event-2020"

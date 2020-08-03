@@ -1,0 +1,23 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-r779fr.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-r779fr@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T073000Z
+DTEND:20200731T074500Z
+SUMMARY:The p2pcommons: A distributed information layer for research by Ch
+ ris Hartgerink
+DESCRIPTION:The peer-to-peer commons (p2pcommons) is a set of standards fo
+ r Hyperdrives to improve information sharing\, especially in scholarly res
+ earch. In this short presentation\, I will introduce the core concepts of 
+ the p2pcommons (e.g.\, provenance\, modules)\, why it is relevant for scho
+ larly research\, and I highlight some of the libraries we provide to devel
+ op software utilising the p2pcommons.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/r779fr/
+END:VEVENT
+END:VCALENDAR

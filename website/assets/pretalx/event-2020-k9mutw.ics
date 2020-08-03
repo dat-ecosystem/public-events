@@ -1,0 +1,20 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-k9mutw.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-k9mutw@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200731T110000Z
+DTEND:20200731T113000Z
+SUMMARY:Funding Opportunities in Europe by David Seoane and Pablo Mondragó
+ n Fernández
+DESCRIPTION:An overview over the open calls in the Next Generation Interne
+ t\, manufacturing\, artificial intelligence and more. For projects in need
+  of funding.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/k9mutw/
+END:VEVENT
+END:VCALENDAR

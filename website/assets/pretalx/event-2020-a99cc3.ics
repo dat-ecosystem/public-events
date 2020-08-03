@@ -1,0 +1,27 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//dat-foundation//pretalx-fetch//EN
+URL:https://events.dat.foundation/assets/pretalx/event-2020-a99cc3.ics
+TIMEZONE-ID:Europe/Copenhagen
+X-WR-TIMEZONE:Europe/Copenhagen
+BEGIN:VEVENT
+UID:2020-a99cc3@events.dat.foundation@events.dat.foundation
+SEQUENCE:0
+DTSTAMP:20200803T035404Z
+DTSTART:20200730T180000Z
+DTEND:20200730T190000Z
+SUMMARY:The Dat Universe - Interoperability discussion by Franz Heinzmann 
+ and Nina Breznik
+DESCRIPTION:How do different projects use Hypercores? How can the work wit
+ h each other?\n\nIn this session we will try to give a quick overview of h
+ ow the different projects in the community make use of Hypercores. We'll q
+ uickly talk about Multifeed\, Hyperdrive\, Corestore\, Kappa Core and how 
+ these modules differ in their approach to feed and network management - an
+ d how projects like Beaker\, Cabal\, Cobox\, DatDot\, Sonar and others use
+  them.\n\nThen\, for the main part of this session\, we will moderate a di
+ scussion on different topics of interoperability and possible future colla
+ boration points. Please feel very invited to join this discussion\, both w
+ ith ideas and questions on how the ecosystem could develop.
+URL;VALUE=URI:https://events.dat.foundation/2020/talk/a99cc3/
+END:VEVENT
+END:VCALENDAR
