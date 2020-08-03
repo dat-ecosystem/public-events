@@ -7,6 +7,6 @@ inputs:
   - name: ttl
     required: true
   - name: conferences
-    required: true
+    required: false
   - name: personPriority
     required: false
