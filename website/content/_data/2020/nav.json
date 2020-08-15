@@ -3,5 +3,6 @@
   { "href": "/2020/schedule", "slug": "schedule", "title": "Agenda" },
   { "href": "/2020/people", "slug": "people", "title": "People" },
   { "href": "/2020/coc", "slug": "coc", "title": "Code of Conduct" },
+  { "href": "/2020/review", "slug": "review", "title": "Review" },
   { "href": "/2020/stream", "slug": "stream", "title": "Videos" }
 ]

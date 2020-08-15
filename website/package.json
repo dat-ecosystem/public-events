@@ -29,7 +29,9 @@
     "rollup-plugin-terser": "^6.1.0"
   },
   "dependencies": {
-    "proposal-temporal": "^0.2.0",
-    "lodash.findlastindex": "^4.6.0"
+    "lodash.findlastindex": "^4.6.0",
+    "markdown-it-emoji": "^1.4.0",
+    "markdown-it-named-headings": "^1.1.0",
+    "proposal-temporal": "^0.2.0"
   }
 }

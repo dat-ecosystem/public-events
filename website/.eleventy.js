@@ -230,10 +230,11 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true
   })
-  const markdownItAttrs = require('markdown-it-attrs')
+    .use(require('markdown-it-attrs'))
+    .use(require('markdown-it-named-headings'))
+    .use(require('markdown-it-emoji/light'))
 
-  const mdIt = markdownIt.use(markdownItAttrs)
-  eleventyConfig.setLibrary('md', mdIt)
+  eleventyConfig.setLibrary('md', markdownIt)
   eleventyConfig.addFilter('md', input => markdownIt.render(input))
   eleventyConfig.addFilter('sort', sort)
   eleventyConfig.addFilter('forIndex', forIndex)
