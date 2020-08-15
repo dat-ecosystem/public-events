@@ -105,7 +105,7 @@ function event (entry, dayRange) {
     <div class="cal-entry cal-entry-${entry.code}"
       style="${style}">
       <div class="cal-entry-content">
-        <span class="cal-entry-time">${hourFormat.format(startTime.inTimeZone('Europe/Copenhagen'))}-${hourFormat.format(endTime.inTimeZone('Europe/Copenhagen'))}</span>
+        <span class="cal-entry-time">${hourFormat.format(startTime.toDateTime('Europe/Copenhagen'))}-${hourFormat.format(endTime.toDateTime('Europe/Copenhagen'))}</span>
         <span class="cal-entry-text">
         <a class="cal-entry-talk cal-link-talk" href="/2020/talk/${entry.code}" title="${entry.abstract}">${entry.title}</a>
         <span class="cal-entry-by">by ${personlist(entry.speakers, true)}

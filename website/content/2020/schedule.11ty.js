@@ -21,9 +21,9 @@ function getRange (day, talks, timeZone) {
   if (start === undefined) {
     return
   }
-  let startTZ = start.inTimeZone(timeZone)
+  let startTZ = start.toDateTime(timeZone)
   startTZ = startTZ.minus(Temporal.Duration.from({ minutes: startTZ.minute }))
-  let endTZ = end.inTimeZone(timeZone)
+  let endTZ = end.toDateTime(timeZone)
   endTZ = endTZ.minus(Temporal.Duration.from({ minutes: endTZ.minute }))
   endTZ = endTZ.plus(onHour)
   const tz = Temporal.TimeZone.from(timeZone)
@@ -35,7 +35,7 @@ const onHour = Temporal.Duration.from({ hours: 1 })
 function * getHours ({ start, end, timeZone }) {
   let current = Temporal.Absolute.from(start)
   while (current.getEpochSeconds() < end.getEpochSeconds()) {
-    yield { hour: current.inTimeZone(timeZone).getTime().toString(), time: current.getEpochSeconds() }
+    yield { hour: current.toDateTime(timeZone).toTime().toString(), time: current.getEpochSeconds() }
     current = current.plus(onHour)
   }
 }
