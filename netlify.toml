@@ -32,11 +32,6 @@
   status = 301
   force = true
 
-[[redirects]]
-  from = "/2020/stream/"
-  to = "https://www.youtube.com/watch?v=Cm9fwxnXg9k&list=PL7sG5SCUNyeYx8wnfMOUpsh7rM_g0w_c"
-  status = 302
-  force = true
 
 [build.processing]
   skip_processing = false
